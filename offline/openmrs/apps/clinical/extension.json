@@ -93,7 +93,7 @@
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
-      "conceptName": "History and Examination",
+      "formName": "History and Examination",
       "default": true
     },
     "order": 1,
@@ -105,7 +105,7 @@
     "type": "config",
     "extensionParams": {
       "default": true,
-      "conceptName": "Vitals"
+      "formName": "Vitals"
     },
     "order": 2,
     "requiredPrivilege": "app:clinical"
@@ -115,7 +115,7 @@
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
-      "conceptName": "Second Vitals",
+      "formName": "Second Vitals",
       "showIf": [
         "var visitTypes = [];",
         "if(visitTypes.length === 0) return true;",
