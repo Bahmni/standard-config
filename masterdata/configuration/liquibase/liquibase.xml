@@ -323,4 +323,34 @@
             1, now(), NULL, NULL, NULL, uuid());
         </sql>
     </changeSet>
+
+    <changeSet id="BAH-3917-25232" author="standard-config">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="program_attribute_type"/>
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM program_attribute_type
+                WHERE name IN ('ID_Number', 'Treatment Date', 'Co-morbidites', 'Doctor-In-Charge', 'Patient Stage', 'Program State')
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding required attributes for program enrollment</comment>
+        <sql>
+            insert into program_attribute_type(name, description, datatype, datatype_config, min_occurs, creator, date_created, uuid)
+            values('Program State','Program State', 'org.openmrs.customdatatype.datatype.ConceptDatatype', 56831, 0, 1, NOW(), UUID());
+
+            insert into program_attribute_type(name, description, datatype, datatype_config, min_occurs, creator, date_created, uuid)
+            values('ID_Number','ID Number', 'org.openmrs.customdatatype.datatype.RegexValidatedTextDatatype', '[0-9]*', 0, 1, NOW(), UUID());
+
+            insert into program_attribute_type(name, description, datatype, min_occurs, creator, date_created, uuid)
+            values('Treatment Date','Treatment Date', 'org.openmrs.customdatatype.datatype.DateDatatype', 0, 1, NOW(), UUID());
+
+            insert into program_attribute_type(name, description, datatype, min_occurs, creator, date_created, uuid)
+            values('Co-morbidites','Co-morbidites', 'org.openmrs.customdatatype.datatype.BooleanDatatype', 0, 1, NOW(), UUID());
+
+            insert into program_attribute_type(name, description, datatype, min_occurs, creator, date_created, uuid)
+            values('Doctor-In-Charge','Doctor In Charge', 'org.openmrs.customdatatype.datatype.FreeTextDatatype', 0, 1, NOW(), UUID());
+
+            insert into program_attribute_type(name, description, datatype, datatype_config, min_occurs, creator, date_created, uuid)
+            values('Patient Stage','Patient Stage', 'org.openmrs.customdatatype.datatype.ConceptDatatype', 56825, 0, 1, NOW(), UUID());
+        </sql>
+    </changeSet>
 </databaseChangeLog>
