@@ -340,4 +340,17 @@
 
         </sql>
     </changeSet>
+    <changeSet id="BAH-3992-reporting-age-group" author="Standard-Config">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM reporting_age_group where report_group_name="All Ages";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding All Ages age group to reporting_age_group</comment>
+        <sql>
+            INSERT INTO reporting_age_group (name,report_group_name, min_years, min_days, max_years, max_days)
+            VALUES ('All', 'All Ages',0,0,200,0);
+        </sql>
+
+    </changeSet>
 </databaseChangeLog>
