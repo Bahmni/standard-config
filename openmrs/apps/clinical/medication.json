@@ -43,22 +43,22 @@
         ],
         "drugFormDefaults": {
           "Ayurvedic": {
-            "doseUnits": "Teaspoon",
+            "doseUnits": "Teaspoon(s)",
             "route": "Oral"
           },
           "Capsule": {
-            "doseUnits": "Capsule(s)",
+            "doseUnits": "Cap(s)",
             "route": "Oral"
           },
           "Cream": {
             "route": "Topical"
           },
           "Drops": {
-            "doseUnits": "Drop",
+            "doseUnits": "Drop(s)",
             "route": "Topical"
           },
           "Food Supplement": {
-            "doseUnits": "Unit(s)",
+            "doseUnits": "Unit",
             "route": "Oral"
           },
           "Gel": {
@@ -90,7 +90,7 @@
             "route": "Topical"
           },
           "Pessary": {
-            "doseUnits": "Unit(s)",
+            "doseUnits": "Unit",
             "route": "Per Vaginal"
           },
           "Powder": {
