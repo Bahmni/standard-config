@@ -18,15 +18,15 @@
                     "countyDistrict"
                 ]
             },
-            "forms2Validations": {
-                "type": "formsV2",
-                "displayOrder": 2,
+            "forms-v2-react": {
+                "type": "formsV2React",
+                "displayOrder": 17,
                 "dashboardConfig": {
                     "title": null,
-                    "maximumNoOfVisits": 5
+                    "maximumNoOfVisits": 10,
+                    "showEditForActiveEncounter": true
                 },
-                "formGroup": [ ],
-                "translationKey":"DASHBOARD_TITLE_FORMS2_DISPLAY_EDIT_FORMS2_FORMS"
+                "translationKey": "Observation Forms"
             },
             "diagnosis":{
                 "translationKey":"DASHBOARD_TITLE_DIAGNOSIS_KEY",
@@ -50,28 +50,17 @@
                     "labEntry"
                 ]
             },
-	          "tuberculosis": {
-                "title": "Tuberculosis Follow Up",
-                "type": "tuberculosis",
-                "isObservation": true,
-                "dashboardConfig": {
-                    "conceptNames": [
-                        "Tuberculosis Followup Template"
-                    ],
-                    "numberOfVisits": 2
-                }
-            },
             "disposition":{  
                 "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
                 "showDetailsButton":true,
                 "type":"disposition",
                 "numberOfVisits":1,
-                "displayOrder":7
+                "displayOrder":16
             },
             "treatments":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type":"treatment",
-                "displayOrder":4,
+                "displayOrder": 4,
                 "dashboardConfig":{  
                     "showFlowSheet":true,
                     "showListView":true,
@@ -101,18 +90,18 @@
                 "translationKey":"DASHBOARD_TITLE_RADIOLOGY_KEY",
                 "type":"radiology",
                 "showDetailsButton":true,
-                "displayOrder":5
+                "displayOrder":6
             },
             "programs":{  
                 "translationKey":"DASHBOARD_TITLE_PROGRAMS_KEY",
                 "type":"programs",
-                "displayOrder":10
+                "displayOrder":13
             },
             "radiologyOrders":{  
                 "orderType":"Radiology Order",
                 "type":"ordersControl",
                 "translationKey":"DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
-                "displayOrder":17,
+                "displayOrder":14,
                 "dashboardConfig":{  
                     "conceptNames":[  
                         "Summary"
@@ -124,31 +113,31 @@
                 "orderType":"Radiology Order",
                 "type":"pacsOrders",
                 "translationKey":"DASHBOARD_TITLE_PACS_KEY",
-                "displayOrder":8,
+                "displayOrder":11,
                 "dashboardConfig":{  
                     "pacsImageUrl":"/oviyam2/oviyam?patientID={{patientID}}&accessionNumber={{orderNumber}}",
                     "numberOfVisits":4
                 }
             },
-            "labOrdersDisplayControl":{  
+            "labOrdersDisplayControl":{
                 "translationKey":"DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
                 "type":"ordersControl",
                 "orderType":"Lab Order",
                 "showDetailsButton":true,
-                "displayOrder":9,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
+                "displayOrder":8,
+                "dashboardConfig":{
+                    "conceptNames":[
+                        "Systolic blood pressure",
+                        "Diastolic blood pressure",
+                        "Body position",
                         "Temperature"
                     ]
                 },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
+                "expandedViewConfig":{
+                    "conceptNames":[
+                        "Systolic blood pressure",
+                        "Diastolic blood pressure",
+                        "Body position",
                         "Temperature"
                     ],
                     "showDetailsButton":true
@@ -168,7 +157,7 @@
             "labResults":{  
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "type":"labOrders",
-                "displayOrder":6,
+                "displayOrder":5,
                 "dashboardConfig":{  
                     "title":null,
                     "numberOfVisits":6,
@@ -197,22 +186,22 @@
                 "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
                 "type":"observation",
                 "isObservation":true,
-                "displayOrder":11,
+                "displayOrder":9    ,
                 "dashboardConfig":{  
                     "conceptNames":[  
-                        "HEIGHT",
-                        "Weight",
-                        "BMI Data",
-                        "BMI Status Data"
+                        "Height (cm)",
+                        "Weight (kg)",
+                        "Body mass index",
+                        "BMI Status"
                     ],
                     "showDetailsButton":true,
                     "numberOfVisits":2
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
-                        "HEIGHT",
-                        "Weight",
-                        "BMI",
+                        "Height (cm)",
+                        "Weight (kg)",
+                        "Body mass index",
                         "BMI STATUS"
                     ],
                     "numberOfVisits":2,
@@ -224,124 +213,60 @@
                 },
                 "hideEmptyDisplayControl": true
             },
-            "vitals":{  
-                "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
-                "type":"vitals",
-                "isObservation":true,
-                "displayOrder":12,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Vitals"
-                    ],
-                    "numberOfVisits":2
+            "flowsheet": {
+                "type": "flowSheet",
+                "title": "Vitals Flow Sheet",
+                "displayOrder": 12,
+                "dashboardConfig": {
+                    "latestCount": "5",
+                    "groupBy": "obstime",
+                    "obsConcepts": [
+                        "Pulse",
+                        "Arterial blood oxygen saturation (pulse oximeter)",
+                        "Respiratory rate",
+                        "Temperature",
+                        "Systolic blood pressure",
+                        "Diastolic blood pressure",
+                        "Body position"
+                    ]
                 },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Vitals"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-                        "numberOfVisits":"10",
-                        "groupBy":"encounters",
-                        "obsConcepts":[  
-                            "Weight",
-                            "Vitals"
-                        ],
-                        "drugConcepts":[  
-
-                        ],
-                        "labConcepts":[  
-
-                        ]
-                    }
-                }
-            },
-            "secondVitals":{  
-                "translationKey":"DASHBOARD_TITLE_SECOND_VITALS_KEY",
-                "type":"second vitals",
-                "isObservation":true,
-                "displayOrder":13,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
+                "allFlowSheetDetails": {
+                    "latestCount": "10",
+                    "groupBy": "obstime",
+                    "obsConcepts": [
+                        "Pulse",
+                        "Arterial blood oxygen saturation (pulse oximeter)",
+                        "Respiratory rate",
+                        "Temperature",
+                        "Systolic blood pressure",
+                        "Diastolic blood pressure",
+                        "Body position"
+                    ]
                 }
             },
             "historyAndExaminations":{  
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":14,
+                "displayOrder": 10,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
-                        "History and Examination"
+                        "Chief Complaint Record",
+                        "History of present illness",
+                        "Smoking status",
+                        "Consultation Images",
+                        "Consultation Videos"
                     ],
                     "numberOfVisits":2
                 },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "History and Examination"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
-            "gynaecology":{  
-                "translationKey":"DASHBOARD_TITLE_GYNAECOLOGY_KEY",
-                "type":"gynaecology",
-                "isObservation":true,
-                "displayOrder":15,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Gynaecology"
-                    ],
-                    "showDetailsButton":true,
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Gynaecology"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
-            "obstetrics":{  
-                "translationKey":"DASHBOARD_TITLE_OBSTETRICS_KEY",
-                "type":"obstetrics",
-                "isObservation":true,
-                "displayOrder":16,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Obstetrics"
+                "expandedViewConfig":{
+                    "conceptNames":[
+                        "Chief Complaint Record",
+                        "History of present illness",
+                        "Smoking status",
+                        "Consultation Images",
+                        "Consultation Videos"
                     ],
                     "numberOfVisits":2,
                     "showDetailsButton":true,
@@ -353,7 +278,7 @@
             "visits":{  
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
-                "displayOrder":3,
+                "displayOrder":7,
                 "dashboardConfig":{  
                     "title":null,
                     "maximumNoOfVisits":8,
@@ -364,8 +289,8 @@
                 "title":"Diabetes",
                 "templateName":"Diabetes Templates",
                 "type":"diseaseTemplate",
-                "displayOrder":18,
-                "dashboardConfig":{  
+                "displayOrder":22,
+                "dashboardConfig":{
                     "showOnly":[  
 
                     ]
@@ -402,17 +327,17 @@
             "admissionDetails":{  
                 "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                 "type":"admissionDetails",
-                "displayOrder":19,
+                "displayOrder":18,
                 "showDetailsButton":true
             },
             "conditions": {
                 "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
                 "type": "conditionsList",
-                "displayOrder": 20
+                "displayOrder": 3
             },
             "formsDisplay": {
                 "type": "forms",
-                "displayOrder": 21,
+                "displayOrder": 15,
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 10
@@ -422,21 +347,11 @@
             },
             "patientAppointments": {
                 "type": "custom",
-                "displayOrder": 22,
+                "displayOrder": 19,
                 "config": {
                     "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
                 }
-            },
-	    "Forms-2.0": {
-                "type": "formsV2",
-                "displayOrder": 23,
-                "dashboardConfig": {
-                    "title": null,
-                    "maximumNoOfVisits": 1
-                },
-                "formGroup": [ ],
-                "translationKey": "DASHBOARD_TITLE_FORMS2_DISPLAY_CONTROL_KEY"
             },
             "Form 2 Obs To Obs": {
                 "displayType": "Half-Page",
@@ -490,7 +405,7 @@
                 "translationKey": "DASHBOARD_TITLE_GROWTH_CHART",
                 "config":{  
                     "yAxisConcepts":[  
-                        "Weight"
+                        "Weight (kg)"
                     ],
                     "referenceData":"growthChartReference.csv",
                     "numberOfVisits":20
@@ -502,8 +417,8 @@
                 "translationKey": "DASHBOARD_TITLE_BLOOD_PRESSURE",
                 "config":{  
                     "yAxisConcepts":[  
-                        "Systolic Data",
-                        "Diastolic Data"
+                        "Systolic blood pressure",
+                        "Diastolic blood pressure"
                     ],
                     "xAxisConcept":"observationDateTime",
                     "numberOfVisits":10
@@ -515,7 +430,7 @@
                 "translationKey": "DASHBOARD_TITLE_WEIGHT_BMI",
                 "config":{  
                     "yAxisConcepts":[  
-                        "Weight",
+                        "Weight (kg)",
                         "BMI"
                     ],
                     "xAxisConcept":"observationDateTime",
@@ -528,8 +443,8 @@
                 "translationKey": "DASHBOARD_TITLE_DIABETES_BLOOD_SUGAR",
                 "config":{  
                     "yAxisConcepts":[  
-                        "Blood Sugar Fasting",
-                        "Blood Sugar P.P"
+                        "Fasting blood glucose measurement (mg/dL)",
+                        "Serum glucose"
                     ],
                     "xAxisConcept":"observationDateTime",
                     "numberOfVisits":10
@@ -541,7 +456,7 @@
                 "translationKey": "DASHBOARD_TITLE_PULSE",
                 "config":{  
                     "yAxisConcepts":[  
-                        "Pulse Data"
+                        "Pulse"
                     ],
                     "xAxisConcept":"observationDateTime",
                     "numberOfVisits":10
