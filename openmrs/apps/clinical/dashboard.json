@@ -301,25 +301,23 @@
                         "numberOfVisits":"15",
                         "groupBy":"encounters",
                         "obsConcepts":[  
-                            "Weight",
-                            "Height",
-                            "Systolic",
-                            "Diastolic",
-                            "Diabetes, Foot Exam",
-                            "Diabetes, Eye Exam"
+                            "Weight (kg)",
+                            "Height (cm)",
+                            "Systolic blood pressure",
+                            "Diastolic blood pressure",
+                            "Foot examination",
+                            "Eye examination findings (text)"
                         ],
-                        "drugConcepts":[  
-                            "Ipratropium Pressurised",
-                            "Garbhpal Rasa"
+                        "drugConcepts":[
                         ],
                         "labConcepts":[  
-                            "RBS",
-                            "FBS",
-                            "PP2BS",
-                            "Hb1AC",
-                            "Creatinine",
-                            "Albumin",
-                            "Polymorph"
+                            "Serum glucose",
+                            "Fasting blood glucose measurement (mg/dL)",
+                            "Post-prandial blood glucose measurement (mg/dL)",
+                            "Glycosylated hemoglobin A measurement",
+                            "Serum Creatinine",
+                            "Serum Albumin",
+                            "Neutrophils"
                         ]
                     }
                 }
@@ -477,21 +475,21 @@
                     "pivotTable":{  
                         "numberOfVisits":"10",
                         "groupBy":"visits",
-                        "obsConcepts":[  
-                            "Diabetes, Blood Pressure",
-                            "Diabetes, A1C",
-                            "Diabetes, LDL",
-                            "Diabetes, Ulcers on Feet",
-                            "Blood Sugar Fasting",
-                            "Blood Sugar PP"
+                        "obsConcepts":[
+                            "Blood Pressure",
+                            "Diabetes, Last HbA1c Date",
+                            "Diabetes, Last known A1C Result",
+                            "Foot examination",
+                            "Fasting blood glucose measurement (mg/dL)",
+                            "Serum glucose"
                         ],
-                        "labConcepts":[  
-                            "RBS",
-                            "FBS",
-                            "PP2BS",
-                            "Hb1AC",
-                            "Creatinine",
-                            "Cholesterol"
+                        "labConcepts":[
+                            "Serum glucose",
+                            "Fasting blood glucose measurement (mg/dL)",
+                            "Post-prandial blood glucose measurement (mg/dL)",
+                            "Glycosylated hemoglobin A measurement",
+                            "Serum Creatinine",
+                            "Total cholesterol (mmol/L)"
                         ]
                     }
                 },
@@ -526,11 +524,12 @@
                 "displayType":"Full-Page",
                 "dashboardConfig":{  
                     "showGroupDateTime":false,
-                    "conceptNames":[  
-                        "Chief Complaint Data",
-                        "Examination Notes",
-                        "Smoking History",
-                        "Clief COmplaint Notes",
+                    "conceptNames":[
+                        "Chief Complaint Record",
+                        "History of present illness",
+                        "Smoking status",
+                        "Consultation Images",
+                        "Consultation Videos",
                         "Blood Pressure"
                     ]
                 },
