@@ -6,19 +6,16 @@
     "config": {
       "forDataAnalysis": true,
       "patientAttributes": [
-        "caste",
-        "class",
-        "education",
-        "occupation",
-        "primaryContact"
+        "phoneNumber"
       ],
       "visitAttributes": [
         "Visit Status",
         "Admission Status"
       ],
       "patientAddresses": [
-        "address3",
-        "city_village"
+        "county_district",
+        "city_village",
+        "state_province"
       ],
       "applyDateRangeFor": "visitStopDate",
       "visitTypesToFilter": [
@@ -105,11 +102,12 @@
     "config": {
       "addressAttributes": [
         "address1",
-        "city_village"
+        "city_village",
+        "county_district",
+        "state_province"
       ],
       "patientAttributes": [
-        "caste",
-        "education"
+        "phoneNumber"
       ],
       "conceptNames": [
         "Height (cm)",
