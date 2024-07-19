@@ -130,6 +130,11 @@
             "COMMENTS",
             "Patient file"
         ],
+        "orderTypeClassMap" :{
+            "Laboratory": ["Test","LabSet","LabTest"],
+            "Radiology Orders": ["Radiology","Radiology/Imaging Procedure"],
+            "Procedure Orders": ["Procedure"]
+        },
         "otherInvestigationsMap": {
             "Radiology": "Radiology Order",
             "Endoscopy": "Endoscopy Order"
