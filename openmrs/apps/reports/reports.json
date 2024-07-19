@@ -20,7 +20,9 @@
       "applyDateRangeFor": "visitStopDate",
       "visitTypesToFilter": [
         "PHARMACY VISIT",
-        "OPD"
+        "OPD",
+        "IPD",
+        "EMERGENCY"
       ]
     }
   },
