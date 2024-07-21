@@ -552,14 +552,16 @@
                 "type":"obsToObsFlowSheet",
                 "displayType":"Full-Page",
                 "displayOrder":26,
-                "dashboardConfig":{  
-                    "groupByConcept":"Malaria, Treatment Start Date",
-                    "templateName":"Malaria",
-                    "conceptNames":[  
-                        "Malaria, Parents Name",
-                        "Malaria, drug regimen",
-                        "Malaria, Malaria Type",
-                        "Malaria, Source"
+                "dashboardConfig":{
+                    "groupByConcept":"Treatment start date",
+                    "formNames": [
+                        "Malaria"
+                    ],
+                    "conceptNames": [
+                        "Rapid test for malaria",
+                        "Malaria risk",
+                        "Malaria, Source",
+                        "Problem severity"
                     ]
                 }
             },
