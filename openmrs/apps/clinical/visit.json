@@ -17,14 +17,13 @@
                     "groupBy": "encounters",
                     "obsConcepts": [
                         "Pulse",
-                        "Diastolic",
-                        "Systolic",
+                        "Diastolic blood pressure",
+                        "Systolic blood pressure",
                         "Temperature",
-                        "RR",
-                        "SPO2",
-                        "Height",
-                        "WEIGHT",
-                        "M/C Days"
+                        "Respiratory rate",
+                        "Arterial blood oxygen saturation (pulse oximeter)",
+                        "Height (cm)",
+                        "Weight (kg)"
                     ],
                     "labConcepts": ""
                 }
@@ -99,7 +98,7 @@
                 "displayOrder": 2,
                 "translationKey":"DISCHARGE_SUMMARY_AT_ADMISSION_KEY",
                 "config": {
-                    "conceptNames": ["WEIGHT"],
+                    "conceptNames": ["Weight (kg)"],
                     "scope": "initial"
                 }
             },
@@ -108,7 +107,7 @@
                 "displayOrder": 3,
                 "translationKey":"DISCHARGE_SUMMARY_AT_DISCHARGE_KEY",
                 "config": {
-                    "conceptNames": ["WEIGHT"],
+                    "conceptNames": ["Weight (kg)"],
                     "scope": "latest"
                 }
             },
@@ -129,11 +128,9 @@
                 "translationKey": "DISCHARGE_SUMMARY_CLINICAL_NOTES_KEY",
                 "config": {
                     "conceptNames": [
-                        "History and Examination Notes",
-                        "Discharge Summary",
-                        "Lab Investigation Notes",
-                        "Radiology Notes",
-                        "Other Notes"
+                        "Consultation Note",
+                        "Lab Order Notes",
+                        "Radiology Notes"
                     ],
                     "scope": "latest",
                     "numberOfVisits": "1"
@@ -179,9 +176,6 @@
                 "translationKey":"DISCHARGE_SUMMARY_ADVICE_ON_DISCHARGE_KEY",
                 "config": {
                     "conceptNames": [
-                        "Additional Advice on Discharge",
-                        "Follow up Date",
-                        "Discharge Summary, Plan for follow up"
                     ],
                     "scope": "latest"
                 }
