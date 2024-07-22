@@ -126,20 +126,10 @@
                 "showDetailsButton":true,
                 "displayOrder":8,
                 "dashboardConfig":{
-                    "conceptNames":[
-                        "Systolic blood pressure",
-                        "Diastolic blood pressure",
-                        "Body position",
-                        "Temperature"
-                    ]
+                    "conceptNames":[]
                 },
                 "expandedViewConfig":{
-                    "conceptNames":[
-                        "Systolic blood pressure",
-                        "Diastolic blood pressure",
-                        "Body position",
-                        "Temperature"
-                    ],
+                    "conceptNames":[],
                     "showDetailsButton":true
                 }
             },
