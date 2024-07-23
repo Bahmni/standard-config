@@ -275,43 +275,6 @@
                     "groupByVisits":true
                 }
             },
-            "diabetes":{  
-                "title":"Diabetes",
-                "templateName":"Diabetes Templates",
-                "type":"diseaseTemplate",
-                "displayOrder":22,
-                "dashboardConfig":{
-                    "showOnly":[  
-
-                    ]
-                },
-                "expandedViewConfig":{  
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-                        "numberOfVisits":"15",
-                        "groupBy":"encounters",
-                        "obsConcepts":[  
-                            "Weight (kg)",
-                            "Height (cm)",
-                            "Systolic blood pressure",
-                            "Diastolic blood pressure",
-                            "Foot examination",
-                            "Eye examination findings (text)"
-                        ],
-                        "drugConcepts":[
-                        ],
-                        "labConcepts":[  
-                            "Serum glucose",
-                            "Fasting blood glucose measurement (mg/dL)",
-                            "Post-prandial blood glucose measurement (mg/dL)",
-                            "Glycosylated hemoglobin A measurement",
-                            "Serum Creatinine",
-                            "Serum Albumin",
-                            "Neutrophils"
-                        ]
-                    }
-                }
-            },
             "admissionDetails":{  
                 "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                 "type":"admissionDetails",
@@ -450,40 +413,6 @@
                     "numberOfVisits":10
                 },
                 "displayOrder":5
-            },
-            "diabetes":{  
-                "title":"Diabetes",
-                "templateName":"Diabetes, Progress",
-                "type":"diseaseTemplate",
-                "dashboardConfig":{  
-                    "showOnly":[  
-
-                    ]
-                },
-                "expandedViewConfig":{  
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-                        "numberOfVisits":"10",
-                        "groupBy":"visits",
-                        "obsConcepts":[
-                            "Blood Pressure",
-                            "Diabetes, Last HbA1c Date",
-                            "Diabetes, Last known A1C Result",
-                            "Foot examination",
-                            "Fasting blood glucose measurement (mg/dL)",
-                            "Serum glucose"
-                        ],
-                        "labConcepts":[
-                            "Serum glucose",
-                            "Fasting blood glucose measurement (mg/dL)",
-                            "Post-prandial blood glucose measurement (mg/dL)",
-                            "Glycosylated hemoglobin A measurement",
-                            "Serum Creatinine",
-                            "Total cholesterol (mmol/L)"
-                        ]
-                    }
-                },
-                "displayOrder":6
             }
         }
     },
