@@ -1,24 +1,27 @@
 [
     {
-        "type": "PATIENT_ADMIT",
+        "event": "PATIENT_ADMIT",
         "tasks": [
             {
-                "name": "Collect patient history"
+                "name": "Collect patient history",
+                "type": ""
             },
             {
-                "name": "Record medications taken by the patient already"
+                "name": "Record medications taken by the patient already",
+                "type": ""
             },
             {
-                "name": "Record Vitals"
+                "name": "Record Vitals",
+                "type": ""
             }
         ]
     },
     {
-        "type": "SHIFT_START_TASK",
+        "event": "SHIFT_START_TASK",
         "tasks": []
     },
     {
-        "type": "ROLLOVER_TASK",
+        "event": "ROLLOVER_TASK",
         "tasks": []
     }
 ]
