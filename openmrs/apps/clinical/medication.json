@@ -43,18 +43,18 @@
         ],
         "drugFormDefaults": {
           "Ayurvedic": {
-            "doseUnits": "Teaspoon(s)",
+            "doseUnits": "Teaspoon",
             "route": "Oral"
           },
           "Capsule": {
-            "doseUnits": "Cap(s)",
+            "doseUnits": "Capsule",
             "route": "Oral"
           },
           "Cream": {
             "route": "Topical"
           },
           "Drops": {
-            "doseUnits": "Drop(s)",
+            "doseUnits": "Drop",
             "route": "Topical"
           },
           "Food Supplement": {
@@ -65,7 +65,7 @@
             "route": "Topical"
           },
           "Granule": {
-            "doseUnits": "Unit(s)",
+            "doseUnits": "Unit",
             "route": "Oral"
           },
           "Inhaler": {
@@ -110,7 +110,7 @@
             "route": "Oral"
           },
           "Tablet": {
-            "doseUnits": "Tablet(s)",
+            "doseUnits": "Tablet",
             "route": "Oral"
           }
         }
