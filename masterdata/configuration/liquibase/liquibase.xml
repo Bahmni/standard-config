@@ -351,6 +351,7 @@
             INSERT INTO reporting_age_group (name,report_group_name, min_years, min_days, max_years, max_days)
             VALUES ('All', 'All Ages',0,0,200,0);
         </sql>
-
     </changeSet>
+
+    <include file="createBedLayout.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
