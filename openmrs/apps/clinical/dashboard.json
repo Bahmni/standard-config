@@ -136,6 +136,7 @@
             "bacteriologyResults":{  
                 "translationKey":"DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
                 "type":"bacteriologyResultsControl",
+                "displayOrder": 20,
                 "scope":"All",
                 "orderType":"",
                 "dashboardConfig":{  
@@ -302,6 +303,20 @@
                 "config": {
                     "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
+                }
+            },
+            "procedureDisplayControl":{
+                "translationKey":"DASHBOARD_TITLE_PROCEDURE_DISPLAY_CONTROL_KEY",
+                "type":"ordersControl",
+                "orderType":"Procedure Order",
+                "showDetailsButton":true,
+                "displayOrder":21,
+                "dashboardConfig":{
+                    "conceptNames":[]
+                },
+                "expandedViewConfig":{
+                    "conceptNames":[],
+                    "showDetailsButton":true
                 }
             },
             "Form 2 Obs To Obs": {
