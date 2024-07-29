@@ -18,6 +18,10 @@
                     "countyDistrict"
                 ]
             },
+            "allergies": {
+                "type":"allergies",
+                "displayOrder": 2
+            },
             "forms-v2-react": {
                 "type": "formsV2React",
                 "displayOrder": 17,
