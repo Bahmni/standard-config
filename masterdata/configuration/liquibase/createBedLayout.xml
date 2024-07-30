@@ -27,6 +27,14 @@
         </sql>
     </changeSet>
     <changeSet id="example-create-beds-and-assign-to-location" author="Standard-Config">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM bed;
+            </sqlCheck>
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM bed_location_map;
+            </sqlCheck>
+        </preConditions>
         <comment>Creating beds and assign to location</comment>
         <sql>
             SET @bed_type_normal = (SELECT bed_type_id FROM bed_type where name='normal');
@@ -67,14 +75,18 @@
             INSERT INTO bed_location_map(location_id, bed_row_number, bed_column_number, bed_id) VALUES(@location_id_general_room2, 2, 1, 7);
             INSERT INTO bed_location_map(location_id, bed_row_number, bed_column_number, bed_id) VALUES(@location_id_general_room2, 2, 2, 8);
 
-            SET @location_id_emergency_room = (SELECT location_id FROM location where name='Emergency');
+            SET @parent_location_id = (select location_id from location where name='Emergency');
+            INSERT INTO location (name, description, creator, retired, date_created, uuid, parent_location) VALUES('Emergency Ward', 'Emergency', 1, 0, NOW(), UUID(), @parent_location_id);
+            SET @location_id_emergency_room = (SELECT location_id FROM location where name='Emergency Ward');
 
             INSERT INTO bed_location_map(location_id, bed_row_number, bed_column_number, bed_id) VALUES(@location_id_emergency_room, 1, 1, 9);
             INSERT INTO bed_location_map(location_id, bed_row_number, bed_column_number, bed_id) VALUES(@location_id_emergency_room, 1, 2, 10);
             INSERT INTO bed_location_map(location_id, bed_row_number, bed_column_number, bed_id) VALUES(@location_id_emergency_room, 2, 1, 11);
             INSERT INTO bed_location_map(location_id, bed_row_number, bed_column_number, bed_id) VALUES(@location_id_emergency_room, 2, 2, 12);
 
-            SET @location_id_pediatric_room = (SELECT location_id FROM location where name='Pediatric Ward');
+            SET @pediatric_parent_location_id = (select location_id from location where name='Pediatric Ward');
+            INSERT INTO location (name, description, creator, retired, date_created, uuid, parent_location) VALUES('Pediatric Ward Room-1', 'Pediatric Ward', 1, 0, NOW(), UUID(), @pediatric_parent_location_id);
+            SET @location_id_pediatric_room = (SELECT location_id FROM location where name='Pediatric Ward Room-1');
 
             INSERT INTO bed_location_map(location_id, bed_row_number, bed_column_number, bed_id) VALUES(@location_id_pediatric_room, 1, 1, 13);
             INSERT INTO bed_location_map(location_id, bed_row_number, bed_column_number, bed_id) VALUES(@location_id_pediatric_room, 1, 2, 14);
