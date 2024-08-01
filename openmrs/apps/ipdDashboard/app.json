@@ -37,6 +37,7 @@
       "refreshKey": 6
     }
   ],
+  "nonMedicationTaskTypes": ["IP Measuring Intakes", "IP Patient Care", "IP Checklist"],
   "nursingTasks": {
     "timeInMinutesFromNowToShowTaskAsRelevant": 30,
     "timeInMinutesFromNowToShowPastTaskAsLate": 60,

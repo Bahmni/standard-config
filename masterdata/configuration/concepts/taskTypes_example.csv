@@ -1,0 +1,5 @@
+Uuid,Void/Retire,Mappings|SAME-AS,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Answers,Members,_version:1,_order:3000
+a0eb13f7-0cd8-4e40-a03b-c8091ac05c89,,,IP Measuring Intakes,Measuring Intakes,Used for recording and tracking patient intakes,Misc,N/A,,,,
+785e3bf3-5dc2-43a9-b90c-694469fbea0c,,,IP Patient Care,Patient Care,For managing and documenting inpatient care activities,Misc,N/A,,,,
+996b6a90-1005-4ce0-a022-9ef85ffe1886,,,IP Checklist,Checklist,A checklist used for inpatient care procedures,Misc,N/A,,,,
+88968b6e-14b6-4633-87ca-3ccf6843741d,,,All Task Types,All Task Types,Encompasses all different types of tasks in the system,ConvSet,N/A,,IP Measuring Intakes;IP Patient Care;IP Checklist,,
