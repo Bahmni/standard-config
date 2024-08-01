@@ -196,7 +196,71 @@
     "label": "Medications",
     "translationKey":"MEDICATIONS_BOARD_LABEL_KEY",
     "extensionParams":{
-      "tabConfigName": "allMedicationTabConfig"
+      "tabConfigName": "allMedicationTabConfig",
+      "sections": {
+        "nutritionalValues":{  
+          "translationKey": "DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
+          "type": "observation",
+          "isObservation": true,
+          "displayOrder": 1,
+          "dashboardConfig": {  
+            "conceptNames":[  
+              "Height (cm)",
+              "Weight (kg)",
+              "Body mass index",
+              "BMI Status"
+            ],
+            "showDetailsButton": true
+          },
+          "expandedViewConfig": {  
+            "conceptNames":[  
+              "Height (cm)",
+              "Weight (kg)",
+              "Body mass index",
+              "BMI STATUS"
+            ],
+            "scope": "latest",
+            "showDetailsButton": true,
+            "pivotTable": {}
+          },
+          "hideEmptyDisplayControl": true
+        },
+        "flowsheet": {
+          "type": "flowSheet",
+          "title": "Vitals Flow Sheet",
+          "displayOrder": 2,
+          "dashboardConfig": {
+            "latestCount": "5",
+            "groupBy": "obstime",
+            "obsConcepts": [
+              "Pulse",
+              "Arterial blood oxygen saturation (pulse oximeter)",
+              "Respiratory rate",
+              "Temperature",
+              "Systolic blood pressure",
+              "Diastolic blood pressure",
+              "Body position"
+            ]
+          },
+          "allFlowSheetDetails": {
+            "latestCount": "5",
+            "groupBy": "obstime",
+            "obsConcepts": [
+              "Pulse",
+              "Arterial blood oxygen saturation (pulse oximeter)",
+              "Respiratory rate",
+              "Temperature",
+              "Systolic blood pressure",
+              "Diastolic blood pressure",
+              "Body position"
+            ]
+          }
+        },
+        "allergies": {
+          "type": "allergies",
+          "displayOrder": 4
+        }
+      }
     },
     "url": "treatment",
     "icon": "fa-user-md",
