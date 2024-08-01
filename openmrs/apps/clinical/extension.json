@@ -206,9 +206,7 @@
           "dashboardConfig": {  
             "conceptNames":[  
               "Height (cm)",
-              "Weight (kg)",
-              "Body mass index",
-              "BMI Status"
+              "Weight (kg)"
             ],
             "showDetailsButton": true
           },
@@ -225,40 +223,9 @@
           },
           "hideEmptyDisplayControl": true
         },
-        "flowsheet": {
-          "type": "flowSheet",
-          "title": "Vitals Flow Sheet",
-          "displayOrder": 2,
-          "dashboardConfig": {
-            "latestCount": "5",
-            "groupBy": "obstime",
-            "obsConcepts": [
-              "Pulse",
-              "Arterial blood oxygen saturation (pulse oximeter)",
-              "Respiratory rate",
-              "Temperature",
-              "Systolic blood pressure",
-              "Diastolic blood pressure",
-              "Body position"
-            ]
-          },
-          "allFlowSheetDetails": {
-            "latestCount": "5",
-            "groupBy": "obstime",
-            "obsConcepts": [
-              "Pulse",
-              "Arterial blood oxygen saturation (pulse oximeter)",
-              "Respiratory rate",
-              "Temperature",
-              "Systolic blood pressure",
-              "Diastolic blood pressure",
-              "Body position"
-            ]
-          }
-        },
         "allergies": {
           "type": "allergies",
-          "displayOrder": 4
+          "displayOrder": 2
         }
       }
     },
