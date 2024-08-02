@@ -27,9 +27,9 @@
                 JOIN (SELECT pri.patient_id, pri.identifier FROM patient_identifier pri
                 join patient_identifier_type pit on pri.identifier_type = pit.patient_identifier_type_id and pri.preferred = 1
                 join global_property gp on gp.property="bahmni.primaryIdentifierType" and gp.property_value=pit.uuid) primaryIdentifier ON ma.patient_id = primaryIdentifier.patient_id
-                join concept_name cn on cn.concept_id = map.function and cn.concept_name_type = "FULLY_SPECIFIED"
-                join concept_name cnd on cnd.concept_id = ma.dose_units and cnd.concept_name_type = "FULLY_SPECIFIED"
-                join concept_name cnr on cnr.concept_id = ma.route and cnr.concept_name_type = "FULLY_SPECIFIED"
+                join concept_name cn on cn.concept_id = map.performer_function and cn.concept_name_type = "FULLY_SPECIFIED" and cn.locale='en'
+                join concept_name cnd on cnd.concept_id = ma.dose_units and cnd.concept_name_type = "FULLY_SPECIFIED" and cnd.locale='en'
+                join concept_name cnr on cnr.concept_id = ma.route and cnr.concept_name_type = "FULLY_SPECIFIED" and cnr.locale='en'
                 join person_name pn on ma.patient_id = pn.person_id and pn.voided = 0 and pn.preferred = 1
                 join patient_identifier pi on ma.patient_id = pi.patient_id
                 join person p on p.person_id = ma.patient_id and p.voided = 0
