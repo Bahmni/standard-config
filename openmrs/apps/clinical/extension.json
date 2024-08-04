@@ -199,31 +199,28 @@
       "tabConfigName": "allMedicationTabConfig",
       "sections": {
         "basicDetails":{  
-          "translationKey":"Basic Details",
-          "type":"observation",
-          "isObservation":true,
-          "displayOrder":9    ,
-          "dashboardConfig":{  
+          "translationKey":"DASHBOARD_TITLE_BASIC_DETAILS_KEY",
+          "type": "observation",
+          "isObservation": true,
+          "displayOrder": 1,
+          "dashboardConfig": {
+            "conceptNames":[  
+              "Height (cm)",
+              "Weight (kg)"
+            ],
+            "displayNameType": "FSN",
+            "showDetailsButton": true,
+            "numberOfVisits":2
+          },
+          "expandedViewConfig": { 
             "conceptNames":[  
               "Height (cm)",
               "Weight (kg)",
               "Body mass index",
-              "BMI Status"
+              "BMI STATUS"
             ],
-            "displayNameType": "FSN",
-            "showDetailsButton":true,
-            "numberOfVisits":2
-          },
-          "expandedViewConfig":{  
-            "conceptNames":[  
-                "Height (cm)",
-                "Weight (kg)",
-                "Body mass index",
-                "BMI STATUS"
-            ],
-            "numberOfVisits":2,
-            "scope":"latest",
-            "showDetailsButton":true,
+            "scope": "latest",
+            "showDetailsButton": true,
             "displayNameType": "FSN",
             "pivotTable": {}
           },

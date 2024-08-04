@@ -178,7 +178,7 @@
                 }
             },
             "basicDetails":{  
-                "translationKey":"Basic Details",
+                "translationKey":"DASHBOARD_TITLE_BASIC_DETAILS_KEY",
                 "type":"observation",
                 "isObservation":true,
                 "displayOrder":9    ,
