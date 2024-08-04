@@ -198,27 +198,33 @@
     "extensionParams":{
       "tabConfigName": "allMedicationTabConfig",
       "sections": {
-        "nutritionalValues":{  
-          "translationKey": "DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
-          "type": "observation",
-          "isObservation": true,
-          "displayOrder": 1,
-          "dashboardConfig": {  
-            "conceptNames":[  
-              "Height (cm)",
-              "Weight (kg)"
-            ],
-            "showDetailsButton": true
-          },
-          "expandedViewConfig": {  
+        "basicDetails":{  
+          "translationKey":"Basic Details",
+          "type":"observation",
+          "isObservation":true,
+          "displayOrder":9    ,
+          "dashboardConfig":{  
             "conceptNames":[  
               "Height (cm)",
               "Weight (kg)",
               "Body mass index",
-              "BMI STATUS"
+              "BMI Status"
             ],
-            "scope": "latest",
-            "showDetailsButton": true,
+            "displayNameType": "FSN",
+            "showDetailsButton":true,
+            "numberOfVisits":2
+          },
+          "expandedViewConfig":{  
+            "conceptNames":[  
+                "Height (cm)",
+                "Weight (kg)",
+                "Body mass index",
+                "BMI STATUS"
+            ],
+            "numberOfVisits":2,
+            "scope":"latest",
+            "showDetailsButton":true,
+            "displayNameType": "FSN",
             "pivotTable": {}
           },
           "hideEmptyDisplayControl": true

@@ -177,8 +177,8 @@
                     }  
                 }
             },
-            "nutritionalValues":{  
-                "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
+            "basicDetails":{  
+                "translationKey":"Basic Details",
                 "type":"observation",
                 "isObservation":true,
                 "displayOrder":9    ,
@@ -189,6 +189,7 @@
                         "Body mass index",
                         "BMI Status"
                     ],
+                    "displayNameType": "FSN",
                     "showDetailsButton":true,
                     "numberOfVisits":2
                 },
@@ -202,6 +203,7 @@
                     "numberOfVisits":2,
                     "scope":"latest",
                     "showDetailsButton":true,
+                    "displayNameType": "FSN",
                     "pivotTable":{  
 
                     }
