@@ -136,25 +136,25 @@
   "vitalsConfig": {
     "latestVitalsConceptValues": {
       "spO2": "Arterial Blood Oxygen Saturation (Pulse Oximeter)",
-      "weight": "Weight",
-      "bmi": "BMI",
+      "weight": "Weight (kg)",
+      "bmi": "Body mass index",
       "respiratoryRate": "Respiratory Rate",
       "systolicPressure": "Systolic blood pressure",
       "diastolicPressure": "Diastolic blood pressure",
       "temperature": "Temperature",
       "pulse": "Pulse",
-      "height": "Height"
+      "height": "Height (cm)"
     },
     "vitalsHistoryConceptValues": {
       "spO2": "Arterial Blood Oxygen Saturation (Pulse Oximeter)",
-      "weight": "Weight",
-      "bmi": "BMI",
+      "weight": "Weight (kg)",
+      "bmi": "Body mass index",
       "respiratoryRate": "Respiratory Rate",
       "systolicPressure": "Systolic blood pressure",
       "diastolicPressure": "Diastolic blood pressure",
       "temperature": "Temperature",
       "pulse": "Pulse",
-      "height": "Height",
+      "height": "Height (cm)",
       "muac": "Mid-upper arm circumference"
     }
   }
