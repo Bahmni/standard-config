@@ -232,6 +232,22 @@
       "showTotalRow": true,
       "showTotalColumn": true
     }
+  },
+  "OpenELISTestCount": {
+    "name": "OpenELIS Test Count",
+    "type": "ElisGeneric",
+    "requiredPrivilege": "app:reports",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
+    }
+  },
+  "OdooInvoiceSummary": {
+    "name": "Odoo Invoicing Summary",
+    "type": "ERPGeneric",
+    "requiredPrivilege": "app:reports",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/odooInvoiceSummary.sql"
+    }
   }
 }
 
