@@ -20,6 +20,16 @@
     "order": 7,
     "requiredPrivilege": "app:adt"
   },
+   "adt": {
+    "id": "bahmni.adt",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_INPATIENT_KEY",
+    "url": "../adt/",
+    "icon": "icon-bahmni-inpatient",
+    "order": 4,
+    "requiredPrivilege": "app:adt"
+  },
   "programs": {
     "id": "bahmni.programs",
     "extensionPointId": "org.bahmni.home.dashboard",
