@@ -88,6 +88,55 @@
       "version": "1",
       "referenceVersion": null,
       "referenceFormUuid": null
+    },
+    {
+      "locale": "es",
+      "labels": {
+        "SECTION_1": "Detalles Básicos",
+        "SECTION_17": "Información de Tarifas",
+        "SECTION_6": "Signos Vitales"
+      },
+      "concepts": {
+        "SYSTOLIC_BLOOD_PRESSURE_25": "Presión arterial sistólica",
+        "BODY_POSITION_27_DESC": "Posición del cuerpo para el procedimiento o la medición de la presión arterial",
+        "CACHEXIA_23": "Caquexia",
+        "DOCTOR_NAME_19": "Nombre del médico",
+        "BODY_MASS_INDEX_21_DESC": "El índice de masa corporal (IMC) es una relación entre el peso y la altura asociada con la grasa corporal y el riesgo para la salud.\r\n\r\nLa fórmula es IMC = peso corporal en kilogramos / altura en metros cuadrados.",
+        "HEIGHT_(CM)_5_DESC": "Altura del paciente en centímetros.",
+        "WEIGHT_(KG)_4": "Peso (kg)",
+        "OBESITY_23": "Obesidad",
+        "DIASTOLIC_BLOOD_PRESSURE_26": "Presión arterial diastólica",
+        "BLOOD_PRESSURE_24": "Presión arterial",
+        "CONSULTATION_FEE_20": "Tarifa de consulta",
+        "ARTERIAL_BLOOD_OXYGEN_SATURATION_(PULSE_OXIMETER)_29": "Saturación de oxígeno en sangre arterial (oxímetro de pulso)",
+        "MALNUTRITION_OF_MODERATE_DEGREE_(GOMEZ:_60%_TO_LESS_THAN_75%_OF_STANDARD_WEIGHT)_23": "Desnutrición de grado moderado (Gómez: 60% a menos del 75% del peso estándar)",
+        "MORBID_OBESITY_23": "Obesidad mórbida",
+        "DIASTOLIC_BLOOD_PRESSURE_26_DESC": "Medición de la presión arterial diastólica del paciente (tomada con un manguito manual en posición sentada o de pie)",
+        "HEIGHT_(CM)_5": "Altura (cm)",
+        "MALNUTRITION_OF_MILD_DEGREE_(GOMEZ:_75%_TO_LESS_THAN_90%_OF_STANDARD_WEIGHT)_23": "Desnutrición de grado leve (Gómez: 75% a menos del 90% del peso estándar)",
+        "PULSE_28_DESC": "Frecuencia del pulso del paciente, medida con un oxímetro periférico.",
+        "UNKNOWN_27": "Desconocido",
+        "WEIGHT_(KG)_4_DESC": "Peso del paciente en kilogramos.",
+        "ARTERIAL_BLOOD_OXYGEN_SATURATION_(PULSE_OXIMETER)_29_DESC": "Saturación de oxígeno, medida con un oxímetro periférico.",
+        "BODY_POSITION_27": "Posición del cuerpo",
+        "NORMAL_23": "Normal",
+        "OTHER_27": "Otro",
+        "BODY_MASS_INDEX_21": "Índice de masa corporal",
+        "BMI_STATUS_23": "Estado del IMC",
+        "FOWLER'S_POSITION_27": "Posición de Fowler",
+        "RECUMBENT_27": "Decúbito",
+        "OVERWEIGHT_(BMI_25.0-29.9)_23": "Sobrepeso (IMC 25.0-29.9)",
+        "SITTING_27": "Sentado",
+        "SYSTOLIC_BLOOD_PRESSURE_25_DESC": "Medición de la presión arterial sistólica del paciente (tomada con un manguito manual en posición sentada o de pie)",
+        "STANDING_27": "De pie",
+        "REGISTRATION_FEE_18": "Tarifa de registro",
+        "PULSE_28": "Pulso"
+      },
+      "formName": "Detalles de Registro",
+      "formUuid": null,
+      "version": "1",
+      "referenceVersion": null,
+      "referenceFormUuid": null
     }
   ]
 }
