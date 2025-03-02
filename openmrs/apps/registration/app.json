@@ -116,7 +116,8 @@
             "patientSearch": {
                 "customAttributes": {
                     "label": "Phone Number",
-                    "placeholder": "Phone Number",
+                    "translationKey": "REGISTRATION_SEARCH_PHONE_NUMBER",
+                    "placeholder": "Phone_Number_Placeholder",
                     "fields": ["phoneNumber","alternatePhoneNumber"]
                 }
             },

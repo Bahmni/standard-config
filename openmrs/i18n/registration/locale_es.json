@@ -21,5 +21,7 @@
   "REGISTRATION_INSTITUTE_ADDRESS": "Ganiyari, Distrito - Bilaspur",
   "FEE_INFORMATION_LOCALE_KEY": "Información de Tarifas",
   "NUTRITIONAL_VALUES_LOCALE_KEY": "Valores Nutricionales",
-  "REGISTRATION_PRINT_WITH_BARCODE": "Imprimir con <u>C</u>ódigo de Barras"
+  "REGISTRATION_PRINT_WITH_BARCODE": "Imprimir con <u>C</u>ódigo de Barras",
+  "REGISTRATION_SEARCH_PHONE_NUMBER": "Número de Teléfono",
+  "Phone_Number_Placeholder": "Número de Teléfono"
 }
