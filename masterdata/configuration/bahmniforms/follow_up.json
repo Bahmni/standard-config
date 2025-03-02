@@ -31,6 +31,20 @@
       "version": "1",
       "referenceVersion": null,
       "referenceFormUuid": null
+    },
+    {
+      "locale": "es",
+      "labels": {},
+      "concepts": {
+        "REASON_FOR_VISIT_2": "Motivo de la visita",
+        "RETURN_VISIT_DATE_1_DESC": "El paciente debe regresar en esta fecha",
+        "RETURN_VISIT_DATE_1": "Fecha de la visita de seguimiento"
+      },
+      "formName": "Seguimiento",
+      "formUuid": null,
+      "version": "1",
+      "referenceVersion": null,
+      "referenceFormUuid": null
     }
   ]
 }

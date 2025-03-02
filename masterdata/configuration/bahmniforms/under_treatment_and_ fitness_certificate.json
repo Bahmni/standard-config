@@ -28,6 +28,21 @@
       "version": "1",
       "referenceVersion": null,
       "referenceFormUuid": null
+    },
+    {
+      "locale": "es",
+      "labels": {
+        "LABEL_3": "Nota: Por favor, navegue a la sección de impresión en el Panel de Paciente para imprimir los certificados."
+      },
+      "concepts": {
+        "REST_DURATION_2": "Duración del descanso",
+        "TREATMENT_PLAN_1": "Plan de tratamiento"
+      },
+      "formName": "Certificado de Tratamiento y Aptitud",
+      "formUuid": null,
+      "version": "1",
+      "referenceVersion": null,
+      "referenceFormUuid": null
     }
   ]
 }

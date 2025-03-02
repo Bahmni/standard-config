@@ -73,6 +73,38 @@
       "version": "1",
       "referenceVersion": null,
       "referenceFormUuid": null
+    },
+    {
+      "locale": "es",
+      "labels": {},
+      "concepts": {
+        "SYSTOLIC_BLOOD_PRESSURE_20": "Presión arterial sistólica",
+        "ARTERIAL_BLOOD_OXYGEN_SATURATION_(PULSE_OXIMETER)_15_DESC": "Saturación de oxígeno, medida con un oxímetro periférico.",
+        "SYSTOLIC_BLOOD_PRESSURE_20_DESC": "Medición de la presión arterial sistólica de un paciente (tomada con un manguito manual en posición sentada o de pie)",
+        "TEMPERATURE_18_DESC": "Temperatura del paciente en Fahrenheit",
+        "PULSE_14_DESC": "Frecuencia del pulso del paciente, medida con un oxímetro periférico.",
+        "FOWLER'S_POSITION_22": "Posición de Fowler",
+        "UNKNOWN_22": "Desconocido",
+        "RECUMBENT_22": "Decúbito",
+        "BODY_POSITION_22": "Posición del cuerpo",
+        "TEMPERATURE_18": "Temperatura",
+        "DIASTOLIC_BLOOD_PRESSURE_21_DESC": "Medición de la presión arterial diastólica de un paciente (tomada con un manguito manual en posición sentada o de pie)",
+        "RESPIRATORY_RATE_16_DESC": "Frecuencia respiratoria medida en respiraciones por minuto",
+        "STANDING_22": "De pie",
+        "DIASTOLIC_BLOOD_PRESSURE_21": "Presión arterial diastólica",
+        "SITTING_22": "Sentado",
+        "OTHER_22": "Otro",
+        "RESPIRATORY_RATE_16": "Frecuencia respiratoria",
+        "BODY_POSITION_22_DESC": "Posición del cuerpo para el procedimiento o medición de la presión arterial",
+        "PULSE_14": "Pulso",
+        "BLOOD_PRESSURE_19": "Presión arterial",
+        "ARTERIAL_BLOOD_OXYGEN_SATURATION_(PULSE_OXIMETER)_15": "Saturación de oxígeno arterial (oxímetro de pulso)"
+      },
+      "formName": "Segunda tanda de signos vitales",
+      "formUuid": null,
+      "version": "1",
+      "referenceVersion": null,
+      "referenceFormUuid": null
     }
   ]
 }

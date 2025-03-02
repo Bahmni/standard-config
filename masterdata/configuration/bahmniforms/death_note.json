@@ -43,6 +43,31 @@
       "version": "1",
       "referenceVersion": null,
       "referenceFormUuid": null
+    },
+    {
+      "locale": "es",
+      "labels": {},
+      "concepts": {
+        "POSTOPERATIVE_DEATH_2": "Muerte postoperatoria",
+        "INTRAPARTUM_MATERNAL_DEATH_2": "Muerte materna intraparto",
+        "PROBABLE_CAUSE_OF_DEATH_2_DESC": "Probable causa de la muerte del paciente a partir de la entrevista con un familiar u otro personal no médico como parte del cuestionario del registro de defunciones.",
+        "NATURAL_DEATH_REPORTABLE_TO_MEDICOLEGAL_AUTHORITY_2": "Muerte natural reportable a la autoridad médico-legal",
+        "DATE_OF_DEATH_1": "Fecha de defunción",
+        "CAUSE_OF_DEATH,_NON-CODED_(TEXT)_3": "Causa de la muerte",
+        "POSTPARTUM_MATERNAL_DEATH_2": "Muerte materna postparto",
+        "ANTEPARTUM_MATERNAL_DEATH_2": "Muerte materna anteparto",
+        "DEAD_ON_ARRIVAL_AT_HOSPITAL_4": "Muerto a la llegada al hospital",
+        "NO_4": "No",
+        "OTHER_GENERIC_2": "Otro",
+        "PROBABLE_CAUSE_OF_DEATH_2": "Probable causa de la muerte",
+        "YES_4": "Sí",
+        "NATURAL_DEATH_2": "Muerte natural"
+      },
+      "formName": "Nota de Defunción",
+      "formUuid": null,
+      "version": "1",
+      "referenceVersion": null,
+      "referenceFormUuid": null
     }
   ]
 }

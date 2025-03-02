@@ -33,6 +33,27 @@
       "version": "1",
       "referenceVersion": null,
       "referenceFormUuid": null
+    },
+    {
+      "locale": "es",
+      "labels": {},
+      "concepts": {
+        "SYSTOLIC_BLOOD_PRESSURE_2": "Presión arterial sistólica",
+        "SYSTOLIC_BLOOD_PRESSURE_2_DESC": "Medición de la presión arterial sistólica de un paciente (tomada con un manguito manual en posición sentada o de pie)",
+        "LOW-DENSITY_LIPOPROTEIN_CHOLESTEROL_(MMOL/L)_7": "Colesterol de lipoproteínas de baja densidad",
+        "SERUM_CREATININE_(MG/DL)_5_DESC": "Prueba de laboratorio que determina el nivel de creatinina en el suero sanguíneo. Se utiliza a menudo con BUN para evaluar la función renal. Unidades de mg/dL. Si se desean las unidades en umol/L, use CIEL:790",
+        "LAST_LDL_DATE_6": "Última fecha de LDL",
+        "DIASTOLIC_BLOOD_PRESSURE_3_DESC": "Medición de la presión arterial diastólica de un paciente (tomada con un manguito manual en posición sentada o de pie)",
+        "DIASTOLIC_BLOOD_PRESSURE_3": "Presión arterial diastólica",
+        "SERUM_CREATININE_(MG/DL)_5": "Creatinina en suero",
+        "LAST_SERUM_CREATININE_DATE_4": "Última fecha de creatinina en suero",
+        "LOW-DENSITY_LIPOPROTEIN_CHOLESTEROL_(MMOL/L)_7_DESC": "La prueba de colesterol LDL se utiliza junto con otras pruebas de lípidos para determinar el riesgo de enfermedades cardíacas."
+      },
+      "formName": "Progreso de Hipertensión",
+      "formUuid": null,
+      "version": "1",
+      "referenceVersion": null,
+      "referenceFormUuid": null
     }
   ]
 }

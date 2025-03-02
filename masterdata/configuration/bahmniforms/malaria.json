@@ -58,6 +58,54 @@
       "version": "1",
       "referenceVersion": null,
       "referenceFormUuid": null
-    }
+    },
+    {
+      "locale": "es",
+      "labels": {
+        "BOOLEAN_NO": "No",
+        "BOOLEAN_YES": "Sí"
+      },
+      "concepts": {
+        "MILD_8": "Leveo",
+        "FATAL_8": "Fatal",
+        "MALARIA,_SOURCE_6": "Fuente",
+        "INDETERMINATE_3": "Indeterminado",
+        "PROBLEM_SEVERITY_8_DESC": "Una pregunta que identifica la gravedad de un problema o diagnóstico. También puede usarse como un conjunto de conveniencia.",
+        "TEST_NOT_PERFORMED_DUE_TO_LACK_OF_AVAILABILITY_OF_TEST_MATERIALS_3": "Prueba no realizada debido a la falta de disponibilidad de materiales de prueba",
+        "MODERATE_8": "Moderado",
+        "CURRENTLY_PREGNANT_7": "Actualmente embarazada",
+        "ACD_-_ACTIVE_CASE_DETECTION_6": "ACD - Detección de Casos Activos",
+        "MILD_TO_MODERATE_8": "Leveo a moderado",
+        "MALARIA_RISK_5": "Riesgo de malaria",
+        "POSITIVE_3": "Positivo",
+        "NO_2": "No",
+        "MALARIAL_PROPHYLAXIS_1_DESC": "Profilaxis para la infección por malaria",
+        "NEGATIVE_3": "Negativo",
+        "TREATMENT_START_DATE_9": "Fecha de inicio del tratamiento",
+        "POSITIVE_FOR_PLASMODIUM_FALCIPARUM_3": "Positivo para Plasmodium falciparum",
+        "HIGH_5": "Alto",
+        "POSITIVE_FOR_BOTH_PLASMODIUM_FALCIPARUM_AND_PLASMODIUM_VIVAX_3": "Positivo para Plasmodium falciparum y Plasmodium vivax",
+        "PROCEDURE_NOT_PERFORMED_3": "Procedimiento no realizado",
+        "ANTI-MALARIAL_GIVEN_2": "Antipalúdico administrado",
+        "MODERATE_TO_SEVERE_8": "Moderado a grave",
+        "PROBLEM_SEVERITY_8": "Gravedad del problema",
+        "SEVERE_8": "Grave",
+        "DATE_OF_DEATH_4": "Fecha de defunción",
+        "RAPID_TEST_FOR_MALARIA_3_DESC": "Prueba para el diagnóstico rápido de malaria.",
+        "NONE_5": "Ninguno",
+        "YES_2": "Sí",
+        "PCD_-_PASSIVE_CASE_DETECTION_6": "PCD - Detección Pasiva de Casos",
+        "LOW_5": "Bajo",
+        "UNKNOWN_2": "Desconocido",
+        "MALARIAL_PROPHYLAXIS_1": "Profilaxis contra la malaria",
+        "POSITIVE_FOR_PLASMODIUM_VIVAX_3": "Positivo para Plasmodium vivax",
+        "RAPID_TEST_FOR_MALARIA_3": "Prueba rápida para malaria"
+      },
+      "formName": "Malaria",
+      "formUuid": null,
+      "version": "1",
+      "referenceVersion": null,
+      "referenceFormUuid": null
+    }   
   ]
 }

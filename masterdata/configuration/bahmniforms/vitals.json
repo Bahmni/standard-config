@@ -51,6 +51,41 @@
       "version": "1",
       "referenceVersion": null,
       "referenceFormUuid": null
+    },
+    {
+      "locale": "es",
+      "labels": {
+        "LABEL_23": "Nota: Por favor, guarde el formulario de signos vitales para registrar las observaciones.",
+        "LABEL_13": "Nota: Por favor, guarde el formulario de signos vitales para registrar las observaciones."
+      },
+      "concepts": {
+        "BODY_POSITION_21_DESC": "Posición del cuerpo para el procedimiento o la medición de la presión arterial",
+        "ARTERIAL_BLOOD_OXYGEN_SATURATION_(PULSE_OXIMETER)_15_DESC": "Saturación de oxígeno, medida con un oxímetro periférico.",
+        "DIASTOLIC_BLOOD_PRESSURE_20_DESC": "Medición de la presión arterial diastólica del paciente (tomada con un manguito manual en posición sentada o de pie)",
+        "SYSTOLIC_BLOOD_PRESSURE_19": "Presión arterial sistólica",
+        "PULSE_14_DESC": "Frecuencia del pulso del paciente, medida con un oxímetro periférico.",
+        "UNKNOWN_21": "Desconocido",
+        "TEMPERATURE_17": "Temperatura",
+        "FOWLER'S_POSITION_21": "Posición de Fowler",
+        "RECUMBENT_21": "Recumbente",
+        "BODY_POSITION_21": "Posición del cuerpo",
+        "RESPIRATORY_RATE_16_DESC": "Frecuencia respiratoria medida en respiraciones por minuto",
+        "SITTING_21": "Sentado",
+        "STANDING_21": "De pie",
+        "DIASTOLIC_BLOOD_PRESSURE_20": "Presión arterial diastólica",
+        "OTHER_21": "Otro",
+        "RESPIRATORY_RATE_16": "Frecuencia respiratoria",
+        "SYSTOLIC_BLOOD_PRESSURE_19_DESC": "Medición de la presión arterial sistólica del paciente (tomada con un manguito manual en posición sentada o de pie)",
+        "PULSE_14": "Pulso",
+        "BLOOD_PRESSURE_18": "Presión arterial",
+        "ARTERIAL_BLOOD_OXYGEN_SATURATION_(PULSE_OXIMETER)_15": "Saturación de oxígeno arterial (oxímetro de pulso)",
+        "TEMPERATURE_17_DESC": "Temperatura del paciente en grados Fahrenheit"
+      },
+      "formName": "Signos Vitales",
+      "formUuid": null,
+      "version": "1",
+      "referenceVersion": null,
+      "referenceFormUuid": null
     }
   ]
 }
