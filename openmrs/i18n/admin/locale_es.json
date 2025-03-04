@@ -56,5 +56,10 @@
   "ADMINISTER_MEDICATION_TASK_MESSAGE": "El usuario {{userId}} administró una tarea de medicación para el paciente {{patientId}}.",
   "STOP_SCHEDULED_MEDICATION_TASK_MESSAGE": "El usuario {{userId}} detuvo una tarea de medicación para el paciente {{patientId}}.",
   "SKIP_SCHEDULED_MEDICATION_TASK_MESSAGE": "El usuario {{userId}} omitió una tarea de medicación para el paciente {{patientId}}.",
-  "CREATE_EMERGENCY_MEDICATION_TASK_MESSAGE": "El usuario {{userId}} añadió una tarea de medicación de emergencia para el paciente {{patientId}}."
+  "CREATE_EMERGENCY_MEDICATION_TASK_MESSAGE": "El usuario {{userId}} añadió una tarea de medicación de emergencia para el paciente {{patientId}}.",
+  "ADMIN_CSV_UPLOAD": "Cargar CSV",
+  "ADMIN_CSV_EXPORT": "Exportar CSV",
+  "ADMIN_AUDIT_LOG": "Registro de Auditoría",
+  "ADMIN_ORDER_SET": "Conjunto de Órdenes",
+  "ADMIN_BEDS": "Camas"
 }
