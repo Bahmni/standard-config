@@ -1,3 +1,3 @@
 Uuid,Privilege name,Description
-,app:atomfeed-console,Able to access atomfeed console.
-,Send SMS,Privilege to send SMS
+,app:atomfeed-console,Capaz de acceder a la consola de atomfeed.
+,Send SMS,Privilegio para enviar SMS
