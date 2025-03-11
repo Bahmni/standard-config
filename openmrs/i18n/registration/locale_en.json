@@ -23,5 +23,8 @@
   "NUTRITIONAL_VALUES_LOCALE_KEY": "Nutritional Values",
   "REGISTRATION_PRINT_WITH_BARCODE": "Bar<u>c</u>ode Print",
   "REGISTRATION_SEARCH_PHONE_NUMBER": "Phone Number",
-  "Phone_Number_Placeholder": "Phone Number"
+  "Phone_Number_Placeholder": "Phone Number",
+  "REGISTRATION_FAMILY_NAME_ERROR_KEY": "The last name should contain only alphabets without space.",
+  "REGISTRATION_FIRST_NAME_ERROR_KEY": "The first name should contain only alphabets without space.",
+  "REGISTRATION_Middle_NAME_ERROR_KEY": "The middle name should contain only alphabets without space."
 }
