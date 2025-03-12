@@ -1,6 +1,6 @@
-Uuid,Void/Retire,Mappings|SAME-AS|SNOMED,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Members,_version:1,_order:1400
-,,,Download URL,,,Misc,Text,,,
-,,,FHIR Export User Name,User Name,,Misc,N/A,,,
-,,,FHIR Export Start Date,Start Date,,Misc,Date,,,
-,,,FHIR Export End Date,End Date,,Misc,Date,,,
-,,,FHIR Export Anonymise Flag,Anonymise,,Misc,Boolean,,,
+Uuid,Void/Retire,Mappings|SAME-AS|SNOMED,Fully specified name:en,Short name:en,Description:en,Fully specified name:es,Short name:es,Description:es,Data class,Data type,Members,_version:1,_order:1400
+,,,Download URL,,,URL de descarga,,,Misc,Text,,,,
+,,,FHIR Export User Name,User Name,,,Nombre de usuario de exportación FHIR,Nombre de usuario,,,Misc,N/A,,,,
+,,,FHIR Export Start Date,Start Date,,,Fecha de inicio de exportación FHIR,Fecha de inicio,,,Misc,Date,,,,
+,,,FHIR Export End Date,End Date,,,Fecha de finalización de exportación FHIR,Fecha de finalización,,,Misc,Date,,,,
+,,,FHIR Export Anonymise Flag,Anonymise,,,Bandera de anonimización de exportación FHIR,Bandera de anonimización,,,Misc,Boolean,,,,

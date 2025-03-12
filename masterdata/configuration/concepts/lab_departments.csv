@@ -1,7 +1,7 @@
-Uuid,Void/Retire,Same as mappings,Fully specified name:en,Fully specified name:fr,Short name:en,Short name:fr,Description:en,Description:fr,Data class,Data type,Complex data handler,Answers,Members,Allow decimals,Units,Normal low,Normal high,Absolute low,Absolute high,_version:1,_order:1000
-0001fdca-769d-47e4-8397-1c73c8bad34b,,,Biochemistry Department,,Biochemistry,,,,Department,N/A,,,,,,,,,,,
-50975c1d-ae6a-4e8a-90cd-172a1e55156c,,,Pathology Department,,Pathology,,,,Department,N/A,,,,,,,,,,,
-2c87f0c0-9b9b-4c8b-ae96-20e6361f21d5,,,Haematology Lab Department,,Haematology,,,,Department,N/A,,,,,,,,,,,
-5a950b75-e24c-438d-9e64-5795c6cb921b,,,Histopathology Department,,Histopathology,,,,Department,N/A,,,,,,,,,,,
-af18babe-99b0-44f4-ac7a-88b3d91a0c2a,,,Serology Department,,Serology,,,,Department,N/A,,,,,,,,,,,
-3c3ba267-033d-4433-abd6-49adce15e315,,,Microbiology Department,,Microbiology,,,,Department,N/A,,,,,,,,,,,
+Uuid,Void/Retire,Same as mappings,Fully specified name:en,Fully specified name:es,Short name:en,Short name:es,Description:en,Description:es,Data class,Data type,Complex data handler,Answers,Members,Allow decimals,Units,Normal low,Normal high,Absolute low,Absolute high,_version:1,_order:1000
+0001fdca-769d-47e4-8397-1c73c8bad34b,,,Biochemistry Department,Departamento de Bioquímica,Biochemistry,Bioquímica,Department focused on biochemistry research and studies,Departamento enfocado en investigación y estudios de bioquímica,Department,N/A,,,,,,,,,,,
+50975c1d-ae6a-4e8a-90cd-172a1e55156c,,,Pathology Department,Departamento de Patología,Pathology,Patología,Department focused on the study and diagnosis of diseases,Departamento enfocado en el estudio y diagnóstico de enfermedades,Department,N/A,,,,,,,,,,,
+2c87f0c0-9b9b-4c8b-ae96-20e6361f21d5,,,Haematology Lab Department,Departamento de Hematología,Haematology,Hematología,Department focused on blood and blood-related diseases,Departamento enfocado en enfermedades sanguíneas y relacionadas con la sangre,Department,N/A,,,,,,,,,,,
+5a950b75-e24c-438d-9e64-5795c6cb921b,,,Histopathology Department,Departamento de Histopatología,Histopathology,Histopatología,Department focusing on tissue examination and diagnosis,Departamento enfocado en el examen de tejidos y diagnóstico,Department,N/A,,,,,,,,,,,
+af18babe-99b0-44f4-ac7a-88b3d91a0c2a,,,Serology Department,Departamento de Serología,Serology,Serología,Department focused on diagnostic testing for antibodies and infections,Departamento enfocado en pruebas diagnósticas de anticuerpos e infecciones,Department,N/A,,,,,,,,,,,
+3c3ba267-033d-4433-abd6-49adce15e315,,,Microbiology Department,Departamento de Microbiología,Microbiology,Microbiología,Department focusing on the study of microorganisms and infections,Departamento enfocado en el estudio de microorganismos e infecciones,Department,N/A,,,,,,,,,,,
