@@ -1,3 +1,4 @@
 Uuid,Void/Retire,Name,Description,Java class name,Parent,Concept Classes,_order:1000
-,,Orden de Radiología,Una orden para pruebas de radiología,org.openmrs.Order,,Radiology; Radiology/Imaging Procedure,
-,,Orden de Procedimiento,Una orden para procedimientos,org.openmrs.Order,,Procedure,
+Uuid,Void/Retire,Name,Description,Java class name,Parent,Concept Classes,_order:1000
+,,Radiology Order,An order for radiology tests,org.openmrs.Order,,Radiology; Radiology/Imaging Procedure,
+,,Procedure Order,An order for procedures,org.openmrs.Order,,Procedure,
