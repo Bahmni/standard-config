@@ -43,3 +43,10 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/bahnew/standard-config:latest
+      - name: Repository Dispatch
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.INFRA_GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/bahnew/utils/dispatches \
+            -d '{"event_type":"standard-config-publish"}'
