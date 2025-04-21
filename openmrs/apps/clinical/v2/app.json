@@ -1,0 +1,14 @@
+{
+	"patientInformation": {},
+    "actions":[],
+	"dashboards": [
+		{
+			"name": "General Dashboard",
+			"description": "The clinical dashboard is the main entry point for clinicians to access patient information and clinical tools.",
+			"requiredPrivileges": [""],
+			"icon": "fa fa-dashboard",
+			"default": true,
+			"url": "general.json"
+		}
+	]
+}
