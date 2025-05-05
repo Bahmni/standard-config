@@ -2,18 +2,16 @@
 	"sections": [
 		{
 			"name": "Patient Summary",
-			"icon": "fa fa-user",
+			"translationKey":"DASHBOARD_PATIENT_SUMMARY_SECTION",
+			"icon": "fa-user",
 			"controls": [
-				{
-					"name": "Allergies",
-					"translationKey": "ALLERGIES_KEY",
-					"type": "allergies"
-				},
-				{
-					"name": "Treatments",
-					"translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
-					"type": "treatment"
-				}
+			]
+		},
+		{
+			"name": "Allergies",
+			"translationKey": "DASHBOARD_ALLERGIES_SECTION",
+			"icon": "fa-hand-dots",
+			"controls": [
 			]
 		}
 	]
