@@ -64,6 +64,13 @@
 			]
 		},
 		{
+			"name": "Radiology Investigations",
+			"translationKey": "DASHBOARD_TITLE_RADIOLOGY_INVESTIGATIONS_KEY",
+			"icon": "fa-flask",
+			"controls": [
+			]
+		},
+		{
 			"name": "Procedures",
 			"translationKey": "DASHBOARD_TITLE_PROCEDURES_KEY",
 			"icon": "fa-bed",
