@@ -1,5 +1,5 @@
 {
-    "defaultDurationUnit": "Days",
+    "defaultDurationUnit": "d",
     "defaultInstructions": "As directed",
     "drugFormDefaults": {
         "Ayurvedic": {
