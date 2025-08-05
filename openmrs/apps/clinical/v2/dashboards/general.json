@@ -1,39 +1,34 @@
 {
-	"sections": [
-		{
-			"name": "Allergies",
-			"translationKey": "DASHBOARD_TITLE_ALLERGIES_KEY",
-			"icon": "fa-hand-dots",
-			"controls": [
-			]
-		},
-		{
-			"name": "Conditions",
-			"translationKey": "DASHBOARD_TITLE_CONDITIONS_KEY",
-			"icon": "fa-stethoscope",
-			"controls": [
-			]
-		},
-		{
-			"name": "Medications",
-			"translationKey": "DASHBOARD_TITLE_MEDICATIONS_KEY",
-			"icon": "fa-pills",
-			"controls": [
-			]
-		},
-		{
-			"name": "Lab Investigations",
-			"translationKey": "DASHBOARD_TITLE_LAB_INVESTIGATIONS_KEY",
-			"icon": "fa-flask",
-			"controls": [
-			]
-		},
-		{
-			"name": "Radiology Investigations",
-			"translationKey": "DASHBOARD_TITLE_RADIOLOGY_INVESTIGATIONS_KEY",
-			"icon": "fa-flask",
-			"controls": [
-			]
-		}
-	]
+  "sections": [
+    {
+      "name": "Allergies",
+      "translationKey": "DASHBOARD_TITLE_ALLERGIES_KEY",
+      "icon": "fa-hand-dots",
+      "controls": []
+    },
+    {
+      "name": "Conditions",
+      "translationKey": "DASHBOARD_TITLE_CONDITIONS_KEY",
+      "icon": "fa-stethoscope",
+      "controls": []
+    },
+    {
+      "name": "Medications",
+      "translationKey": "DASHBOARD_TITLE_MEDICATIONS_KEY",
+      "icon": "fa-pills",
+      "controls": []
+    },
+    {
+      "name": "Lab Investigations",
+      "translationKey": "DASHBOARD_TITLE_LAB_INVESTIGATIONS_KEY",
+      "icon": "fa-flask",
+      "controls": []
+    },
+    {
+      "name": "Radiology Investigations",
+      "translationKey": "DASHBOARD_TITLE_RADIOLOGY_INVESTIGATIONS_KEY",
+      "icon": "fa-x-ray",
+      "controls": []
+    }
+  ]
 }
