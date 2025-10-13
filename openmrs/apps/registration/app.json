@@ -130,39 +130,11 @@
       }
     },
     "patientSearch": {
-      "customAttributes": [
-        {
-          "label": "Phone Number",
-          "fields": ["phoneNumber", "alternatePhoneNumber"],
-          "type": "person",
-          "default": true
-        },
-        {
-          "label": "Email",
-          "fields": ["email"],
-          "type": "person"
-        },
-        {
-          "label": "Village",
-          "fields": ["village"],
-          "type": "address"
-        },
-        {
-          "label": "Locality",
-          "fields": ["locality"],
-          "type": "address"
-        },
-        {
-          "label": "Program Name",
-          "fields": ["programName"],
-          "type": "program"
-        },
-        {
-          "label": "Program Registration ID",
-          "fields": ["programRegistrationId"],
-          "type": "program"
-        }
-      ]
+      "customAttributes": {
+        "label": "Phone Number",
+        "placeholder": "Phone Number",
+        "fields": ["phoneNumber", "alternatePhoneNumber"]
+      }
     },
     "addressHierarchy": {
       "showAddressFieldsTopDown": false,
