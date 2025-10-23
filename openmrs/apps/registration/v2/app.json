@@ -4,37 +4,59 @@
       {
         "translationKey": "REGISTRATION_PATIENT_SEARCH_DROPDOWN_PHONE_NUMBER",
         "fields": ["phoneNumber", "alternatePhoneNumber"],
-        "columnTranslationKeys": [
-          "REGISTRATION_PATIENT_SEARCH_HEADER_PHONE_NUMBER",
-          "REGISTRATION_PATIENT_SEARCH_HEADER_ALTERNATE_PHONE_NUMBER"
+        "expectedFields": [
+            {
+              "field": "phoneNumber",
+              "translationKey": "REGISTRATION_PATIENT_SEARCH_HEADER_PHONE_NUMBER"
+            }, 
+            {
+              "field": "alternatePhoneNumber",
+              "translationKey": "REGISTRATION_PATIENT_SEARCH_HEADER_ALTERNATE_PHONE_NUMBER"
+            }
         ],
         "type": "person"
       },
       {
         "translationKey": "REGISTRATION_PATIENT_SEARCH_DROPDOWN_EMAIL",
         "fields": ["email"],
-        "columnTranslationKeys": ["REGISTRATION_PATIENT_SEARCH_HEADER_EMAIL"],
+        "expectedFields": [
+            {
+              "field": "email",
+              "translationKey": "REGISTRATION_PATIENT_SEARCH_HEADER_EMAIL"
+            }
+        ],
         "type": "person"
       },
       {
         "translationKey": "REGISTRATION_PATIENT_SEARCH_DROPDOWN_VILLAGE",
         "fields": ["City_village"],
-        "columnTranslationKeys": ["REGISTRATION_PATIENT_SEARCH_HEADER_VILLAGE"],
+        "expectedFields": [
+            {
+              "field": "City_village",
+              "translationKey": "REGISTRATION_PATIENT_SEARCH_HEADER_VILLAGE"
+            }
+        ],
         "type": "address"
       },
       {
         "translationKey": "REGISTRATION_PATIENT_SEARCH_DROPDOWN_LOCALITY",
         "fields": ["address2"],
-        "columnTranslationKeys": [
-          "REGISTRATION_PATIENT_SEARCH_HEADER_LOCALITY"
+        "expectedFields": [
+            {
+              "field": "address2",
+              "translationKey": "REGISTRATION_PATIENT_SEARCH_HEADER_LOCALITY"
+            }
         ],
         "type": "address"
       },
       {
         "translationKey": "REGISTRATION_PATIENT_SEARCH_DROPDOWN_PROGRAM_REGISTRATION_ID",
         "fields": ["ID_Number"],
-        "columnTranslationKeys": [
-          "REGISTRATION_PATIENT_SEARCH_HEADER_PROGRAM_REGISTRATION_ID"
+        "expectedFields": [
+            {
+              "field": "ID_Number",
+              "translationKey": "REGISTRATION_PATIENT_SEARCH_HEADER_PROGRAM_REGISTRATION_ID"
+            }
         ],
         "type": "program"
       }
