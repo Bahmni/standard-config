@@ -94,7 +94,7 @@
     "id": "bahmni.ot",
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
-    "translationKey": "Operation Theatre",
+    "translationKey": "MODULE_LABEL_OPERATION_THEATRE_KEY",
     "url": "../ot/",
     "icon": "fa-hospital-o",
     "order": 9,
