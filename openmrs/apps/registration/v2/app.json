@@ -61,5 +61,6 @@
         "type": "program"
       }
     ]
-  }
+  },
+  "defaultVisitType": "OPD"
 }
