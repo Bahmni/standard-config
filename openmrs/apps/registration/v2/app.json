@@ -62,5 +62,14 @@
       }
     ]
   },
-  "defaultVisitType": "OPD"
+  "defaultVisitType": "OPD",
+  "patientInformation": {
+    "showMiddleName": true,
+    "showLastName": true,
+    "isLastNameMandatory": true,
+    "addressHierarchy": {
+      "showAddressFieldsTopDown": true,
+      "strictAutocompleteFromLevel": "postalCode"
+    }
+  }
 }
