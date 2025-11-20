@@ -73,7 +73,7 @@
     "showLastName": true,
     "isFirstNameMandatory": true,
     "isMiddleNameMandatory": false,
-    "isGenderMandatory": false,
+    "isGenderMandatory": true,
     "isDateOfBirthMandatory": true,
     "isLastNameMandatory": true,
     "addressHierarchy": {
@@ -92,17 +92,17 @@
   },
   "fieldValidation": {
     "firstName": {
-      "pattern": "^[a-zA-Z\\s]*$",
+      "pattern": "^[a-zA-Z]+$",
       "errorMessage": "First name should contain only alphabets without space",
       "required": true
     },
     "middleName": {
-      "pattern": "^[a-zA-Z\\s]*$",
+      "pattern": "^[a-zA-Z]+$",
       "errorMessage": "Middle name should contain only alphabets without space",
        "required": true
     },
     "lastName": {
-      "pattern": "^[a-zA-Z\\s]*$",
+      "pattern": "^[a-zA-Z]+$",
       "errorMessage": "Last name should contain only alphabets without space",
       "required": true
     },
