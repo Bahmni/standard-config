@@ -71,6 +71,9 @@
     "showEnterManually":false,
     "showMiddleName": true,
     "showLastName": true,
+    "isFirstNameMandatory": true,
+    "isGenderMandatory": false,
+    "isDateOfBirthMandatory": true,
     "isLastNameMandatory": true,
     "addressHierarchy": {
       "showAddressFieldsTopDown": true,
