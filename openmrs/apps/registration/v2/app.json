@@ -68,6 +68,7 @@
     "patientNameDisplayOrder": ["firstName", "middleName", "lastName"],
     "showBirthTime": true,
     "showDOBEstimated": true,
+    "showEnterManually":false,
     "showMiddleName": true,
     "showLastName": true,
     "isLastNameMandatory": true,
