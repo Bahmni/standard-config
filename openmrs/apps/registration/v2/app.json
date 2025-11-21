@@ -62,5 +62,53 @@
       }
     ]
   },
-  "defaultVisitType": "OPD"
+  "defaultVisitType": "OPD",
+  "patientInformation": {
+    "defaultIdentifierPrefix": "ABC",
+    "patientNameDisplayOrder": ["firstName", "middleName", "lastName"],
+    "showBirthTime": true,
+    "showDOBEstimated": true,
+    "showEnterManually":false,
+    "showMiddleName": true,
+    "showLastName": true,
+    "isFirstNameMandatory": true,
+    "isMiddleNameMandatory": false,
+    "isGenderMandatory": true,
+    "isDateOfBirthMandatory": true,
+    "isLastNameMandatory": true,
+    "addressHierarchy": {
+      "showAddressFieldsTopDown": true,
+      "strictAutocompleteFromLevel": "postalCode"
+    },
+    "additionalPatientInformation": {
+      "translationKey": "REGISTRATION_ADDITIONAL_PATIENT_INFORMATION_TITLE", 
+        "expectedFields": [     
+            {
+              "field": "email",
+              "translationKey": "REGISTRATION_PATIENT_SEARCH_DROPDOWN_EMAIL"
+            }
+        ]
+    }
+  },
+  "fieldValidation": {
+    "firstName": {
+      "pattern": "^[a-zA-Z]+$",
+      "errorMessage": "First name should contain only alphabets without space",
+      "required": true
+    },
+    "middleName": {
+      "pattern": "^[a-zA-Z]+$",
+      "errorMessage": "Middle name should contain only alphabets without space",
+       "required": true
+    },
+    "lastName": {
+      "pattern": "^[a-zA-Z]+$",
+      "errorMessage": "Last name should contain only alphabets without space",
+      "required": true
+    },
+    "email": {
+      "pattern": "^(?=.{1,40}$)(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,4})$",
+      "errorMessage": "Should be a valid email address"
+    }
+  }
 }
