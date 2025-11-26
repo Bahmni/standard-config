@@ -75,7 +75,7 @@
     "isMiddleNameMandatory": false,
     "isGenderMandatory": true,
     "isDateOfBirthMandatory": true,
-    "isLastNameMandatory": false,
+    "isLastNameMandatory": true,
     "addressHierarchy": {
       "showAddressFieldsTopDown": true,
       "strictAutocompleteFromLevel": "postalCode"
