@@ -125,7 +125,8 @@
                           "translationKey": "REGISTRATION_ALTERNATE_PHONE_NUMBER"
                         }
                     ]
-    }
+    },
+    "isExtraPatientIdentifiersSection": true
   },
   "fieldValidation": {
     "firstName": {
