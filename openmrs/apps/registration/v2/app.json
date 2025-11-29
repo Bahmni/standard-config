@@ -77,7 +77,7 @@
     "isDateOfBirthMandatory": true,
     "isLastNameMandatory": true,
     "addressHierarchy": {
-      "showAddressFieldsTopDown": true,
+      "showAddressFieldsTopDown": false,
       "strictAutocompleteFromLevel": "postalCode"
     },
     "additionalPatientInformation": {
