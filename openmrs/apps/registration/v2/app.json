@@ -126,7 +126,7 @@
                         }
                     ]
     },
-    "isExtraPatientIdentifiersSection": true
+    "showExtraPatientIdentifiersSection": true
   },
   "fieldValidation": {
     "firstName": {

@@ -121,7 +121,7 @@
                 }
             },
             "addressHierarchy": {
-                "showAddressFieldsTopDown": true,
+                "showAddressFieldsTopDown": false,
                 "strictAutocompleteFromLevel": "postalCode"
             }
         }
