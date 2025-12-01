@@ -6,8 +6,7 @@
       "icon": "fa-hand-dots",
       "controls": [
         {
-          "type": "allergies",
-          "config": {}
+          "type": "allergies"
         }
       ]
     },
@@ -17,12 +16,10 @@
       "icon": "fa-stethoscope",
       "controls": [
         {
-          "type": "conditions",
-          "config": {}
+          "type": "conditions"
         },
         {
-          "type": "diagnoses",
-          "config": {}
+          "type": "diagnoses"
         }
       ]
     },
@@ -32,8 +29,7 @@
       "icon": "fa-pills",
       "controls": [
         {
-          "type": "treatment",
-          "config": {}
+          "type": "treatment"
         }
       ]
     },
@@ -43,8 +39,7 @@
       "icon": "fa-flask",
       "controls": [
         {
-          "type": "labOrders",
-          "config": {}
+          "type": "labOrders"
         }
       ]
     },
@@ -54,8 +49,7 @@
       "icon": "fa-x-ray",
       "controls": [
         {
-          "type": "pacsOrders",
-          "config": {}
+          "type": "pacsOrders"
         }
       ]
     },
