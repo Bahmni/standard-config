@@ -77,7 +77,7 @@
     "isDateOfBirthMandatory": true,
     "isLastNameMandatory": true,
     "addressHierarchy": {
-      "showAddressFieldsTopDown": true,
+      "showAddressFieldsTopDown": false,
       "strictAutocompleteFromLevel": "postalCode"
     },
     "additionalPatientInformation": {
@@ -125,7 +125,8 @@
                           "translationKey": "REGISTRATION_ALTERNATE_PHONE_NUMBER"
                         }
                     ]
-    }
+    },
+    "showExtraPatientIdentifiersSection": true
   },
   "fieldValidation": {
     "firstName": {
