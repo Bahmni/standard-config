@@ -15,7 +15,7 @@
     </addressComponent>
     <addressComponent>
       <field>POSTAL_CODE</field>
-      <nameMapping>Pin Code</nameMapping>
+      <nameMapping>Constituency</nameMapping>
       <sizeMapping>40</sizeMapping>
       <requiredInHierarchy>false</requiredInHierarchy>
     </addressComponent>
