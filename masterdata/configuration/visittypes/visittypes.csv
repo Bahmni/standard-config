@@ -1,6 +1,6 @@
 Uuid,Void/Retire,Name,Description,_version:1
 ,,Chronic Care,Visit for patient enrolled in chronic programs,
-,,Preventive/Promotive Care,Visit for Maternal, Child Health and Sexual Reproductive health patients,
+,,MCH Visit,Visit for Maternal, Child Health and Sexual Reproductive health patients,
 ,,Acute Episodic,Visit for patient with minor ailments,
 ,,Health Support Services,Visit for other service including oral health-phsycosocial support services etc,
 ,,Special OPD,Visit for retrospective data entry,
