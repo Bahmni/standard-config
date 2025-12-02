@@ -47,5 +47,7 @@
   "REGISTRATION_EMAIL": "Correo electrónico",
   "REGISTRATION_CONTACT_INFORMATION_TITLE": "Información de contacto",
   "REGISTRATION_PHONE_NUMBER": "Número de teléfono",
-  "REGISTRATION_ALTERNATE_PHONE_NUMBER": "Número de teléfono alternativo"
+  "REGISTRATION_ALTERNATE_PHONE_NUMBER": "Número de teléfono alternativo",
+  "REGISTRATION_NATIONAL_ID": "Cédula de Identidad",
+  "REGISTRATION_PASSPORT": "Número de Pasaporte"
 }
