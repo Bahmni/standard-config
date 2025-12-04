@@ -156,26 +156,27 @@
   },
   "extensionPoints": [
     {
-      "id": "org.bahmni.registration.patient.search.result.action",
-      "description": "Bahmni Patient Search Result Action"
-    },
-    {
-      "id": "org.bahmni.registration.patient.next",
-      "description": "After Bahmni Patient Registration, forward url configuration"
-    },
-    {
       "id": "org.bahmni.registration.navigation",
-      "description": "Navigation within regsitration first and second page"
-    },
-    {
-      "id": "org.bahmni.registration.conceptSetGroup.observations",
-      "description": "Registration Second Page Forms"
+      "description": "Navigation within registration first and second page"
     }
   ],
-  "appExtensions":
-    {
-      "search":{
-        "id": "bahmni.registration.navigation.patient.search",
+  "registrationAppExtensions": [
+      {
+        "id": "bahmni.registration.navigation.patient.start.visit",
+        "extensionPointId": "org.bahmni.registration.navigation",
+        "type": "startVisit",
+        "translationKey":"REGISTRATION_SEARCH_CONFIG_KEY",
+        "url": "#patient/{{patientUuid}}",
+        "shortcutKey": "REGISTRATION_SEARCH_CONFIG_ACCESS_KEY",
+        "icon": "fa-search",
+        "order": 1,
+        "requiredPrivilege": "View Patients",
+        "customProperties": {
+          "patientDetails": "Registration Details"
+        }
+      },
+      {
+        "id": "bahmni.registration.navigation.patient.documents",
         "extensionPointId": "org.bahmni.registration.navigation",
         "type": "link",
         "translationKey":"REGISTRATION_SEARCH_CONFIG_KEY",
@@ -185,5 +186,5 @@
         "order": 1,
         "requiredPrivilege": "View Patients"
       }
-    }
+    ]
   }
