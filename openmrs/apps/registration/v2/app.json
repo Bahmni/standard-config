@@ -60,6 +60,79 @@
         ],
         "type": "program"
       }
+    ],
+    "appointment" :[
+      {
+        "translationKey": "REGISTRATION_PATIENT_SEARCH_APPOINTMENT_NUMBER",
+        "fields": ["appointmentNumber"],
+        "expectedFields": [
+          {
+            "field": "appointmentNumber",
+            "translationKey": "REGISTRATION_PATIENT_SEARCH_HEADER_APPOINTMENT_NUMBER"
+          },
+          {
+            "field": "appointmentDate",
+            "translationKey": "REGISTRATION_PATIENT_SEARCH_HEADER_APPOINTMENT_DATE"
+          },
+          {
+            "field": "appointmentReason",
+            "translationKey": "REGISTRATION_PATIENT_SEARCH_HEADER_APPOINTMENT_REASON"
+          },
+          {
+            "field": "appointmentStatus",
+            "type": "string",
+            "translationKey": "REGISTRATION_PATIENT_SEARCH_HEADER_APPOINTMENT_STATUS"
+          }
+        ],
+        "type": "appointment",
+        "actions" : [
+          {
+            "translationKey": "REGISTRATION_PATIENT_SEARCH_APPOINTMENT_MARK_AS_ARRIVED",
+            "type": "changeStatus",
+            "enabledRule": [
+              {
+                "type": "privilegeCheck",
+                "values": ["app:appointment:markAppointmentAsArrived"]
+              },
+              {
+                "type": "statusCheck",
+                "values": ["Scheduled"]
+              },
+              {
+                "type": "appDateCheck",
+                "values":["today"]
+              }
+            ],
+            "onAction" : {
+              "status": "Arrived"
+            },
+            "onSuccess": {
+              "notification": "REGISTRATION_APPOINTMENT_MARKED_AS_ARRIVED_SUCCESS_NOTIFICATION"
+            }
+          },
+          {
+            "translationKey": "REGISTRATION_PATIENT_SEARCH_VIEW_PATIENT_RECORD",
+            "type": "navigate",
+            "enabledRule": [
+              {
+                "type": "privilegeCheck",
+                "values": ["app:appointment:startVerification"]
+              },
+              {
+                "type": "statusCheck",
+                "values": ["Arrived"]
+              },
+              {
+                "type": "appDateCheck",
+                "values":["today"]
+              }
+            ],
+            "onAction": {
+              "navigation": "/bahmni/registration/index.html#/patient/{{patientUuid}}?appointmentNumber={{appointmentNumber}}&appointmentUuid={{appointmentUuid}}"
+            }
+          }
+        ]
+      }
     ]
   },
   "defaultVisitType": "OPD",
@@ -166,7 +239,7 @@
         "extensionPointId": "org.bahmni.registration.navigation",
         "type": "startVisit",
         "translationKey":"REGISTRATION_SEARCH_CONFIG_KEY",
-        "url": "#patient/{{patientUuid}}",
+        "url": "#/registration/patient/{{patientUuid}}",
         "shortcutKey": "REGISTRATION_SEARCH_CONFIG_ACCESS_KEY",
         "icon": "fa-search",
         "order": 1,
@@ -179,12 +252,11 @@
         "id": "bahmni.registration.navigation.patient.documents",
         "extensionPointId": "org.bahmni.registration.navigation",
         "type": "link",
-        "translationKey":"REGISTRATION_SEARCH_CONFIG_KEY",
-        "url": "/search",
-        "shortcutKey": "REGISTRATION_SEARCH_CONFIG_ACCESS_KEY",
-        "icon": "fa-search",
-        "order": 1,
-        "requiredPrivilege": "View Patients"
+        "translationKey":"REGISTRATION_NEXT_PAGE",
+        "url": "/registration/patient/{{patientUuid}}?appointmentNumber={{appointmentNumber}}&appointmentUuid={{appointmentUuid}}",
+        "shortcutKey": "REGISTRATION_CREATE_NEW_CONFIG_ACCESS_KEY",
+        "order": 2,
+        "requiredPrivilege": "Add Patients"
       }
     ]
   }
