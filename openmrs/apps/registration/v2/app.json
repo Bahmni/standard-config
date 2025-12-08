@@ -29,10 +29,10 @@
       },
       {
         "translationKey": "REGISTRATION_PATIENT_SEARCH_DROPDOWN_VILLAGE",
-        "fields": ["City_village"],
+        "fields": ["city_village"],
         "expectedFields": [
             {
-              "field": "City_village",
+              "field": "city_village",
               "translationKey": "REGISTRATION_PATIENT_SEARCH_HEADER_VILLAGE"
             }
         ],
@@ -48,17 +48,6 @@
             }
         ],
         "type": "address"
-      },
-      {
-        "translationKey": "REGISTRATION_PATIENT_SEARCH_DROPDOWN_PROGRAM_REGISTRATION_ID",
-        "fields": ["ID_Number"],
-        "expectedFields": [
-            {
-              "field": "ID_Number",
-              "translationKey": "REGISTRATION_PATIENT_SEARCH_HEADER_PROGRAM_REGISTRATION_ID"
-            }
-        ],
-        "type": "program"
       }
     ]
   },
