@@ -29,19 +29,15 @@
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
                     "attributes": [
-                        "distanceFromCenter",
+                        "primaryContact",
+                        "saphoneNumber",
                         "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster",
                         "email"
                     ]
                 },
                 "hidden": {
                     "attributes": [
-                        "primaryContact"
+                        "isUrban"
                     ]
                 },
                 "defaults":  {
@@ -59,9 +55,9 @@
                 "Parent":"patient"
             },
 
-            "autoCompleteFields":["familyName", "caste"],
+            "autoCompleteFields":["familyName"],
             "defaultIdentifierPrefix": "GAN",
-            "defaultVisitType": "OPD",
+            "defaultVisitType": "OPD Acute Episodic",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
             "showLastName": true,
@@ -69,6 +65,7 @@
             "patientNameDisplayOrder": ["firstName", "middleName", "lastName"],
             "showSaveConfirmDialog": false,
             "showBirthTime": true,
+            "showEnterID":false,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
                 {
@@ -94,7 +91,7 @@
             ],
             "conceptSetUI": {
                 "REGISTRATION FEES": {
-                    "required": true,
+                    "required": false,
                     "label": "Fee"
                 },
                 "FHS": {
@@ -111,13 +108,15 @@
                 "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "The Middle name should contain only alphabets without space."},
                 "address1":{"pattern":"^[a-zA-Z0-9\\s'\\-\\/]{1,}", "errorMessage":"Only Alphanumerics and following special characters are allowed. Special characters - [ '-/]"},
                 "address2":{"pattern":"^[a-zA-Z0-9\\s,'\\-.\\/]{1,}", "errorMessage":"Only Alphanumerics and following special characters are allowed. Special characters - [ ,'-./]"},
-                "cityVillage":{"pattern":"^[a-zA-Z0-9\\s,'\\-.\\/]{2,}", "errorMessage":"Only Alphanumerics and following special characters are allowed. Special characters - [ ,'-./]"}
+                "cityVillage":{"pattern":"^[a-zA-Z0-9\\s,'\\-.\\/]{2,}", "errorMessage":"Only Alphanumerics and following special characters are allowed. Special characters - [ ,'-./]"},
+                "primaryContact":{"pattern":"[0-9]{8}", "errorMessage":"Should be 8 characters"},
+                "saphoneNumber":{"pattern":"27[0-9]{9}", "errorMessage":"Should be 11 characters starting with 27 as the country code"}
             },
             "patientSearch": {
                 "customAttributes": {
-                    "label": "Phone Number",
-                    "placeholder": "Phone Number",
-                    "fields": ["phoneNumber","alternatePhoneNumber"]
+                    "label": "Relative/Phone",
+                    "placeholder": "Relative/phone/address",
+                    "fields": ["phoneNumber","alternatePhoneNumber","primaryContact","saphoneNumber","givenNameLocal","familyNameLocal","middleNameLocal","extraAddressInfo"]
                 }
             },
             "addressHierarchy": {

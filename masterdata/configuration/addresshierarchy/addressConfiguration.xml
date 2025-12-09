@@ -3,7 +3,7 @@
   <addressComponents>
     <addressComponent>
       <field>STATE_PROVINCE</field>
-      <nameMapping>State</nameMapping>
+      <nameMapping>Country</nameMapping>
       <sizeMapping>40</sizeMapping>
       <requiredInHierarchy>false</requiredInHierarchy>
     </addressComponent>
