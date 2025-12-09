@@ -242,10 +242,7 @@
         "url": "#registration/patient/{{patientUuid}}",
         "kind": "tertiary",
         "order": 2,
-        "requiredPrivilege": "View Patients",
-        "customProperties": {
-          "patientDetails": "Registration Details"
-        }
+        "requiredPrivilege": "View Patients"
       },
       {
         "id": "bahmni.registration.navigation.patient.documents",
