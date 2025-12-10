@@ -153,5 +153,22 @@
       "pattern": "^\\+?[0-9]{6,15}$",
       "errorMessage": "Alternate phone number should be 6 to 15 digits"
     }
+  },
+  "extensionPoints": [
+    {
+      "id": "org.bahmni.registration.navigation",
+      "description": "Navigation within registration first and second page"
+    }
+  ],
+  "registrationAppExtensions": [
+      {
+        "id": "bahmni.registration.navigation.patient.start.visit",
+        "extensionPointId": "org.bahmni.registration.navigation",
+        "type": "startVisit",
+        "url": "#registration/patient/{{patientUuid}}",
+        "kind": "tertiary",
+        "order": 1,
+        "requiredPrivilege": "View Patients"
+      }
+    ]
   }
-}
