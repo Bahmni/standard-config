@@ -124,7 +124,6 @@
                           "field": "alternatePhoneNumber",
                           "translationKey": "REGISTRATION_ALTERNATE_PHONE_NUMBER"
                         }
-                         
                     ]
     },
     "showExtraPatientIdentifiersSection": true
