@@ -49,5 +49,11 @@
   "REGISTRATION_PHONE_NUMBER": "Número de teléfono",
   "REGISTRATION_ALTERNATE_PHONE_NUMBER": "Número de teléfono alternativo",
   "REGISTRATION_NATIONAL_ID": "Cédula de Identidad",
-  "REGISTRATION_PASSPORT": "Número de Pasaporte"
+  "REGISTRATION_PASSPORT": "Número de Pasaporte",
+  "REGISTRATION_FIRST_NAME_VALIDATION": "El nombre debe contener solo letras sin espacios",
+  "REGISTRATION_MIDDLE_NAME_VALIDATION": "El segundo nombre debe contener solo letras sin espacios",
+  "REGISTRATION_LAST_NAME_VALIDATION": "El apellido debe contener solo letras sin espacios",
+  "REGISTRATION_EMAIL_VALIDATION": "Debe ser una dirección de correo electrónico válida",
+  "REGISTRATION_PHONE_NUMBER_VALIDATION": "El número de teléfono debe tener entre 6 y 15 dígitos",
+  "REGISTRATION_ALTERNATE_PHONE_NUMBER_VALIDATION": "El número de teléfono alternativo debe tener entre 6 y 15 dígitos"
 }
