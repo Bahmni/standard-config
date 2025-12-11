@@ -70,12 +70,12 @@
     "showDOBEstimated": true,
     "showEnterManually":false,
     "showMiddleName": true,
-    "showLastName": false,
+    "showLastName": true,
     "isFirstNameMandatory": true,
     "isMiddleNameMandatory": false,
     "isGenderMandatory": true,
     "isDateOfBirthMandatory": true,
-    "isLastNameMandatory": false,
+    "isLastNameMandatory": true,
     "addressHierarchy": {
       "showAddressFieldsTopDown": false,
       "strictAutocompleteFromLevel": "postalCode"
