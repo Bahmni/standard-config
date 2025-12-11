@@ -131,27 +131,27 @@
   "fieldValidation": {
     "firstName": {
       "pattern": "^[a-zA-Z]+$",
-      "errorMessage": "First name should contain only alphabets without space"
+      "errorMessage": "REGISTRATION_FIRST_NAME_VALIDATION"
     },
     "middleName": {
       "pattern": "^[a-zA-Z]+$",
-      "errorMessage": "Middle name should contain only alphabets without space"
+      "errorMessage": "REGISTRATION_MIDDLE_NAME_VALIDATION"
     },
     "lastName": {
       "pattern": "^[a-zA-Z]+$",
-      "errorMessage": "Last name should contain only alphabets without space"
+      "errorMessage": "REGISTRATION_LAST_NAME_VALIDATION"
     },
     "email": {
       "pattern": "^(?=.{1,40}$)(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,4})$",
-      "errorMessage": "Should be a valid email address"
+      "errorMessage": "REGISTRATION_EMAIL_VALIDATION"
     },
     "phoneNumber": {
       "pattern": "^\\+?[0-9]{6,15}$",
-      "errorMessage": "Phone number should be 6 to 15 digits"
+      "errorMessage": "REGISTRATION_PHONE_NUMBER_VALIDATION"
     },
     "alternatePhoneNumber": {
       "pattern": "^\\+?[0-9]{6,15}$",
-      "errorMessage": "Alternate phone number should be 6 to 15 digits"
+      "errorMessage": "REGISTRATION_ALTERNATE_PHONE_NUMBER_VALIDATION"
     }
   },
   "extensionPoints": [

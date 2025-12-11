@@ -49,5 +49,11 @@
   "REGISTRATION_PHONE_NUMBER": "Phone number",
   "REGISTRATION_ALTERNATE_PHONE_NUMBER": "Alternate phone number",
   "REGISTRATION_NATIONAL_ID": "National ID",
-  "REGISTRATION_PASSPORT": "Passport"
+  "REGISTRATION_PASSPORT": "Passport",
+  "REGISTRATION_FIRST_NAME_VALIDATION": "First name should contain only alphabets without space",
+  "REGISTRATION_MIDDLE_NAME_VALIDATION": "Middle name should contain only alphabets without space",
+  "REGISTRATION_LAST_NAME_VALIDATION": "Last name should contain only alphabets without space",
+  "REGISTRATION_EMAIL_VALIDATION": "Should be a valid email address",
+  "REGISTRATION_PHONE_NUMBER_VALIDATION": "Phone number should be numbers between 6 to 15 digits",
+  "REGISTRATION_ALTERNATE_PHONE_NUMBER_VALIDATION": "Alternate phone number should be numbers between 6 to 15 digits"
 }
