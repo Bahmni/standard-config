@@ -165,7 +165,6 @@
         "id": "bahmni.registration.navigation.patient.start.visit",
         "extensionPointId": "org.bahmni.registration.navigation",
         "type": "startVisit",
-        "url": "#registration/patient/{{patientUuid}}",
         "kind": "tertiary",
         "order": 1,
         "requiredPrivilege": "View Patients"
