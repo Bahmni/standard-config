@@ -11,6 +11,26 @@
       ]
     },
     {
+      "name": "Episode of care",
+      "translationKey": "DASHBOARD_TITLE_EPISODE_OF_CARE_KEY",
+      "icon": "fa-hand-dots",
+      "controls": [
+        {
+          "type": "programs",
+          "config": {
+            "fields": [
+              "programName",
+              "referenceNumber",
+              "startDate",
+              "endDate",
+              "outcome",
+              "status"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "name": "Conditions",
       "translationKey": "DASHBOARD_TITLE_CONDITIONS_KEY",
       "icon": "fa-stethoscope",
