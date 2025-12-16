@@ -11,8 +11,8 @@
       ]
     },
     {
-      "name": "Episode of care",
-      "translationKey": "DASHBOARD_TITLE_EPISODE_OF_CARE_KEY",
+      "name": "Programs",
+      "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
       "icon": "fa-hand-dots",
       "controls": [
         {
@@ -20,9 +20,10 @@
           "config": {
             "fields": [
               "programName",
-              "referenceNumber",
+              "attributes:Program ID",
+              "attributes:Program Country",
               "startDate",
-              "endDate",
+              "endDate",                         
               "outcome",
               "status"
             ]
