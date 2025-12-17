@@ -1,0 +1,8 @@
+fileignoreconfig:
+- filename: openmrs/apps/clinical/v2/dashboards/general.json
+  checksum: a3febee8dd7a1ac526eeaafceb1919c41814f95835a5586ce4c38a4950f414a5
+- filename: openmrs/i18n/clinical/locale_en.json
+  checksum: f670a1e56e69eedddde91964398609490df0bf79e982d6cf859d6f1b4ecefa54
+- filename: openmrs/i18n/clinical/locale_es.json
+  checksum: 91352267bca625369662c0ff46c1d58a5026b85d7701e2dcfbabcc990b1a4503
+version: "1.0"
