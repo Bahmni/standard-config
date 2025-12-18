@@ -34,6 +34,19 @@
       ]
     },
     {
+      "name": "Procedures",
+      "translationKey": "DASHBOARD_TITLE_PROCEDURES_KEY",
+      "icon": "fa-flask",
+      "controls": [
+        {
+          "type": "ordersControl",
+          "config": {
+            "orderType": "Procedure Order"
+          }
+        }
+      ]
+    },
+    {
       "name": "Lab Investigations",
       "translationKey": "DASHBOARD_TITLE_LAB_INVESTIGATIONS_KEY",
       "icon": "fa-flask",
