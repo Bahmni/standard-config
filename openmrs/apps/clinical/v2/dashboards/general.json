@@ -11,6 +11,26 @@
       ]
     },
     {
+      "name": "Programs",
+      "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+      "icon": "fa-clipboard-list",
+      "controls": [
+        {
+          "type": "programs",
+          "config": {
+            "fields": [
+              "programName",
+              "ID_Number",
+              "startDate",
+              "endDate",
+              "outcome",
+              "state"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "name": "Conditions",
       "translationKey": "DASHBOARD_TITLE_CONDITIONS_KEY",
       "icon": "fa-stethoscope",
