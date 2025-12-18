@@ -34,8 +34,8 @@
       ]
     },
     {
-      "name": "Examinations",
-      "translationKey": "DASHBOARD_TITLE_SERVICE_REQUEST_KEY",
+      "name": "Procedures",
+      "translationKey": "DASHBOARD_TITLE_PROCEDURES_KEY",
       "icon": "fa-flask",
       "controls": [
         {
