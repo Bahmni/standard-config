@@ -72,7 +72,8 @@
             "conceptNames": [
               "Chief Complaint Record",
               "History of present illness",
-              "Consultation Images"
+              "Consultation Images",
+              "Consultation Videos"
             ],
             "conceptCodes": ["163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"],
             "displayNameType": "FSN"
