@@ -1,6 +1,24 @@
 {
   "sections": [
     {
+      "name": "Basic Details",
+      "translationKey": "DASHBOARD_TITLE_BASIC_DETAILS_KEY",
+      "icon": "fa-user",
+      "controls": [
+        {
+          "type": "observations",
+          "config": {
+            "conceptNames": ["Height (cm)", "Weight (kg)"],
+            "conceptCodes": [
+              "1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "9bb0795c-4ff0-0305-1990-000000000028"
+            ],
+            "displayNameType": "FSN"
+          }
+        }
+      ]
+    },
+    {
       "name": "Allergies",
       "translationKey": "DASHBOARD_TITLE_ALLERGIES_KEY",
       "icon": "fa-hand-dots",
@@ -40,6 +58,25 @@
         },
         {
           "type": "diagnoses"
+        }
+      ]
+    },
+    {
+      "name": "Physical Examinations",
+      "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+      "icon": "fa-notes-medical",
+      "controls": [
+        {
+          "type": "observations",
+          "config": {
+            "conceptNames": [
+              "Chief Complaint Record",
+              "History of present illness",
+              "Consultation Images"
+            ],
+            "conceptCodes": ["163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"],
+            "displayNameType": "FSN"
+          }
         }
       ]
     },
@@ -114,24 +151,5 @@
         }
       ]
     }
-  ],
-  "physicalExaminations": {
-    "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
-    "dashboardConfig": {
-      "conceptNames": ["Chief Complaint Record", "History of present illness"],
-      "conceptCodes": ["163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"],
-      "displayNameType": "FSN"
-    }
-  },
-  "basicDetails": {
-    "translationKey": "DASHBOARD_TITLE_BASIC_DETAILS_KEY",
-    "dashboardConfig": {
-      "conceptNames": ["Height (cm)", "Weight (kg)"],
-      "conceptCodes": [
-        "1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "9bb0795c-4ff0-0305-1990-000000000028"
-      ],
-      "displayNameType": "FSN"
-    }
-  }
+  ]
 }
