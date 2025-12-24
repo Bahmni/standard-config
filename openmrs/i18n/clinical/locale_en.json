@@ -112,5 +112,6 @@
   "PROGRAM_DOCTORINCHARGE": "Doctor In-Charge",
   "PROGRAM_PATIENT_STAGE": "Patient Stage",
   "MODULE_LABEL_ACTIVE_NEW_KEY": "New - Active",
-  "MODULE_LABEL_ALL_NEW_KEY": "New - All"
+  "MODULE_LABEL_ALL_NEW_KEY": "New - All",
+  "PROGRAMS_TABLE_HEADER_ID_NUMBER": "ID Number"
 }
