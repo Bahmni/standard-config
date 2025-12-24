@@ -37,11 +37,14 @@
       "name": "Lab Investigations",
       "translationKey": "DASHBOARD_TITLE_LAB_INVESTIGATIONS_KEY",
       "icon": "fa-flask",
-      "controls": [
+     "controls": [
         {
-          "type": "labOrders"
-        }
-      ]
+          "type": "labOrders",
+          "config": {
+            "orderType": "Lab order",
+            "numberOfVisits": 5
+          }
+    }]
     },
     {
       "name": "Radiology Investigations",
