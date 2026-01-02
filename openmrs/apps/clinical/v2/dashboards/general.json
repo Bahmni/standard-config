@@ -85,7 +85,11 @@
       "icon": "fa-x-ray",
       "controls": [
         {
-          "type": "pacsOrders"
+          "type": "pacsOrders",
+          "config": {
+            "orderType": "Radiology order",
+            "numberOfVisits": 5
+          }
         }
       ]
     },
