@@ -38,7 +38,7 @@
         {
           "type": "forms",
           "config": {
-            "maximumNoOfVisits": 10,
+            "numberOfVisits": 10,
             "showEditForActiveEncounter": true
 
           }
