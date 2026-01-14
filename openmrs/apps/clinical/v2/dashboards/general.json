@@ -40,7 +40,6 @@
           "config": {
             "numberOfVisits": 10,
             "showEditForActiveEncounter": true
-
           }
         }
       ]
