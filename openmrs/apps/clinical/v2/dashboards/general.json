@@ -8,12 +8,18 @@
         {
           "type": "observations",
           "config": {
-            "conceptNames": ["Height (cm)", "Weight (kg)"],
-            "conceptCodes": [
-              "1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "9bb0795c-4ff0-0305-1990-000000000028"
+            "conceptNames": [
+              "Height (cm)",
+              "Weight (kg)",
+              "Image",
+              "Patient Video"
             ],
-            "displayNameType": "FSN"
+            "conceptUuid": [
+              "1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "9bb0795c-4ff0-0305-1990-000000000005",
+              "9bb0795c-4ff0-0305-1990-000000000007"
+            ],
+            "hideFormName": true
           }
         }
       ]
@@ -75,8 +81,8 @@
               "Consultation Images",
               "Consultation Videos"
             ],
-            "conceptCodes": ["163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"],
-            "displayNameType": "FSN"
+            "conceptUuid": ["163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"],
+            "hideFormName": false
           }
         }
       ]
