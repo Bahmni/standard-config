@@ -8,11 +8,15 @@
         {
           "type": "observations",
           "config": {
+            "titleTranslationKey": "DASHBOARD_TITLE_OBSERVATIONS_KEY",
             "conceptNames": [
+              "Pulse",
               "Height (cm)",
               "Weight (kg)",
               "Image",
-              "Patient Video"
+              "Patient Video",
+              "Consultation Images",
+              "Consultation Videos"
             ],
             "conceptUuid": [
               "1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -20,6 +24,16 @@
               "9bb0795c-4ff0-0305-1990-000000000007"
             ],
             "hideFormName": true
+          }
+        },
+        {
+          "type": "observations",
+          "config": {
+            "titleTranslationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+            "conceptNames": [
+              "Chief Complaint Record",
+              "History of present illness"
+            ]
           }
         }
       ]
@@ -68,26 +82,6 @@
       ]
     },
     {
-      "name": "Physical Examinations",
-      "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
-      "icon": "fa-notes-medical",
-      "controls": [
-        {
-          "type": "observations",
-          "config": {
-            "conceptNames": [
-              "Chief Complaint Record",
-              "History of present illness",
-              "Consultation Images",
-              "Consultation Videos"
-            ],
-            "conceptUuid": ["163201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"],
-            "hideFormName": false
-          }
-        }
-      ]
-    },
-    {
       "name": "Medications",
       "translationKey": "DASHBOARD_TITLE_MEDICATIONS_KEY",
       "icon": "fa-pills",
@@ -114,14 +108,15 @@
       "name": "Lab Investigations",
       "translationKey": "DASHBOARD_TITLE_LAB_INVESTIGATIONS_KEY",
       "icon": "fa-flask",
-     "controls": [
+      "controls": [
         {
           "type": "labOrders",
           "config": {
             "orderType": "Lab order",
             "numberOfVisits": 5
           }
-    }]
+        }
+      ]
     },
     {
       "name": "Radiology Investigations",
