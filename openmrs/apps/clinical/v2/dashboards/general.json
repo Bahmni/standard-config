@@ -58,6 +58,19 @@
       ]
     },
     {
+      "name": "Vaccinations",
+      "translationKey": "DASHBOARD_TITLE_VACCINATION_KEY",
+      "icon": "fa-syringe",
+      "controls": [
+        {
+          "type": "treatment",
+          "config": {
+            "code": ["http://hl7.org/fhir/sid/cvx|"]
+          }
+        }
+      ]
+    },
+    {
       "name": "Medications",
       "translationKey": "DASHBOARD_TITLE_MEDICATIONS_KEY",
       "icon": "fa-pills",
