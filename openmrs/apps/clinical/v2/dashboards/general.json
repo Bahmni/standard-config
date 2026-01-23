@@ -1,6 +1,43 @@
 {
   "sections": [
     {
+      "name": "Basic Details",
+      "translationKey": "DASHBOARD_TITLE_BASIC_DETAILS_KEY",
+      "icon": "fa-user",
+      "controls": [
+        {
+          "type": "observations",
+          "config": {
+            "titleTranslationKey": "DASHBOARD_TITLE_OBSERVATIONS_KEY",
+            "conceptNames": [
+              "Pulse",
+              "Height (cm)",
+              "Weight (kg)",
+              "Image",
+              "Patient Video",
+              "Consultation Images",
+              "Consultation Videos"
+            ],
+            "conceptUuid": [
+              "1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "9bb0795c-4ff0-0305-1990-000000000005",
+              "9bb0795c-4ff0-0305-1990-000000000007"
+            ]
+          }
+        },
+        {
+          "type": "observations",
+          "config": {
+            "titleTranslationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+            "conceptNames": [
+              "Chief Complaint Record",
+              "History of present illness"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "name": "Allergies",
       "translationKey": "DASHBOARD_TITLE_ALLERGIES_KEY",
       "icon": "fa-hand-dots",
@@ -97,14 +134,15 @@
       "name": "Lab Investigations",
       "translationKey": "DASHBOARD_TITLE_LAB_INVESTIGATIONS_KEY",
       "icon": "fa-flask",
-     "controls": [
+      "controls": [
         {
           "type": "labOrders",
           "config": {
             "orderType": "Lab order",
             "numberOfVisits": 5
           }
-    }]
+        }
+      ]
     },
     {
       "name": "Radiology Investigations",
