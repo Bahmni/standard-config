@@ -102,18 +102,17 @@
   "APPOINTMENTS_PROVIDER": "مقدم الخدمة",
   "APPOINTMENTS_STATUS": "الحالة",
   "APPOINTMENTS_STATUS_CANCELLED": "ملغى",
+  "APPOINTMENTS_STATUS_CHECKEDIN": "تم تسجيل الوصول",
   "APPOINTMENTS_STATUS_COMPLETED": "مكتمل",
   "APPOINTMENTS_STATUS_MISSED": "فقد",
   "APPOINTMENTS_STATUS_SCHEDULED": "مجدول",
   "APPOINTMENTS_STATUS_UNKNOWN": "غير معروف",
+  "APPOINTMENTS_STATUS_WAITLIST": "قائمة الانتظار",
   "APPOINTMENTS_TABLE_ARIA_LABEL": "جدول المواعيد",
-  "APPOINTMENTS_TABLE_NOT_AVAILABLE": "غير متاح",
   "APPOINTMENTS_TAB_UPCOMING": "القادم",
   "APPOINTMENTS_TAB_PAST": "الماضي",
   "APPOINTMENTS_NUMBER": "رقم الموعد",
   "APPOINTMENTS_SERVICE": "الخدمة",
   "APPOINTMENTS_REASON": "السبب",
-  "APPOINTMENTS_SLOT": "الفتحة الزمنية",
-  "NO_UPCOMING_APPOINTMENTS": "لا توجد مواعيد قادمة",
-  "NO_APPOINTMENT_HISTORY": "لا يوجد سجل مواعيد"
+  "APPOINTMENTS_SLOT": "الفتحة الزمنية"
 }

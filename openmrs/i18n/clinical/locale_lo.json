@@ -102,18 +102,17 @@
   "APPOINTMENTS_PROVIDER": "ຜູ້ໃຫ້ບໍລິການ",
   "APPOINTMENTS_STATUS": "ສະຖານະ",
   "APPOINTMENTS_STATUS_CANCELLED": "ຍົກເລີກ",
+  "APPOINTMENTS_STATUS_CHECKEDIN": "ລົງທະບຽນ",
   "APPOINTMENTS_STATUS_COMPLETED": "ສຳເລັດ",
   "APPOINTMENTS_STATUS_MISSED": "ສູນເສຍ",
   "APPOINTMENTS_STATUS_SCHEDULED": "ກຳນົດເວລາ",
   "APPOINTMENTS_STATUS_UNKNOWN": "ບໍ່ຮູ້",
+  "APPOINTMENTS_STATUS_WAITLIST": "ລາຍຊື່ລໍ",
   "APPOINTMENTS_TABLE_ARIA_LABEL": "ຕາຕະລາງການນັດໝາຍ",
-  "APPOINTMENTS_TABLE_NOT_AVAILABLE": "ບໍ່ມີໃຊ້ໄດ້",
   "APPOINTMENTS_TAB_UPCOMING": "ກຳລັງມາ",
   "APPOINTMENTS_TAB_PAST": "ອະດີດ",
   "APPOINTMENTS_NUMBER": "ເລກທີ່ການນັດໝາຍ",
   "APPOINTMENTS_SERVICE": "ບໍລິການ",
   "APPOINTMENTS_REASON": "ເຫດຜົນ",
-  "APPOINTMENTS_SLOT": "ຊ່ອງວ່າງ",
-  "NO_UPCOMING_APPOINTMENTS": "ບໍ່ມີການນັດໝາຍກຳລັງມາ",
-  "NO_APPOINTMENT_HISTORY": "ບໍ່ມີປະຫວັດການນັດໝາຍ"
+  "APPOINTMENTS_SLOT": "ຊ່ອງວ່າງ"
 }
