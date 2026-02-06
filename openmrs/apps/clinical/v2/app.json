@@ -15,11 +15,11 @@
       "url": "general.json"
     },
     {
-      "name": "EOC Dashboard",
+      "name": "Program Dashboard",
       "requiredPrivileges": [""],
       "icon": "fa fa-dashboard",
       "default": true,
-      "url": "eocDashboard.json"
+      "url": "program.json"
     }
   ],
   "consultationPad": {
