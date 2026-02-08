@@ -153,7 +153,8 @@
           "type": "pacsOrders",
           "config": {
             "orderType": "Radiology order",
-            "numberOfVisits": 5
+            "numberOfVisits": 5,
+            "pacsViewerUrl": "/ohif/viewer?StudyInstanceUIDs={{StudyInstanceUIDs}}&multimonitor=secondary"
           }
         }
       ]
