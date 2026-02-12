@@ -118,6 +118,28 @@
       ]
     },
     {
+      "name": "Appointments",
+      "translationKey": "APPOINTMENTS_DISPLAY_CONTROL_HEADING",
+      "icon": "fa-calendar",
+      "controls": [
+        {
+          "type": "appointments",
+          "config": {
+            "numberOfPastAppointments": 5,
+            "fields": [
+              "appointmentNumber",
+              "service",
+              "reason",
+              "appointmentDate",
+              "appointmentSlot",
+              "status",
+              "provider"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "name": "Procedures",
       "translationKey": "DASHBOARD_TITLE_PROCEDURES_KEY",
       "icon": "fa-flask",
