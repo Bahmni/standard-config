@@ -1,3 +1,4 @@
+
 {
   "sections": [
     {
@@ -50,7 +51,7 @@
     {
       "name": "Documents",
       "translationKey": "DOCUMENTS_TABLE_HEADING",
-      "icon": "fa-file-pdf",
+      "icon": "fa-file-alt",
       "controls": [
         {
           "type": "patientDocuments"
