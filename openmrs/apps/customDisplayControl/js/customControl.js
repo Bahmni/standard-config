@@ -30,7 +30,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             link: link,
             template: '<ng-include src="contentUrl"/>'
         }
-    }]).directive('customTreatmentChart', ['appService', 'treatmentConfig', 'TreatmentService', 'spinner', '$q', function (appService, treatmentConfig, treatmentService, spinner, $q) {
+    }]).directive('customTreatmentChart', ['appService', 'treatmentConfig', 'treatmentService', 'spinner', '$q', function (appService, treatmentConfig, treatmentService, spinner, $q) {
     var link = function ($scope) {
         var Constants = Bahmni.Clinical.Constants;
         var days = [
@@ -41,7 +41,9 @@ angular.module('bahmni.common.displaycontrol.custom')
             'Thursday',
             'Friday',
             'Saturday'
-        ];
+        ];// Corrected function name from `TreatmentService to `treatmentService`
+          // This was preventing the chart from rendering correctly
+
         $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/customTreatmentChart.html";
 
         $scope.atLeastOneDrugForDay = function (day) {
@@ -60,7 +62,10 @@ angular.module('bahmni.common.displaycontrol.custom')
 
         $scope.getStatusOnDate = function (drug, date) {
             var activeDrugOrders = _.filter(drug.orders, function (order) {
-                if ($scope.config.frequenciesToBeHandled.indexOf(order.getFrequency()) !== -1) {
+
+                // Ensure 'frequenciesToBeHandled' is defined to avoid indexOf error
+                // This fixes a bug that was preventing the customTreatmentChart from rendering correctly
+                if (($scope.config.frequenciesToBeHandled || []).indexOf(order.getFrequency()) !== -1) {
                     return getStatusBasedOnFrequency(order, date);
                 } else {
                     return drug.getStatusOnDate(date) === 'active';
