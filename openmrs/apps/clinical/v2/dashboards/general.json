@@ -54,7 +54,15 @@
       "icon": "fa-file-alt",
       "controls": [
         {
-          "type": "patientDocuments"
+          "type": "patientDocuments",
+          "config": {
+            "fields": [
+              "documentIdentifier",
+              "documentType",
+              "uploadedOn",
+              "uploadedBy"
+            ]
+          }
         }
       ]
     },
