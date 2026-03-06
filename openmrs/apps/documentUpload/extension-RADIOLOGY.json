@@ -5,7 +5,7 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
-            "translationKey": "MODULE_LABEL_ACTIVE_PATIENTS_KEY",
+            "translationKey": " ",
             "forwardUrl" : "#/patient/{{patientUuid}}/document"
         },
         "label": "Active Patients",

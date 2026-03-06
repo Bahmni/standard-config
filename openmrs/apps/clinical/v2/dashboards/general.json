@@ -48,6 +48,16 @@
       ]
     },
     {
+      "name": "Documents",
+      "translationKey": "DOCUMENTS_TABLE_HEADING",
+      "icon": "fa-file-pdf",
+      "controls": [
+        {
+          "type": "patientDocuments"
+        }
+      ]
+    },
+    {
       "name": "Programs",
       "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
       "icon": "fa-clipboard-list",
