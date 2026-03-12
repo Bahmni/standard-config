@@ -67,7 +67,6 @@
             "controls": [
                 {
                     "type": "forms",
-                    "requiredPrivileges": ["Get Forms", "View Forms"],
                     "config": {
                         "numberOfVisits": 10,
                         "showEditForActiveEncounter": true
@@ -97,7 +96,6 @@
             "controls": [
                 {
                     "type": "treatment",
-                    "requiredPrivileges": ["Get Medications", "View Medications"],
                     "config": {}
                 }
             ]
