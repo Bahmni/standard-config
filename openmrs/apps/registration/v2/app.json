@@ -117,6 +117,40 @@
     },
     "showExtraPatientIdentifiersSection": true
   },
+  "registrationForm": {
+    "sections": [
+      {
+        "name": "Basic Details",
+        "translationKey": "REGISTRATION_SECTION_BASIC_DETAILS",
+        "controls": [
+          { "type": "profile" },
+          { "type": "address" },
+          { "type": "contactInfo" }
+        ]
+      },
+      {
+        "name": "Additional Information",
+        "translationKey": "REGISTRATION_SECTION_ADDITIONAL_INFO",
+        "controls": [
+          { "type": "additionalInfo" }
+        ]
+      },
+      {
+        "name": "Identifiers",
+        "translationKey": "REGISTRATION_SECTION_IDENTIFIERS",
+        "controls": [
+          { "type": "additionalIdentifiers" }
+        ]
+      },
+      {
+        "name": "Relationships",
+        "translationKey": "REGISTRATION_SECTION_RELATIONSHIPS",
+        "controls": [
+          { "type": "relationships" }
+        ]
+      }
+    ]
+  },
   "fieldValidation": {
     "firstName": {
       "pattern": "^[a-zA-Z]+$",
