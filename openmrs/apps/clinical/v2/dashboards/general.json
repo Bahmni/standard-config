@@ -60,8 +60,10 @@
               "documentIdentifier",
               "documentType",
               "uploadedOn",
-              "uploadedBy"
-            ]
+              "uploadedBy",
+              "action"
+            ],
+            "pageSize": 5
           }
         }
       ]
