@@ -121,33 +121,39 @@
     "sections": [
       {
         "name": "Basic Details",
-        "translationKey": "REGISTRATION_SECTION_BASIC_DETAILS",
         "controls": [
-          { "type": "profile" },
-          { "type": "address" },
-          { "type": "contactInfo" }
+          {
+            "type": "profile",
+            "titleTranslationKey": "REGISTRATION_SECTION_BASIC_INFO"
+          },
+          {
+            "type": "address",
+            "titleTranslationKey": "REGISTRATION_SECTION_ADDRESS_DETAILS"
+          },
+          {
+            "type": "contactInfo",
+            "titleTranslationKey": "REGISTRATION_SECTION_CONTACT_DETAILS"
+          }
         ]
       },
       {
         "name": "Additional Information",
         "translationKey": "REGISTRATION_SECTION_ADDITIONAL_INFO",
         "controls": [
-          { "type": "additionalInfo" }
+          {
+            "type": "additionalInfo"
+          }
         ]
       },
       {
         "name": "Identifiers",
         "translationKey": "REGISTRATION_SECTION_IDENTIFIERS",
-        "controls": [
-          { "type": "additionalIdentifiers" }
-        ]
+        "controls": [{ "type": "additionalIdentifiers" }]
       },
       {
         "name": "Relationships",
         "translationKey": "REGISTRATION_SECTION_RELATIONSHIPS",
-        "controls": [
-          { "type": "relationships" }
-        ]
+        "controls": [{ "type": "relationships" }]
       }
     ]
   },

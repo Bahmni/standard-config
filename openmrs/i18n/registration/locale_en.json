@@ -55,5 +55,11 @@
   "REGISTRATION_LAST_NAME_VALIDATION": "Last name should contain only alphabets without space",
   "REGISTRATION_EMAIL_VALIDATION": "Should be a valid email address",
   "REGISTRATION_PHONE_NUMBER_VALIDATION": "Phone number should be numbers between 6 to 15 digits",
-  "REGISTRATION_ALTERNATE_PHONE_NUMBER_VALIDATION": "Alternate phone number should be numbers between 6 to 15 digits"
+  "REGISTRATION_ALTERNATE_PHONE_NUMBER_VALIDATION": "Alternate phone number should be numbers between 6 to 15 digits",
+  "REGISTRATION_SECTION_BASIC_INFO": "Basic Information",
+  "REGISTRATION_SECTION_ADDRESS_DETAILS": "Address Information",
+  "REGISTRATION_SECTION_CONTACT_DETAILS": "Contact information",
+  "REGISTRATION_SECTION_ADDITIONAL_INFO": "Additional information",
+  "REGISTRATION_SECTION_IDENTIFIERS": "Additional Identifiers",
+  "REGISTRATION_SECTION_RELATIONSHIPS": "Relationships Information"
 }
