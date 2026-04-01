@@ -119,19 +119,20 @@
   "registrationForm": {
     "sections": [
       {
-        "name": "Basic Details",
+        "name": "Address Information",
+        "translationKey": "REGISTRATION_SECTION_ADDRESS_DETAILS",
         "controls": [
           {
-            "type": "profile",
-            "titleTranslationKey": "REGISTRATION_SECTION_BASIC_INFO"
-          },
+            "type": "address"
+          }
+        ]
+      },
+      {
+        "name": "Contact Information",
+        "translationKey": "REGISTRATION_SECTION_CONTACT_DETAILS",
+        "controls": [
           {
-            "type": "address",
-            "titleTranslationKey": "REGISTRATION_SECTION_ADDRESS_DETAILS"
-          },
-          {
-            "type": "contactInfo",
-            "titleTranslationKey": "REGISTRATION_SECTION_CONTACT_DETAILS"
+            "type": "contactInfo"
           }
         ]
       },
