@@ -55,5 +55,10 @@
   "REGISTRATION_LAST_NAME_VALIDATION": "El apellido debe contener solo letras sin espacios",
   "REGISTRATION_EMAIL_VALIDATION": "Debe ser una dirección de correo electrónico válida",
   "REGISTRATION_PHONE_NUMBER_VALIDATION": "El número de teléfono debe tener entre 6 y 15 dígitos",
-  "REGISTRATION_ALTERNATE_PHONE_NUMBER_VALIDATION": "El número de teléfono alternativo debe tener entre 6 y 15 dígitos"
+  "REGISTRATION_ALTERNATE_PHONE_NUMBER_VALIDATION": "El número de teléfono alternativo debe tener entre 6 y 15 dígitos",
+  "REGISTRATION_SECTION_ADDRESS_DETAILS": "Información de dirección",
+  "REGISTRATION_SECTION_CONTACT_DETAILS": "Información de contacto",
+  "REGISTRATION_SECTION_ADDITIONAL_INFO": "Información adicional",
+  "REGISTRATION_SECTION_IDENTIFIERS": "Identificadores adicionales",
+  "REGISTRATION_SECTION_RELATIONSHIPS": "Información de relación"
 }

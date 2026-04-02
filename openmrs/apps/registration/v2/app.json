@@ -114,8 +114,48 @@
                           "translationKey": "REGISTRATION_ALTERNATE_PHONE_NUMBER"
                         }
                     ]
-    },
-    "showExtraPatientIdentifiersSection": true
+    }
+  },
+  "registrationForm": {
+    "sections": [
+      {
+        "name": "Address Information",
+        "translationKey": "REGISTRATION_SECTION_ADDRESS_DETAILS",
+        "controls": [
+          {
+            "type": "address"
+          }
+        ]
+      },
+      {
+        "name": "Contact Information",
+        "translationKey": "REGISTRATION_SECTION_CONTACT_DETAILS",
+        "controls": [
+          {
+            "type": "contactInfo"
+          }
+        ]
+      },
+      {
+        "name": "Additional Information",
+        "translationKey": "REGISTRATION_SECTION_ADDITIONAL_INFO",
+        "controls": [
+          {
+            "type": "additionalInfo"
+          }
+        ]
+      },
+      {
+        "name": "Identifiers",
+        "translationKey": "REGISTRATION_SECTION_IDENTIFIERS",
+        "controls": [{ "type": "additionalIdentifiers" }]
+      },
+      {
+        "name": "Relationships",
+        "translationKey": "REGISTRATION_SECTION_RELATIONSHIPS",
+        "controls": [{ "type": "relationships" }]
+      }
+    ]
   },
   "fieldValidation": {
     "firstName": {
