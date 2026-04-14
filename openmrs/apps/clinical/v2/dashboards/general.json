@@ -48,6 +48,16 @@
       ]
     },
     {
+      "name": "Immunization",
+      "translationKey": "DASHBOARD_TITLE_IMMUNISATION_KEY",
+      "icon": "fa-syringe",
+      "controls": [
+        {
+          "type": "immunizationHistory"
+        }
+      ]
+    },
+    {
       "name": "Documents",
       "translationKey": "DOCUMENTS_TABLE_HEADING",
       "icon": "fa-file-alt",
@@ -139,6 +149,12 @@
         {
           "type": "treatment",
           "requiredPrivileges": ["Get Orders"]
+        },
+        {
+          "type": "treatment",
+          "config": {
+            "code": ["http://hl7.org/fhir/sid/cvx|"]
+          }
         }
       ]
     },
