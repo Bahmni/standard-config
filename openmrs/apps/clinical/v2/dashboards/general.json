@@ -53,7 +53,11 @@
       "icon": "fa-syringe",
       "controls": [
         {
-          "type": "immunizationHistory"
+          "type": "immunizationHistory",
+          "config": {
+            "encounterType": "Immunization",
+            "startEncounterPrivilege": "app:clinical:addImmunizations"
+          }
         }
       ]
     },
@@ -149,12 +153,6 @@
         {
           "type": "treatment",
           "requiredPrivileges": ["Get Orders"]
-        },
-        {
-          "type": "treatment",
-          "config": {
-            "code": ["http://hl7.org/fhir/sid/cvx|"]
-          }
         }
       ]
     },
