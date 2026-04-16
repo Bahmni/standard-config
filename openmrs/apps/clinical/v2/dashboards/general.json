@@ -85,7 +85,7 @@
               "outcome",
               "state"
             ],
-            "pageSize": 5
+            "pageSize": 10
           }
         }
       ]
@@ -114,14 +114,14 @@
           "type": "conditions",
           "requiredPrivileges": ["Get Conditions"],
           "config": {
-            "pageSize": 10
+            "pageSize": 3
           }
         },
         {
           "type": "diagnoses",
           "requiredPrivileges": ["Get Diagnoses"],
           "config": {
-            "pageSize": 10
+            "pageSize": 3
           }
         }
       ]
