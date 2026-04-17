@@ -18,7 +18,7 @@
               "Consultation Images",
               "Consultation Videos"
             ],
-            "hideThumbnail": true,
+            "hideThumbnail": false,
             "conceptUuid": [
               "1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "9bb0795c-4ff0-0305-1990-000000000005",
@@ -34,7 +34,7 @@
               "Chief Complaint Record",
               "History of present illness"
             ],
-            "hideThumbnail": true
+            "hideThumbnail": false
           }
         }
       ]
@@ -101,7 +101,7 @@
           "config": {
             "numberOfVisits": 10,
             "showEditForActiveEncounter": true,
-            "hideThumbnail": true
+            "hideThumbnail": false
           }
         }
       ]
