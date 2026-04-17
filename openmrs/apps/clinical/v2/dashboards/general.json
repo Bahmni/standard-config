@@ -114,14 +114,14 @@
           "type": "conditions",
           "requiredPrivileges": ["Get Conditions"],
           "config": {
-            "pageSize": 3
+            "pageSize": 10
           }
         },
         {
           "type": "diagnoses",
           "requiredPrivileges": ["Get Diagnoses"],
           "config": {
-            "pageSize": 3
+            "pageSize": 10
           }
         }
       ]
