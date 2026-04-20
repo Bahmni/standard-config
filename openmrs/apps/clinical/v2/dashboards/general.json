@@ -158,7 +158,6 @@
         {
           "type": "appointments",
           "config": {
-            "numberOfPastAppointments": 5,
             "pageSize": 10,
             "fields": [
               "appointmentNumber",
