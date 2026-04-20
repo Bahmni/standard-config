@@ -84,7 +84,8 @@
               "endDate",
               "outcome",
               "state"
-            ]
+            ],
+            "pageSize": 10
           }
         }
       ]
@@ -111,11 +112,17 @@
       "controls": [
         {
           "type": "conditions",
-          "requiredPrivileges": ["Get Conditions"]
+          "requiredPrivileges": ["Get Conditions"],
+          "config": {
+            "pageSize": 10
+          }
         },
         {
           "type": "diagnoses",
-          "requiredPrivileges": ["Get Diagnoses"]
+          "requiredPrivileges": ["Get Diagnoses"],
+          "config": {
+            "pageSize": 10
+          }
         }
       ]
     },
