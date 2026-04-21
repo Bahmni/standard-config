@@ -158,7 +158,7 @@
         {
           "type": "appointments",
           "config": {
-            "numberOfPastAppointments": 5,
+            "pageSize": 5,
             "fields": [
               "appointmentNumber",
               "service",
