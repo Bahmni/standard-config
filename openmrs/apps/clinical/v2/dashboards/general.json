@@ -63,7 +63,7 @@
               "uploadedBy",
               "action"
             ],
-            "pageSize": 10
+            "pageSize": 5
           }
         }
       ]
@@ -85,7 +85,7 @@
               "outcome",
               "state"
             ],
-            "pageSize": 10
+            "pageSize": 5
           }
         }
       ]
@@ -114,14 +114,14 @@
           "type": "conditions",
           "requiredPrivileges": ["Get Conditions"],
           "config": {
-            "pageSize": 10
+            "pageSize": 5
           }
         },
         {
           "type": "diagnoses",
           "requiredPrivileges": ["Get Diagnoses"],
           "config": {
-            "pageSize": 10
+            "pageSize": 5
           }
         }
       ]
