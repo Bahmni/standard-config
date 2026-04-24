@@ -29,6 +29,93 @@
       "environmentalAllergenUuid": "162554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
       "allergyReactionUuid": "162555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     },
-    "statDurationInMilliseconds": 7200000 
+    "statDurationInMilliseconds": 7200000,
+    "encounterDetails": {
+      "metadata": {
+        "defaultEncounterType": "Consultation"
+      },
+      "encounterTypes": ["Consultation"],
+      "privileges": ["Add Encounters"],
+      "attributes": []
+    },
+    "allergies": {
+      "metadata": {},
+      "encounterTypes": ["Consultation"],
+      "privileges": ["Add Allergies"],
+      "attributes": []
+    },
+    "investigations": {
+      "metadata": {},
+      "encounterTypes": ["Consultation"],
+      "privileges": ["Add Orders"],
+      "attributes": []
+    },
+    "medications": {
+      "metadata": {},
+      "encounterTypes": ["Consultation"],
+      "privileges": ["Add Orders"],
+      "attributes": []
+    },
+    "observationForms": {
+      "metadata": {},
+      "encounterTypes": ["Consultation"],
+      "privileges": ["Add Observations"],
+      "attributes": []
+    },
+    "vaccinations": {
+      "metadata": {},
+      "encounterTypes": ["Consultation"],
+      "privileges": ["Add Orders"],
+      "attributes": []
+    },
+    "conditionsAndDiagnoses": {
+      "metadata": {},
+      "encounterTypes": ["Consultation"],
+      "privileges": ["Add Diagnoses"],
+      "attributes": []
+    },
+    "immunizationHistory": {
+      "metadata": {
+        "administeredLocationTag": "Visit Location",
+        "routeConceptUuid": "d462489d-5e07-11ef-8f7c-0242ac120002",
+        "vaccineConceptSetUuid": "984AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "siteConceptUuid": "9cc9ed5b-0926-4abf-a00f-c1d62d305c5f"
+      },
+      "encounterTypes": ["Immunization"],
+      "privileges": ["Get Immunizations", "Add Immunizations"],
+      "attributes": [
+        {
+          "name": "administeredOn",
+          "required": true
+        },
+        {
+          "name": "administeredLocation",
+          "required": true,
+          "administeredLocationTag": "Visit Location"
+        },
+        {
+          "name": "route",
+          "required": false,
+          "routeConceptUuid": "d462489d-5e07-11ef-8f7c-0242ac120002"
+        },
+        {
+          "name": "site",
+          "required": true,
+          "siteConceptUuid": "9cc9ed5b-0926-4abf-a00f-c1d62d305c5f"
+        },
+        {
+          "name": "expiryDate",
+          "required": false
+        },
+        {
+          "name": "manufacturer",
+          "required": false
+        },
+        {
+          "name": "batchNumber",
+          "required": true
+        }
+      ]
+    }
   }
 }
