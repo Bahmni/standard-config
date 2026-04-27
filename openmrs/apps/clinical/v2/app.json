@@ -77,9 +77,9 @@
     "immunizationHistory": {
       "metadata": {
         "administeredLocationTag": "Visit Location",
-        "routeConceptUuid": "d462489d-5e07-11ef-8f7c-0242ac120002",
+        "routeConceptUuid": "162394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "vaccineConceptSetUuid": "984AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "siteConceptUuid": "9cc9ed5b-0926-4abf-a00f-c1d62d305c5f"
+        "siteConceptUuid": "280cbf8c-aff5-4753-a281-61e14d2c622a"
       },
       "encounterTypes": ["Immunization"],
       "privileges": ["Get Immunizations", "Add Immunizations"],
@@ -90,7 +90,7 @@
         },
         {
           "name": "administeredLocation",
-          "required": true
+          "required": false
         },
         {
           "name": "route",
@@ -98,7 +98,7 @@
         },
         {
           "name": "site",
-          "required": true
+          "required": false
         },
         {
           "name": "expiryDate",
@@ -110,7 +110,7 @@
         },
         {
           "name": "batchNumber",
-          "required": true
+          "required": false
         }
       ]
     }
