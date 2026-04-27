@@ -85,6 +85,10 @@
       "privileges": ["Get Immunizations", "Add Immunizations"],
       "attributes": [
         {
+          "name": "drug",
+          "required": true
+        },
+        {
           "name": "administeredOn",
           "required": true
         },
@@ -110,6 +114,10 @@
         },
         {
           "name": "batchNumber",
+          "required": false
+        },
+        {
+          "name": "note",
           "required": false
         }
       ]
