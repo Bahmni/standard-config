@@ -1,0 +1,65 @@
+{
+  "sources": {
+    "patient": {
+      "api": "fhir",
+      "resource": "Patient",
+      "params": {
+        "id": "{{patientUuid}}"
+      }
+    },
+    "relatives": {
+      "api": "fhir",
+      "resource": "RelatedPerson",
+      "params": {
+        "patient": "{{patientUuid}}"
+      }
+    }
+  },
+  "computed": {
+    "patientName": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Patient.name.first().text"
+    },
+    "patientId": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Patient.identifier.where(use = 'official').first().value"
+    },
+    "birthDate": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Patient.birthDate"
+    },
+    "gender": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Patient.gender"
+    },
+    "phone": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Patient.telecom.where(system = 'phone').first().value"
+    },
+    "address": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Patient.address.first().text"
+    },
+    "photoUrl": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Patient.photo.first().url"
+    },
+    "nextOfKinName": {
+      "fn": "fhirPath",
+      "source": "relatives",
+      "expr": "Bundle.entry.first().resource.name.first().text"
+    },
+    "nextOfKinRelationship": {
+      "fn": "fhirPath",
+      "source": "relatives",
+      "expr": "Bundle.entry.first().resource.relationship.first().text"
+    }
+  }
+}

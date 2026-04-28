@@ -1,0 +1,161 @@
+{
+  "sources": {
+    "patient": {
+      "api": "fhir",
+      "resource": "Patient",
+      "params": {
+        "id": "{{patientUuid}}"
+      }
+    },
+    "medications": {
+      "api": "fhir",
+      "resource": "MedicationRequest",
+      "params": {
+        "subject":   "{{patientUuid}}",
+        "encounter": "{{encounterUuid}}",
+        "status":    "active,on-hold,stopped,completed",
+        "_count":    "100"
+      }
+    },
+    "diagnoses": {
+      "api": "fhir",
+      "resource": "Condition",
+      "params": {
+        "subject":   "{{patientUuid}}",
+        "encounter": "{{encounterUuid}}",
+        "category":  "encounter-diagnosis"
+      }
+    },
+    "allergies": {
+      "api": "fhir",
+      "resource": "AllergyIntolerance",
+      "params": {
+        "patient": "{{patientUuid}}"
+      }
+    },
+    "vitals": {
+      "api": "fhir",
+      "resource": "Observation",
+      "params": {
+        "subject":   "{{patientUuid}}",
+        "encounter": "{{encounterUuid}}",
+        "category":  "vital-signs",
+        "_count":    "50"
+      }
+    }
+  },
+  "computed": {
+    "patientName": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Patient.name.first().text"
+    },
+    "patientId": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Patient.identifier.where(use = 'official').first().value"
+    },
+    "birthDate": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Patient.birthDate"
+    },
+    "gender": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Patient.gender"
+    },
+
+    "medicationList": {
+      "fn": "fhirPath",
+      "source": "medications",
+      "expr": "Bundle.entry.resource.where(resourceType = 'MedicationRequest')"
+    },
+    "medicationRows": {
+      "fn": "map",
+      "source": "medicationList",
+      "fields": {
+        "id":            "MedicationRequest.id",
+        "drugName":      "MedicationRequest.medicationCodeableConcept.text",
+        "doseValue":     "MedicationRequest.dosageInstruction.first().doseAndRate.first().doseQuantity.value",
+        "doseUnit":      "MedicationRequest.dosageInstruction.first().doseAndRate.first().doseQuantity.unit",
+        "frequency":     "MedicationRequest.dosageInstruction.first().timing.code.text",
+        "route":         "MedicationRequest.dosageInstruction.first().route.text",
+        "durationValue": "MedicationRequest.dosageInstruction.first().timing.repeat.duration",
+        "durationUnit":  "MedicationRequest.dosageInstruction.first().timing.repeat.durationUnit",
+        "quantity":      "MedicationRequest.dispenseRequest.quantity.value",
+        "quantityUnit":  "MedicationRequest.dispenseRequest.quantity.unit",
+        "instructions":  "MedicationRequest.dosageInstruction.first().patientInstruction",
+        "provider":      "MedicationRequest.requester.display",
+        "status":        "MedicationRequest.status"
+      }
+    },
+    "activeMeds": {
+      "fn": "filter",
+      "source": "medicationRows",
+      "field":  "status",
+      "value":  "active"
+    },
+    "discontinuedMeds": {
+      "fn": "filter",
+      "source": "medicationRows",
+      "field":  "status",
+      "value":  "stopped"
+    },
+    "activeByProvider": {
+      "fn": "groupBy",
+      "source": "activeMeds",
+      "field":  "provider"
+    },
+    "activeMedCount": {
+      "fn": "count",
+      "source": "activeMeds"
+    },
+
+    "diagnosisList": {
+      "fn": "fhirPath",
+      "source": "diagnoses",
+      "expr": "Bundle.entry.resource.where(resourceType = 'Condition')"
+    },
+    "diagnosisRows": {
+      "fn": "map",
+      "source": "diagnosisList",
+      "fields": {
+        "name":      "Condition.code.text",
+        "icdCode":   "Condition.code.coding.where(system = 'http://hl7.org/fhir/sid/icd-10').first().code",
+        "order":     "Condition.extension.where(url = 'http://bahmni.org/fhir/StructureDefinition/diagnosisOrder').first().valueString",
+        "certainty": "Condition.verificationStatus.coding.first().code"
+      }
+    },
+
+    "allergyList": {
+      "fn": "fhirPath",
+      "source": "allergies",
+      "expr": "Bundle.entry.resource.where(resourceType = 'AllergyIntolerance')"
+    },
+    "allergyRows": {
+      "fn": "map",
+      "source": "allergyList",
+      "fields": {
+        "allergen": "AllergyIntolerance.code.text",
+        "reaction":  "AllergyIntolerance.reaction.first().manifestation.first().text",
+        "severity":  "AllergyIntolerance.reaction.first().severity"
+      }
+    },
+
+    "vitalList": {
+      "fn": "fhirPath",
+      "source": "vitals",
+      "expr": "Bundle.entry.resource.where(resourceType = 'Observation')"
+    },
+    "vitalRows": {
+      "fn": "map",
+      "source": "vitalList",
+      "fields": {
+        "name":  "Observation.code.text",
+        "value": "Observation.valueQuantity.value",
+        "unit":  "Observation.valueQuantity.unit"
+      }
+    }
+  }
+}

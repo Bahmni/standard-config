@@ -1,0 +1,98 @@
+{% extends "_base/landscape.html" %}
+
+{% block title %}{{ 'REGISTRATION_CARD' | t }}{% endblock %}
+
+{#
+  Override the generic header block: the registration card always uses the
+  'REGISTRATION_CARD' translation key as its subtitle regardless of whatever
+  config.header is set to, so we take full control here.
+#}
+{% block header %}
+<div class="card-header">{{ config.facilityName | default('') }}</div>
+<div class="card-facility">{{ 'REGISTRATION_CARD' | t }}</div>
+{% endblock %}
+
+{% block styles %}
+/* Photo float layout */
+.card-body { display: flex; gap: 10px; }
+.card-photo { flex-shrink: 0; }
+.card-photo img { width: 20mm; height: 20mm; object-fit: cover; border: 1px solid #ccc; }
+.card-photo .no-photo { width: 20mm; height: 20mm; border: 1px dashed #aaa; display: flex; align-items: center; justify-content: center; font-size: 7pt; color: #aaa; }
+.card-data { flex: 1; }
+{% endblock %}
+
+{% block content %}
+
+<div class="card-body">
+
+  {# Patient photo — shown when config.showPhoto = true and a photo URL exists #}
+  {% if config.showPhoto %}
+  <div class="card-photo">
+    {% if computed.photoUrl %}
+      <img src="{{ computed.photoUrl }}" alt="{{ 'PATIENT_PHOTO' | t }}" />
+    {% else %}
+      <div class="no-photo">{{ 'NO_PHOTO' | t }}</div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="card-data">
+    <table class="info-grid">
+      <tr>
+        <td class="label">{{ 'PATIENT_NAME' | t }}</td>
+        <td class="value">{{ computed.patientName | default('—') }}</td>
+      </tr>
+      <tr>
+        <td class="label">{{ 'REGISTRATION_NO' | t }}</td>
+        <td class="value">{{ computed.patientId | default('—') }}</td>
+      </tr>
+      <tr>
+        <td class="label">{{ 'DATE_OF_BIRTH' | t }}</td>
+        <td class="value">
+          {{ computed.birthDate | dateFormat | default('—') }}
+          ({{ computed.birthDate | age | default('') }})
+        </td>
+      </tr>
+      <tr>
+        <td class="label">{{ 'GENDER' | t }}</td>
+        <td class="value">{{ computed.gender | upper | t | default('—') }}</td>
+      </tr>
+      {# Next-of-kin / Father-Husband name — critical for Indian context #}
+      {% if config.showRelationship and computed.nextOfKinName %}
+      <tr>
+        <td class="label">{{ computed.nextOfKinRelationship | default('RELATIVE') | t }}</td>
+        <td class="value">{{ computed.nextOfKinName }}</td>
+      </tr>
+      {% endif %}
+      {% if computed.phone %}
+      <tr>
+        <td class="label">{{ 'PHONE' | t }}</td>
+        <td class="value">{{ computed.phone }}</td>
+      </tr>
+      {% endif %}
+      {% if computed.address %}
+      <tr>
+        <td class="label">{{ 'ADDRESS' | t }}</td>
+        <td class="value">{{ computed.address }}</td>
+      </tr>
+      {% endif %}
+    </table>
+  </div>
+
+</div>
+
+{# Barcode — shown only when config.showBarcode is true #}
+{% if config.showBarcode and computed.patientId %}
+<div class="barcode-section">
+  {{ computed.patientId | barcode('code128', 35) }}
+</div>
+{% endif %}
+
+{# QR code — shown only when config.showQrCode is true #}
+{% if config.showQrCode and computed.patientId %}
+<div class="barcode-section">
+  {{ computed.patientId | qrcode(100) }}
+</div>
+{% endif %}
+
+{% endblock %}
