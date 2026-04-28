@@ -1,0 +1,214 @@
+{% extends "_base/portrait.html" %}
+
+{% block title %}{{ config.header | default('Prescription') }}{% endblock %}
+
+{#
+  The base portrait template already renders a generic header using
+  config.facilityName and config.header. No override needed here.
+#}
+
+{% block styles %}
+/* Discontinued medication row styling */
+.discontinued td { text-decoration: line-through; color: #888; }
+.discontinued .disc-label {
+  display: block;
+  font-size: 8pt;
+  text-decoration: none;
+  color: #c00;
+}
+/* Vitals inline list */
+.vitals-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+.vitals-list li { font-size: 10pt; }
+.vitals-list li span.v-name { font-weight: bold; }
+/* Diagnosis / allergy rows */
+.clinical-list { margin: 6px 0 16px; padding-left: 16px; }
+.clinical-list li { font-size: 10pt; margin-bottom: 3px; }
+.clinical-list .icd { font-size: 9pt; color: #555; margin-left: 6px; }
+.provider-attrs { font-size: 9pt; color: #444; margin-top: 2px; }
+{% endblock %}
+
+{% block content %}
+
+{# ── Patient information ─────────────────────────────────────────────────── #}
+<div class="patient-info">
+  <table class="info-grid">
+    <tr>
+      <td class="label">{{ 'PATIENT_NAME' | t }}</td>
+      <td class="value">{{ computed.patientName | default('—') }}</td>
+      <td class="label">{{ 'PATIENT_ID' | t }}</td>
+      <td class="value">{{ computed.patientId | default('—') }}</td>
+    </tr>
+    <tr>
+      <td class="label">{{ 'AGE' | t }}</td>
+      <td class="value">{{ computed.birthDate | age | default('—') }}</td>
+      <td class="label">{{ 'GENDER' | t }}</td>
+      <td class="value">{{ computed.gender | upper | t | default('—') }}</td>
+    </tr>
+    {% if context.visitType %}
+    <tr>
+      <td class="label">{{ 'VISIT_TYPE' | t }}</td>
+      <td class="value" colspan="3">{{ context.visitType }}</td>
+    </tr>
+    {% endif %}
+  </table>
+</div>
+
+{# ── Vitals / Observations (shown when config.showVitals = true) ─────────── #}
+{% if config.showVitals and computed.vitalRows and computed.vitalRows.length > 0 %}
+<div class="section-title">{{ 'VITALS' | t }}</div>
+<ul class="vitals-list">
+  {% for v in computed.vitalRows %}
+  <li>
+    <span class="v-name">{{ v.name | default('') }}</span>:
+    {{ v.value | default('—') }} {{ v.unit | default('') }}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{# ── Diagnoses (shown when config.showDiagnoses = true) ─────────────────── #}
+{% if config.showDiagnoses and computed.diagnosisRows and computed.diagnosisRows.length > 0 %}
+<div class="section-title">{{ 'DIAGNOSES' | t }}</div>
+<ul class="clinical-list">
+  {% for d in computed.diagnosisRows %}
+  <li>
+    {{ d.name | default('—') }}
+    {% if d.icdCode %}<span class="icd">({{ d.icdCode }})</span>{% endif %}
+    {% if d.order %} — <em>{{ d.order }}</em>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{# ── Allergies (shown when config.showAllergies = true) ─────────────────── #}
+{% if config.showAllergies and computed.allergyRows and computed.allergyRows.length > 0 %}
+<div class="section-title">{{ 'ALLERGIES' | t }}</div>
+<ul class="clinical-list">
+  {% for a in computed.allergyRows %}
+  <li>
+    {{ a.allergen | default('—') }}
+    {% if a.reaction %} → {{ a.reaction }}{% endif %}
+    {% if a.severity %} ({{ a.severity | t }}){% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{# ── Active Medications ───────────────────────────────────────────────────── #}
+<div class="section-title">{{ 'MEDICATIONS' | t }}</div>
+
+{% if computed.activeMedCount == 0 or computed.activeByProvider is not defined %}
+  <p class="no-data">{{ 'NO_MEDICATIONS' | t }}</p>
+{% else %}
+
+  {# Group active medications by prescribing provider #}
+  {% for provider, meds in computed.activeByProvider %}
+    <p class="provider-label">
+      {{ 'PROVIDER' | t }}: {{ provider }}
+      {# Provider attributes (qualification, registration number, etc.) #}
+      {% if config.providerAttributesForPrint and meds[0].providerAttributes %}
+        <span class="provider-attrs">
+          {% for attr in config.providerAttributesForPrint %}
+            {% if meds[0].providerAttributes[attr] %}
+              · {{ meds[0].providerAttributes[attr] }}
+            {% endif %}
+          {% endfor %}
+        </span>
+      {% endif %}
+    </p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>{{ 'DRUG' | t }}</th>
+          <th>{{ 'DOSE' | t }}</th>
+          <th>{{ 'FREQUENCY' | t }}</th>
+          <th>{{ 'ROUTE' | t }}</th>
+          <th>{{ 'DURATION' | t }}</th>
+          <th>{{ 'QUANTITY' | t }}</th>
+          <th>{{ 'INSTRUCTIONS' | t }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for med in meds %}
+        <tr>
+          <td>{{ med.drugName | default('—') }}</td>
+          <td>
+            {% if med.doseValue %}{{ med.doseValue }} {{ med.doseUnit | default('') }}
+            {% else %}—{% endif %}
+          </td>
+          <td>{{ med.frequency | default('—') }}</td>
+          <td>{{ med.route | default('—') }}</td>
+          <td>
+            {% if med.durationValue %}{{ med.durationValue }} {{ med.durationUnit | default('') }}
+            {% else %}—{% endif %}
+          </td>
+          <td>
+            {% if med.quantity %}{{ med.quantity }} {{ med.quantityUnit | default('') }}
+            {% else %}—{% endif %}
+          </td>
+          <td>{{ med.instructions | default('—') }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endfor %}
+
+{% endif %}
+
+{# ── Discontinued Medications (shown when config.showDiscontinuedMeds = true) #}
+{% if config.showDiscontinuedMeds and computed.discontinuedMeds and computed.discontinuedMeds.length > 0 %}
+<div class="section-title">{{ 'DISCONTINUED_MEDICATIONS' | t }}</div>
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>{{ 'DRUG' | t }}</th>
+      <th>{{ 'DOSE' | t }}</th>
+      <th>{{ 'FREQUENCY' | t }}</th>
+      <th>{{ 'ROUTE' | t }}</th>
+      <th>{{ 'INSTRUCTIONS' | t }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for med in computed.discontinuedMeds %}
+    <tr class="discontinued">
+      <td>
+        {{ med.drugName | default('—') }}
+        <span class="disc-label">{{ 'DISCONTINUED' | t }}</span>
+      </td>
+      <td>
+        {% if med.doseValue %}{{ med.doseValue }} {{ med.doseUnit | default('') }}
+        {% else %}—{% endif %}
+      </td>
+      <td>{{ med.frequency | default('—') }}</td>
+      <td>{{ med.route | default('—') }}</td>
+      <td>{{ med.instructions | default('—') }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+{% endblock %}
+
+{#
+  Override the base footer block to add the optional signature line.
+  The base block only renders config.footer text; prescriptions may also
+  need a handwritten-signature area controlled by config.showSignatureLine.
+#}
+{% block footer %}
+{% if config.footer or config.showSignatureLine %}
+<div class="doc-footer">
+  {% if config.footer %}
+    <p>{{ config.footer }}</p>
+  {% endif %}
+  {% if config.showSignatureLine %}
+    <div class="signature-line">
+      <span class="line"></span>
+      <span class="sig-label">
+        {{ config.signatoryLabel | default('Authorized Signature') }}
+      </span>
+    </div>
+  {% endif %}
+</div>
+{% endif %}
+{% endblock %}
