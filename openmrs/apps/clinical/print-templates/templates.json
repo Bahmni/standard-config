@@ -1,0 +1,58 @@
+{
+  "templates": [
+    {
+      "id": "PRESCRIPTION_V1",
+      "name": "Prescription",
+      "folder": "prescription",
+      "outputFormats": ["html", "pdf"],
+      "triggers": [
+        { "context": "medications", "label": "Print Prescription", "shortcutKey": "p" },
+        { "context": "encounter",   "label": "Print Prescription", "shortcutKey": "p" }
+      ],
+      "config": {
+        "facilityName": "Bahmni Hospital",
+        "header": "PRESCRIPTION",
+        "footer": "This prescription is valid for 30 days.",
+        "showSignatureLine": true,
+        "signatoryLabel": "Authorized Signature",
+        "showDiagnoses": true,
+        "showAllergies": true,
+        "showVitals": true,
+        "showDiscontinuedMeds": true,
+        "providerAttributesForPrint": ["Qualification", "MCI Reg Number"]
+      }
+    },
+    {
+      "id": "REG_CARD_V1",
+      "name": "Registration Card",
+      "folder": "registration-card",
+      "outputFormats": ["html", "pdf"],
+      "triggers": [
+        { "context": "patientRegistration", "label": "Print Card (English)", "shortcutKey": "p" }
+      ],
+      "config": {
+        "facilityName": "Bahmni Hospital",
+        "showBarcode": true,
+        "showQrCode": false,
+        "showPhoto": true,
+        "showRelationship": true
+      }
+    },
+    {
+      "id": "REG_CARD_LOCAL_V1",
+      "name": "Registration Card (Local Language)",
+      "folder": "registration-card",
+      "outputFormats": ["html", "pdf"],
+      "triggers": [
+        { "context": "patientRegistration", "label": "Print Card (Local)", "shortcutKey": "l" }
+      ],
+      "config": {
+        "facilityName": "Bahmni Hospital",
+        "showBarcode": true,
+        "showQrCode": false,
+        "showPhoto": true,
+        "showRelationship": true
+      }
+    }
+  ]
+}
