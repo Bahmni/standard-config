@@ -37,5 +37,13 @@
   "MALE":                      "Male",
   "FEMALE":                    "Female",
   "OTHER":                     "Other",
-  "AUTHORIZED_SIGNATURE":      "Authorized Signature"
+  "AUTHORIZED_SIGNATURE":      "Authorized Signature",
+  "NOTICE":                    "Notice",
+  "CAUTION":                   "Caution",
+  "DATED":                     "Dated",
+  "REGISTRATION":              "Registration",
+  "NAME":                      "Name",
+  "VILLAGE":                   "Village",
+  "TEHSIL":                    "Tehsil",
+  "YEAR_S":                    "Year(s)"
 }

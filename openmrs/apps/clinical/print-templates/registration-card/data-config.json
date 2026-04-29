@@ -4,7 +4,7 @@
       "api": "fhir",
       "resource": "Patient",
       "params": {
-        "id": "{{patientUuid}}"
+        "_id": "{{patientUuid}}"
       }
     },
     "relatives": {
@@ -19,37 +19,52 @@
     "patientName": {
       "fn": "fhirPath",
       "source": "patient",
-      "expr": "Patient.name.first().text"
+      "expr": "Bundle.entry.first().resource.name.first().text"
     },
     "patientId": {
       "fn": "fhirPath",
       "source": "patient",
-      "expr": "Patient.identifier.where(use = 'official').first().value"
+      "expr": "Bundle.entry.first().resource.identifier.where(use = 'official').first().value"
     },
     "birthDate": {
       "fn": "fhirPath",
       "source": "patient",
-      "expr": "Patient.birthDate"
+      "expr": "Bundle.entry.first().resource.birthDate"
     },
     "gender": {
       "fn": "fhirPath",
       "source": "patient",
-      "expr": "Patient.gender"
+      "expr": "Bundle.entry.first().resource.gender"
     },
     "phone": {
       "fn": "fhirPath",
       "source": "patient",
-      "expr": "Patient.telecom.where(system = 'phone').first().value"
+      "expr": "Bundle.entry.first().resource.telecom.where(system = 'phone').first().value"
     },
     "address": {
       "fn": "fhirPath",
       "source": "patient",
-      "expr": "Patient.address.first().text"
+      "expr": "Bundle.entry.first().resource.address.first().text"
     },
     "photoUrl": {
       "fn": "fhirPath",
       "source": "patient",
-      "expr": "Patient.photo.first().url"
+      "expr": "Bundle.entry.first().resource.photo.first().url"
+    },
+    "registrationDate": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Bundle.entry.first().resource.identifier.where(use = 'official').first().period.start"
+    },
+    "village": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Bundle.entry.first().resource.address.first().city"
+    },
+    "tehsil": {
+      "fn": "fhirPath",
+      "source": "patient",
+      "expr": "Bundle.entry.first().resource.address.first().district"
     },
     "nextOfKinName": {
       "fn": "fhirPath",
