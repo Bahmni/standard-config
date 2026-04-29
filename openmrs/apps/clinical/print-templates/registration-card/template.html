@@ -2,97 +2,187 @@
 
 {% block title %}{{ 'REGISTRATION_CARD' | t }}{% endblock %}
 
-{#
-  Override the generic header block: the registration card always uses the
-  'REGISTRATION_CARD' translation key as its subtitle regardless of whatever
-  config.header is set to, so we take full control here.
-#}
-{% block header %}
-<div class="card-header">{{ config.facilityName | default('') }}</div>
-<div class="card-facility">{{ 'REGISTRATION_CARD' | t }}</div>
-{% endblock %}
+{# Suppress the base header — the card header is built inline below #}
+{% block header %}{% endblock %}
 
 {% block styles %}
-/* Photo float layout */
-.card-body { display: flex; gap: 10px; }
-.card-photo { flex-shrink: 0; }
-.card-photo img { width: 20mm; height: 20mm; object-fit: cover; border: 1px solid #ccc; }
-.card-photo .no-photo { width: 20mm; height: 20mm; border: 1px dashed #aaa; display: flex; align-items: center; justify-content: center; font-size: 7pt; color: #aaa; }
-.card-data { flex: 1; }
+.reg-card {
+  display: flex;
+  border: 2px solid #000;
+  width: 100%;
+  min-height: 88mm;
+}
+
+/* Left panel — Notice + Caution */
+.panel-left {
+  width: 38%;
+  border-right: 2px solid #000;
+  padding: 8px 12px;
+}
+.notice-title, .caution-title {
+  font-weight: bold;
+  font-size: 11pt;
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+.caution-title { margin-top: 10px; }
+.notice-list {
+  padding-left: 16px;
+  font-size: 8.5pt;
+  margin-bottom: 6px;
+}
+.notice-list li { margin-bottom: 3px; }
+.caution-text { font-size: 8.5pt; }
+
+/* Right panel — facility header + patient data */
+.panel-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px;
+}
+.facility-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+.facility-logo {
+  width: 14mm;
+  height: 14mm;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.facility-text { text-align: center; }
+.facility-name { font-weight: bold; font-size: 11pt; }
+.facility-location { font-size: 8.5pt; margin-top: 2px; }
+
+/* Patient data + photo row */
+.patient-row {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+.patient-table {
+  flex: 1;
+  border-collapse: collapse;
+  font-size: 9pt;
+}
+.patient-table td { padding: 2px 4px; vertical-align: top; }
+.patient-table td.sep { padding: 2px 2px; }
+.patient-photo { flex-shrink: 0; }
+.patient-photo img {
+  width: 22mm;
+  height: 28mm;
+  object-fit: cover;
+  border: 1px solid #000;
+  display: block;
+}
+.patient-photo .no-photo {
+  width: 22mm;
+  height: 28mm;
+  border: 1px solid #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7pt;
+  color: #aaa;
+  background: #f5f5f5;
+}
 {% endblock %}
 
 {% block content %}
+<div class="reg-card">
 
-<div class="card-body">
-
-  {# Patient photo — shown when config.showPhoto = true and a photo URL exists #}
-  {% if config.showPhoto %}
-  <div class="card-photo">
-    {% if computed.photoUrl %}
-      <img src="{{ computed.photoUrl }}" alt="{{ 'PATIENT_PHOTO' | t }}" />
-    {% else %}
-      <div class="no-photo">{{ 'NO_PHOTO' | t }}</div>
-    {% endif %}
-  </div>
-  {% endif %}
-
-  <div class="card-data">
-    <table class="info-grid">
-      <tr>
-        <td class="label">{{ 'PATIENT_NAME' | t }}</td>
-        <td class="value">{{ computed.patientName | default('—') }}</td>
-      </tr>
-      <tr>
-        <td class="label">{{ 'REGISTRATION_NO' | t }}</td>
-        <td class="value">{{ computed.patientId | default('—') }}</td>
-      </tr>
-      <tr>
-        <td class="label">{{ 'DATE_OF_BIRTH' | t }}</td>
-        <td class="value">
-          {{ computed.birthDate | dateFormat | default('—') }}
-          ({{ computed.birthDate | age | default('') }})
-        </td>
-      </tr>
-      <tr>
-        <td class="label">{{ 'GENDER' | t }}</td>
-        <td class="value">{{ computed.gender | upper | t | default('—') }}</td>
-      </tr>
-      {# Next-of-kin / Father-Husband name — critical for Indian context #}
-      {% if config.showRelationship and computed.nextOfKinName %}
-      <tr>
-        <td class="label">{{ computed.nextOfKinRelationship | default('RELATIVE') | t }}</td>
-        <td class="value">{{ computed.nextOfKinName }}</td>
-      </tr>
-      {% endif %}
-      {% if computed.phone %}
-      <tr>
-        <td class="label">{{ 'PHONE' | t }}</td>
-        <td class="value">{{ computed.phone }}</td>
-      </tr>
-      {% endif %}
-      {% if computed.address %}
-      <tr>
-        <td class="label">{{ 'ADDRESS' | t }}</td>
-        <td class="value">{{ computed.address }}</td>
-      </tr>
-      {% endif %}
-    </table>
+  {# ── Left panel ── #}
+  <div class="panel-left">
+    <div class="notice-title">{{ 'NOTICE' | t }}</div>
+    <ul class="notice-list">
+      {% for item in config.noticeItems %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    <div class="caution-title">{{ 'CAUTION' | t }}</div>
+    <div class="caution-text">{{ config.cautionText | default('') }}</div>
   </div>
 
-</div>
+  {# ── Right panel ── #}
+  <div class="panel-right">
 
-{# Barcode — shown only when config.showBarcode is true #}
-{% if config.showBarcode and computed.patientId %}
-<div class="barcode-section">
-  {{ computed.patientId | barcode('code128', 35) }}
-</div>
-{% endif %}
+    {# Facility header #}
+    <div class="facility-header">
+      {% if config.logoUrl %}
+        <img class="facility-logo" src="{{ config.logoUrl }}" alt="" />
+      {% endif %}
+      <div class="facility-text">
+        <div class="facility-name">{{ config.facilityName | default('') }}</div>
+        {% if config.facilitySubtitle %}
+          <div class="facility-location">{{ config.facilitySubtitle }}</div>
+        {% endif %}
+      </div>
+    </div>
 
-{# QR code — shown only when config.showQrCode is true #}
-{% if config.showQrCode and computed.patientId %}
-<div class="barcode-section">
-  {{ computed.patientId | qrcode(100) }}
-</div>
-{% endif %}
+    {# Patient data + photo #}
+    <div class="patient-row">
+      <table class="patient-table">
+        <tr>
+          <td>{{ 'DATED' | t }}</td>
+          <td class="sep">:</td>
+          <td>{{ computed.registrationDate | dateFormat | default('') }}</td>
+        </tr>
+        <tr>
+          <td>{{ 'REGISTRATION' | t }}</td>
+          <td class="sep">:</td>
+          <td>{{ computed.patientId | default('') }}</td>
+        </tr>
+        <tr>
+          <td>{{ 'NAME' | t }}</td>
+          <td class="sep">:</td>
+          <td>{{ computed.patientName | default('') }}</td>
+        </tr>
+        <tr>
+          <td>{{ 'AGE' | t }}</td>
+          <td class="sep">:</td>
+          <td>{% if computed.birthDate %}{{ computed.birthDate | age }} {{ 'YEAR_S' | t }}{% endif %}</td>
+        </tr>
+        <tr>
+          <td>{{ 'GENDER' | t }}</td>
+          <td class="sep">:</td>
+          <td>{{ computed.gender | upper | first | default('') }}</td>
+        </tr>
+        <tr>
+          <td>{{ 'ADDRESS' | t }}</td>
+          <td class="sep">:</td>
+          <td>{{ computed.address | default('') }}</td>
+        </tr>
+        <tr>
+          <td>{{ 'VILLAGE' | t }}</td>
+          <td class="sep">:</td>
+          <td>{{ computed.village | default('') }}</td>
+        </tr>
+        <tr>
+          <td>{{ 'TEHSIL' | t }}</td>
+          <td class="sep">:</td>
+          <td>{{ computed.tehsil | default('') }}</td>
+        </tr>
+      </table>
 
+      {% if config.showPhoto %}
+      <div class="patient-photo">
+        {% if computed.photoUrl %}
+          <img src="{{ computed.photoUrl }}" alt="{{ 'PATIENT_PHOTO' | t }}" />
+        {% else %}
+          <div class="no-photo">{{ 'NO_PHOTO' | t }}</div>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+
+</div>
 {% endblock %}
