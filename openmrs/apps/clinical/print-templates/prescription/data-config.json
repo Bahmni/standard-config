@@ -4,7 +4,7 @@
       "api": "fhir",
       "resource": "Patient",
       "params": {
-        "id": "{{patientUuid}}"
+        "_id": "{{patientUuid}}"
       }
     },
     "medications": {
@@ -48,22 +48,22 @@
     "patientName": {
       "fn": "fhirPath",
       "source": "patient",
-      "expr": "Patient.name.first().text"
+      "expr": "Bundle.entry.first().resource.name.first().text"
     },
     "patientId": {
       "fn": "fhirPath",
       "source": "patient",
-      "expr": "Patient.identifier.where(use = 'official').first().value"
+      "expr": "Bundle.entry.first().resource.identifier.where(use = 'official').first().value"
     },
     "birthDate": {
       "fn": "fhirPath",
       "source": "patient",
-      "expr": "Patient.birthDate"
+      "expr": "Bundle.entry.first().resource.birthDate"
     },
     "gender": {
       "fn": "fhirPath",
       "source": "patient",
-      "expr": "Patient.gender"
+      "expr": "Bundle.entry.first().resource.gender"
     },
 
     "medicationList": {

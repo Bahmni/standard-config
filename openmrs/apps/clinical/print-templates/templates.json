@@ -32,10 +32,17 @@
       ],
       "config": {
         "facilityName": "Bahmni Hospital",
-        "showBarcode": true,
-        "showQrCode": false,
+        "facilitySubtitle": "",
+        "logoUrl": "",
         "showPhoto": true,
-        "showRelationship": true
+        "noticeItems": [
+          "It is quite important to bring the card to the hospital.",
+          "Take medicines according to instructions of the doctor.",
+          "Registration Timings are from 8:30 am to 12:00 pm.",
+          "OPD days are on Monday, Wednesday, Friday.",
+          "Sundays are holidays."
+        ],
+        "cautionText": "Smoking, Tobacco chewing can cause cancer, heart diseases and ASTHMA."
       }
     },
     {
