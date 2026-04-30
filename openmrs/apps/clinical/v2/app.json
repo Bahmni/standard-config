@@ -89,6 +89,10 @@
           "required": true
         },
         {
+          "name": "doseSequence",
+          "required": false
+        },
+        {
           "name": "administeredOn",
           "required": true
         },
