@@ -1,39 +1,19 @@
 {
   "templates": [
     {
-      "id": "PRESCRIPTION_V1",
-      "name": "Prescription",
-      "folder": "prescription",
-      "outputFormats": ["html", "pdf"],
-      "triggers": [
-        { "context": "medications", "label": "Print Prescription", "shortcutKey": "p" },
-        { "context": "encounter",   "label": "Print Prescription", "shortcutKey": "p" }
-      ],
-      "config": {
-        "facilityName": "Bahmni Hospital",
-        "header": "PRESCRIPTION",
-        "footer": "This prescription is valid for 30 days.",
-        "showSignatureLine": true,
-        "signatoryLabel": "Authorized Signature",
-        "showDiagnoses": true,
-        "showAllergies": true,
-        "showVitals": true,
-        "showDiscontinuedMeds": true,
-        "providerAttributesForPrint": ["Qualification", "MCI Reg Number"]
-      }
-    },
-    {
       "id": "REG_CARD_V1",
       "name": "Registration Card",
       "folder": "registration-card",
-      "outputFormats": ["html", "pdf"],
+      "outputFormats": ["html"],
+      "category":"patientRegistration",
       "triggers": [
-        { "context": "patientRegistration", "label": "Print Card (English)", "shortcutKey": "p" }
+        {"label": "Print Card (English)", "shortcutKey": "p" }
       ],
       "config": {
-        "facilityName": "Bahmni Hospital",
-        "facilitySubtitle": "",
-        "logoUrl": "",
+        "registrationInstitutionName": "Jan Swasthya Sahyog",
+        "registrationInstitutionRegisteredText": "(Registered)",
+        "registrationInstitutionAddress": "Ganiyari, District - Bilaspur",
+        "logoUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/images/bahmni-icon.png",
         "showPhoto": true,
         "noticeItems": [
           "It is quite important to bring the card to the hospital.",
@@ -46,19 +26,27 @@
       }
     },
     {
-      "id": "REG_CARD_LOCAL_V1",
-      "name": "Registration Card (Local Language)",
+      "id": "REG_CARD_V2",
+      "name": "Registration Card",
       "folder": "registration-card",
-      "outputFormats": ["html", "pdf"],
+      "outputFormats": ["html"],
+      "category":"patientRegistration",
       "triggers": [
-        { "context": "patientRegistration", "label": "Print Card (Local)", "shortcutKey": "l" }
+        {"label": "Print Card(Test)", "shortcutKey": "p" }
       ],
       "config": {
         "facilityName": "Bahmni Hospital",
-        "showBarcode": true,
-        "showQrCode": false,
+        "facilitySubtitle": "as",
+        "logoUrl": "https://www.digitalclassworld.com/blog/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg",
         "showPhoto": true,
-        "showRelationship": true
+        "noticeItems": [
+          "It is quite important to bring the card to the hospital.",
+          "Take medicines according to instructions of the doctor.",
+          "Registration Timings are from 8:30 am to 12:00 pm.",
+          "OPD days are on Monday, Wednesday, Friday.",
+          "Sundays are holidays."
+        ],
+        "cautionText": "Smoking, Tobacco chewing can cause cancer, heart diseases and ASTHMA."
       }
     }
   ]
