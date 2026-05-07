@@ -2,187 +2,151 @@
 
 {% block title %}{{ 'REGISTRATION_CARD' | t }}{% endblock %}
 
-{# Suppress the base header — the card header is built inline below #}
 {% block header %}{% endblock %}
 
 {% block styles %}
-.reg-card {
-  display: flex;
-  border: 2px solid #000;
-  width: 100%;
-  min-height: 88mm;
-}
+@page { margin-left: 0.2cm; margin-right: 0.2cm; margin-top: 0.2cm; margin-bottom: 0.2cm; }
 
-/* Left panel — Notice + Caution */
-.panel-left {
-  width: 38%;
-  border-right: 2px solid #000;
-  padding: 8px 12px;
-}
-.notice-title, .caution-title {
-  font-weight: bold;
-  font-size: 11pt;
-  text-align: center;
-  text-decoration: underline;
-  margin-bottom: 5px;
-}
-.caution-title { margin-top: 10px; }
-.notice-list {
-  padding-left: 16px;
-  font-size: 8.5pt;
-  margin-bottom: 6px;
-}
-.notice-list li { margin-bottom: 3px; }
-.caution-text { font-size: 8.5pt; }
+p, h1, h2, h3, table, tr, td, div, span, li { margin: 0px; padding: 0px; }
+h1, h2, h3 { text-align: center; }
+.print-center { text-align: center; }
 
-/* Right panel — facility header + patient data */
-.panel-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 8px 12px;
+.registrationCard-print-table {
+  width: 150mm;
+  height: 83mm;
+  overflow: scroll;
+  margin: 0 auto;
+  table-layout: fixed;
 }
-.facility-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border-bottom: 1px solid #000;
-  padding-bottom: 6px;
-  margin-bottom: 6px;
-}
-.facility-logo {
-  width: 14mm;
-  height: 14mm;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-.facility-text { text-align: center; }
-.facility-name { font-weight: bold; font-size: 11pt; }
-.facility-location { font-size: 8.5pt; margin-top: 2px; }
+.registrationCard-print-table td.registrationCard-photo { padding-top: 2px; }
 
-/* Patient data + photo row */
-.patient-row {
-  display: flex;
-  gap: 10px;
-  flex: 1;
-}
-.patient-table {
-  flex: 1;
-  border-collapse: collapse;
-  font-size: 9pt;
-}
-.patient-table td { padding: 2px 4px; vertical-align: top; }
-.patient-table td.sep { padding: 2px 2px; }
-.patient-photo { flex-shrink: 0; }
-.patient-photo img {
-  width: 22mm;
-  height: 28mm;
-  object-fit: cover;
-  border: 1px solid #000;
-  display: block;
-}
-.patient-photo .no-photo {
-  width: 22mm;
-  height: 28mm;
-  border: 1px solid #aaa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 7pt;
-  color: #aaa;
-  background: #f5f5f5;
-}
+.print-table-left { width: 77mm; }
+.print-table-header { text-align: center; margin-top: 10px; }
+.print-table-left-body { font-size: 4mm; margin-bottom: 0px; padding-bottom: 0px; margin-top: 15px; padding-left: 16px; }
+.print-table-left-body li { margin: 0px; padding: 0px 0px 5px 0px; line-height: 18px; }
+
+.caution { text-align: center; line-height: 20px; }
+.caution h3 { line-height: 25px; margin-bottom: 6px; margin-top: 12px; }
+
+.print-table-right { width: 77mm; }
+.print-table-right .logo { text-align: center; width: 12mm; padding: 0px; margin: 0px; height: 12mm; }
+.print-table-right-header { text-align: center; width: 42mm; text-align: left; height: 12mm; }
+.registrationCard-location { padding: 5px 8px 8px 8px; }
+
+.registrationCard-details { padding: 0mm 5mm 0mm 5mm; }
+.registrationCard-details-name { width: 70px; }
+.registrationCard-details-seperator { width: 20px; text-align: center; }
+.hindi-text { vertical-align: bottom; }
 {% endblock %}
 
 {% block content %}
-<div class="reg-card">
+<table border="1" cellpadding="0" cellspacing="1" class="registrationCard-print-table">
+  <tbody>
+  <tr>
 
-  {# ── Left panel ── #}
-  <div class="panel-left">
-    <div class="notice-title">{{ 'NOTICE' | t }}</div>
-    <ul class="notice-list">
-      {% for item in config.noticeItems %}
-        <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
-    <div class="caution-title">{{ 'CAUTION' | t }}</div>
-    <div class="caution-text">{{ config.cautionText | default('') }}</div>
-  </div>
+    {# ── Left panel ── #}
+    <td class="print-table-left">
+      <table width="100%">
+        <tr>
+          <td>
+            <h3 class="print-table-header">{{ 'NOTICE' | t }}</h3>
+            <ul class="print-table-left-body">
+              {% for item in config.noticeItems %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+            <div class="caution">
+              <h3 class="print-table-header">{{ 'CAUTION' | t }}</h3>
+              <p>{{ config.cautionText | default('') }}</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
 
-  {# ── Right panel ── #}
-  <div class="panel-right">
+    {# ── Right panel ── #}
+    <td class="print-table-right" valign="top">
 
-    {# Facility header #}
-    <div class="facility-header">
-      {% if config.logoUrl %}
-        <img class="facility-logo" src="{{ config.logoUrl }}" alt="" />
-      {% endif %}
-      <div class="facility-text">
-        <div class="facility-name">{{ config.facilityName | default('') }}</div>
-        {% if config.facilitySubtitle %}
-          <div class="facility-location">{{ config.facilitySubtitle }}</div>
-        {% endif %}
-      </div>
-    </div>
-
-    {# Patient data + photo #}
-    <div class="patient-row">
-      <table class="patient-table">
+      {# Header: logo | facility name | photo #}
+      <table>
         <tr>
-          <td>{{ 'DATED' | t }}</td>
-          <td class="sep">:</td>
-          <td>{{ computed.registrationDate | dateFormat | default('') }}</td>
+          <td class="logo">
+            {% if config.logoUrl %}
+              <p><img src="{{ config.logoUrl }}" style="width: 12mm; height: 12mm;" /></p>
+            {% else %}
+              <p></p>
+            {% endif %}
+          </td>
+          <td class="print-table-right-header">
+            <h3>{{ config.registrationInstitutionName | default('') }}</h3>
+            {% if config.registrationInstitutionRegisteredText %}
+              <h3 class="print-center">{{ config.registrationInstitutionRegisteredText }}</h3>
+            {% endif %}
+          </td>
+          <td class="registrationCard-photo">
+            {% if config.showPhoto %}
+              {% if compute.photoUrl %}
+                <img src="{{ compute.photoUrl }}" style="width: 20mm; height: 20mm;"
+                     onerror="this.onerror=null;this.src='../images/blank.jpeg';" />
+              {% endif %}
+            {% endif %}
+          </td>
         </tr>
         <tr>
-          <td>{{ 'REGISTRATION' | t }}</td>
-          <td class="sep">:</td>
-          <td>{{ computed.patientId | default('') }}</td>
-        </tr>
-        <tr>
-          <td>{{ 'NAME' | t }}</td>
-          <td class="sep">:</td>
-          <td>{{ computed.patientName | default('') }}</td>
-        </tr>
-        <tr>
-          <td>{{ 'AGE' | t }}</td>
-          <td class="sep">:</td>
-          <td>{% if computed.birthDate %}{{ computed.birthDate | age }} {{ 'YEAR_S' | t }}{% endif %}</td>
-        </tr>
-        <tr>
-          <td>{{ 'GENDER' | t }}</td>
-          <td class="sep">:</td>
-          <td>{{ computed.gender | upper | first | default('') }}</td>
-        </tr>
-        <tr>
-          <td>{{ 'ADDRESS' | t }}</td>
-          <td class="sep">:</td>
-          <td>{{ computed.address | default('') }}</td>
-        </tr>
-        <tr>
-          <td>{{ 'VILLAGE' | t }}</td>
-          <td class="sep">:</td>
-          <td>{{ computed.village | default('') }}</td>
-        </tr>
-        <tr>
-          <td>{{ 'TEHSIL' | t }}</td>
-          <td class="sep">:</td>
-          <td>{{ computed.tehsil | default('') }}</td>
+          <td colspan="3" class="print-center registrationCard-location">
+            {{ config.registrationInstitutionAddress | default('') }}
+          </td>
         </tr>
       </table>
 
-      {% if config.showPhoto %}
-      <div class="patient-photo">
-        {% if computed.photoUrl %}
-          <img src="{{ computed.photoUrl }}" alt="{{ 'PATIENT_PHOTO' | t }}" />
-        {% else %}
-          <div class="no-photo">{{ 'NO_PHOTO' | t }}</div>
-        {% endif %}
-      </div>
-      {% endif %}
-    </div>
+      {# Patient details table #}
+      <table class="registrationCard-details">
+        <tbody>
+        <tr>
+          <td class="registrationCard-details-name"><span class="hindi-text">{{ 'DATED' | t }}</span></td>
+          <td class="registrationCard-details-seperator"> : </td>
+          <td>{{ compute.registrationDate | default('') }}</td>
+        </tr>
+        <tr>
+          <td class="registrationCard-details-name"><span class="hindi-text">{{ 'REGISTRATION' | t }}</span></td>
+          <td class="registrationCard-details-seperator"> : </td>
+          <td>{{ compute.patientId | default('') }}</td>
+        </tr>
+        <tr>
+          <td class="registrationCard-details-name"><span class="hindi-text">{{ 'NAME' | t }}</span></td>
+          <td class="registrationCard-details-seperator"> : </td>
+          <td><span class="hindi-text">{{ compute.patientName | default('') }}</span></td>
+        </tr>
+        <tr>
+          <td class="registrationCard-details-name"><span class="hindi-text">{{ 'AGE' | t }}</span></td>
+          <td class="registrationCard-details-seperator"> : </td>
+          <td>{% if compute.age !== '' %}{{ compute.age }} {{ 'YEAR_S' | t }}{% endif %}</td>
+        </tr>
+        <tr>
+          <td class="registrationCard-details-name"><span class="hindi-text">{{ 'GENDER' | t }}</span></td>
+          <td class="registrationCard-details-seperator"> : </td>
+          <td>{{ compute.gender | upper | first | default('') }}</td>
+        </tr>
+        <tr>
+          <td class="registrationCard-details-name"><span class="hindi-text">{{ 'ADDRESS' | t }}</span></td>
+          <td class="registrationCard-details-seperator"> : </td>
+          <td>{{ compute.address | default('') }}</td>
+        </tr>
+        <tr>
+          <td class="registrationCard-details-name"><span class="hindi-text">{{ 'VILLAGE' | t }}</span></td>
+          <td class="registrationCard-details-seperator"> : </td>
+          <td>{{ compute.village | default('') }}</td>
+        </tr>
+        <tr>
+          <td class="registrationCard-details-name"><span class="hindi-text">{{ 'TEHSIL' | t }}</span></td>
+          <td class="registrationCard-details-seperator"> : </td>
+          <td>{{ compute.tehsil | default('') }}</td>
+        </tr>
+        </tbody>
+      </table>
 
-  </div>
-
-</div>
+    </td>
+  </tr>
+  </tbody>
+</table>
 {% endblock %}
