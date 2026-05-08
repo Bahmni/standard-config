@@ -151,7 +151,15 @@
         {
           "type": "treatment",
           "config": {
-            "code": ["http://hl7.org/fhir/sid/cvx|"]
+            "code": ["http://hl7.org/fhir/sid/cvx|"],
+            "actions": [
+              {
+                "label": "ADMINISTER_ACTION_LABEL",
+                "type": "administer",
+                "encounterType": "Immunization",
+                "requiredPrivilege": ["Get Orders"]
+              }
+            ]
           }
         }
       ]
