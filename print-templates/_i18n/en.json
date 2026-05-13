@@ -11,5 +11,8 @@
   "GENDER":            "Gender",
   "ADDRESS":           "Address",
   "VILLAGE":           "Village",
-  "TEHSIL":            "Tehsil"
+  "TEHSIL":            "Tehsil",
+  "REGISTRATION_INSTITUTION_NAME":       "Hospital Bahmni",
+  "REGISTRATION_INSTITUTION_REGISTERED": "(Registered)",
+  "REGISTRATION_INSTITUTION_ADDRESS":    "Ganiyari, District - Bilaspur"
 }

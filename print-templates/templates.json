@@ -3,51 +3,7 @@
     {
       "id": "REG_CARD_V1",
       "name": "Registration Card",
-      "folder": "registration-card",
-      "outputFormats": ["html"],
-      "category":"patientRegistration",
-      "triggers": [
-        {"label": "Print Card (English)", "shortcutKey": "p" }
-      ],
-      "config": {
-        "registrationInstitutionName": "Jan Swasthya Sahyog",
-        "registrationInstitutionRegisteredText": "(Registered)",
-        "registrationInstitutionAddress": "Ganiyari, District - Bilaspur",
-        "logoUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/images/bahmni-icon.png",
-        "showPhoto": true,
-        "noticeItems": [
-          "It is quite important to bring the card to the hospital.",
-          "Take medicines according to instructions of the doctor.",
-          "Registration Timings are from 8:30 am to 12:00 pm.",
-          "OPD days are on Monday, Wednesday, Friday.",
-          "Sundays are holidays."
-        ],
-        "cautionText": "Smoking, Tobacco chewing can cause cancer, heart diseases and ASTHMA."
-      }
-    },
-    {
-      "id": "REG_CARD_V2",
-      "name": "Registration Card",
-      "folder": "registration-card",
-      "outputFormats": ["html"],
-      "category":"patientRegistration",
-      "triggers": [
-        {"label": "Print Card(Test)", "shortcutKey": "p" }
-      ],
-      "config": {
-        "facilityName": "Bahmni Hospital",
-        "facilitySubtitle": "as",
-        "logoUrl": "https://www.digitalclassworld.com/blog/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg",
-        "showPhoto": true,
-        "noticeItems": [
-          "It is quite important to bring the card to the hospital.",
-          "Take medicines according to instructions of the doctor.",
-          "Registration Timings are from 8:30 am to 12:00 pm.",
-          "OPD days are on Monday, Wednesday, Friday.",
-          "Sundays are holidays."
-        ],
-        "cautionText": "Smoking, Tobacco chewing can cause cancer, heart diseases and ASTHMA."
-      }
+      "folder": "registration-card"
     }
   ]
 }

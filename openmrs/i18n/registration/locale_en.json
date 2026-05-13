@@ -60,5 +60,6 @@
   "REGISTRATION_SECTION_CONTACT_DETAILS": "Contact information",
   "REGISTRATION_SECTION_ADDITIONAL_INFO": "Additional information",
   "REGISTRATION_SECTION_IDENTIFIERS": "Additional identifiers",
-  "REGISTRATION_SECTION_RELATIONSHIPS": "Relationship information"
+  "REGISTRATION_SECTION_RELATIONSHIPS": "Relationship information",
+  "PRINT_REGISTRATION_CARD": "Print Registration Card"
 }

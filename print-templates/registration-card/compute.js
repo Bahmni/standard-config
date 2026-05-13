@@ -1,50 +1,34 @@
-// registration-card/compute.js
-//
-// Fetches patient data directly from OpenMRS and transforms it
-// for use in template.html as {{ compute.<field> }}.
-//
-// No data-config.json needed — all fetching and transformation is here.
-
 module.exports = {
-  compute: async function ({ context, openmrs }) {
-    const [patientBundle, relativesBundle] = await Promise.all([
-      openmrs.fhir('Patient', { _id: context.patientUuid }),
-      openmrs.fhir('RelatedPerson', { patient: context.patientUuid }),
-    ]);
+  compute: async function ({ context, data, resolved, ValidationError, fhirPath }) {
+    const patientBundle   = resolved?.patient;
+    const relativesBundle = resolved?.relatives;
+    const profile         = resolved?.patientProfile;
 
-    const patient = patientBundle?.entry?.[0]?.resource;
-    const relative = relativesBundle?.entry?.[0]?.resource;
-
-    const officialId = patient?.identifier?.find((id) => id.use === 'official');
-
-    const birthDate = patient?.birthDate ?? '';
-    const ageYears = birthDate
-      ? Math.floor((Date.now() - new Date(birthDate)) / (365.25 * 24 * 60 * 60 * 1000))
-      : '';
-
-    const formatDate = (iso) => {
-      if (!iso) return '';
-      const d = new Date(iso);
-      const day = String(d.getUTCDate()).padStart(2, '0');
-      const mon = d.toLocaleString('en-GB', { month: 'short', timeZone: 'UTC' });
-      return `${day} ${mon} ${d.getUTCFullYear()}`;
+    return {
+      patientId:             fhirPath(patientBundle, "Bundle.entry.first().resource.identifier.where(use = 'official').first().value") ?? '',
+      patientName:           fhirPath(patientBundle, "Bundle.entry.first().resource.name.first().text") ?? '',
+      birthDate:             fhirPath(patientBundle, "Bundle.entry.first().resource.birthDate") ?? '',
+      age:                   computeAge(fhirPath(patientBundle, "Bundle.entry.first().resource.birthDate")),
+      gender:                fhirPath(patientBundle, "Bundle.entry.first().resource.gender") ?? '',
+      phone:                 fhirPath(patientBundle, "Bundle.entry.first().resource.telecom.where(system = 'phone').first().value") ?? '',
+      address:               fhirPath(patientBundle, "Bundle.entry.first().resource.address.first().text") ?? '',
+      village:               fhirPath(patientBundle, "Bundle.entry.first().resource.address.first().city") ?? '',
+      tehsil:                fhirPath(patientBundle, "Bundle.entry.first().resource.address.first().district") ?? '',
+      registrationDate:      profile?.patient?.auditInfo?.dateCreated ?? '',
+      nextOfKinName:         fhirPath(relativesBundle, "Bundle.entry.first().resource.name.first().text") ?? '',
+      nextOfKinRelationship: fhirPath(relativesBundle, "Bundle.entry.first().resource.relationship.first().text") ?? '',
+      photoUrl:              `/openmrs/ws/rest/v1/patientImage?patientUuid=${context.patientUuid}`,
     };
-
-    const result = {
-      patientName: patient?.name?.[0]?.text ?? '',
-      patientId: officialId?.value ?? '',
-      birthDate,
-      age: ageYears,
-      gender: patient?.gender ?? '',
-      phone: patient?.telecom?.find((t) => t.system === 'phone')?.value ?? '',
-      address: patient?.address?.[0]?.text ?? '',
-      photoUrl: `/openmrs/ws/rest/v1/patientImage?patientUuid=${context.patientUuid}`,
-      registrationDate: formatDate(officialId?.period?.start ?? patient?.meta?.lastUpdated),
-      village: patient?.address?.[0]?.city ?? '',
-      tehsil: patient?.address?.[0]?.district ?? '',
-      nextOfKinName: relative?.name?.[0]?.text ?? '',
-      nextOfKinRelationship: relative?.relationship?.[0]?.text ?? '',
-    };
-    return result;
   },
 };
+
+function computeAge(birthDate) {
+  if (!birthDate) return '';
+  const birth = new Date(birthDate);
+  const now   = new Date();
+  const days  = Math.floor((now - birth) / (1000 * 60 * 60 * 24));
+  if (days < 30)   return `${days} days`;
+  const months = Math.floor(days / 30.44);
+  if (months < 12) return `${months} months`;
+  return `${Math.floor(months / 12)} years`;
+}
