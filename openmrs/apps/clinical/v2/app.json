@@ -22,6 +22,12 @@
       "url": "program.json"
     }
   ],
+  "printOptions": [
+    {
+      "translationKey": "CLINICAL_PRINT_MEDICATION_PRESCRIPTION_KEY",
+      "templateId": "PRESCRIPTION_V1"
+    }
+  ],
   "consultationPad": {
     "allergyConceptMap": {
       "medicationAllergenUuid": "162552AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",

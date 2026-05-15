@@ -13,6 +13,8 @@
   "VILLAGE":           "Village",
   "TEHSIL":            "Tehsil",
   "REGISTRATION_INSTITUTION_NAME":       "Hospital Bahmni",
+  "BAHMNI":             "Bahmni",
   "REGISTRATION_INSTITUTION_REGISTERED": "(Registered)",
-  "REGISTRATION_INSTITUTION_ADDRESS":    "Ganiyari, District - Bilaspur"
+  "REGISTRATION_INSTITUTION_ADDRESS":    "Ganiyari, District - Bilaspur",
+  "NO_MEDICATIONS_PRESCRIBED": "No medications prescribed for this visit"
 }

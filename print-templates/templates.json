@@ -4,6 +4,11 @@
       "id": "REG_CARD_V1",
       "name": "Registration Card",
       "folder": "registration-card"
+    },
+    {
+      "id": "PRESCRIPTION_V1",
+      "name": "Prescription",
+      "folder": "prescriptions"
     }
   ]
 }
