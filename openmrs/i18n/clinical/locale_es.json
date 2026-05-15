@@ -110,5 +110,6 @@
   "PROGRAM_TREATMENT_DATE": "Treatment Date",
   "PROGRAM_COMORBIDITES": "Co-morbidites",
   "PROGRAM_DOCTORINCHARGE": "Doctor In-Charge",
-  "PROGRAM_PATIENT_STAGE": "Patient Stage"
+  "PROGRAM_PATIENT_STAGE": "Patient Stage",
+  "CLINICAL_PRINT_MEDICATION_PRESCRIPTION_KEY": "Imprimir receta médica"
 }
