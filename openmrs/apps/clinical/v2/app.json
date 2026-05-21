@@ -92,6 +92,7 @@
           { "name": "dosage", "required": true, "default": "1" },
           { "name": "dosageUnit", "required": true },
           { "name": "route", "required": true },
+          { "name": "frequency", "required": false },
           { "name": "instruction", "required": false },
           { "name": "startDate", "required": true },
           { "name": "note", "required": false }
