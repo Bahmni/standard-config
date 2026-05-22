@@ -62,7 +62,7 @@
         "attributes": []
       },
       {
-        "type": "medications",
+        "type": "medication",
         "label": "MEDICATIONS_INPUT_CONTROL_LABEL",
         "metadata": {},
         "encounterTypes": ["Consultation"],
@@ -82,7 +82,7 @@
         ]
       },
       {
-        "type": "vaccinations",
+        "type": "vaccination",
         "label": "VACCINATION_INPUT_CONTROL_LABEL",
         "metadata": {},
         "encounterTypes": ["Consultation"],
