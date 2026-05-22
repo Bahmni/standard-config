@@ -88,7 +88,7 @@
         "encounterTypes": ["Consultation"],
         "privileges": ["Add Orders"],
         "attributes": [
-          { "name": "stat", "required": false },
+          { "name": "stat", "required": false, "default": true },
           { "name": "dosage", "required": true, "default": "1" },
           { "name": "dosageUnit", "required": true },
           { "name": "route", "required": true },
