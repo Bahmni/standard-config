@@ -50,79 +50,6 @@
       ]
     },
     {
-      "name": "Immunization",
-      "translationKey": "DASHBOARD_TITLE_IMMUNISATION_KEY",
-      "icon": "fa-syringe",
-      "controls": [
-        {
-          "type": "immunizationHistory",
-          "config": {
-            "encounterType": "Immunization",
-            "startEncounterPrivilege": "app:clinical:addImmunizations"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Documents",
-      "translationKey": "DOCUMENTS_TABLE_HEADING",
-      "icon": "fa-file-alt",
-      "controls": [
-        {
-          "type": "patientDocuments",
-          "requiredPrivileges": ["Get DocumentReference"],
-          "config": {
-            "fields": [
-              "documentIdentifier",
-              "documentType",
-              "uploadedOn",
-              "uploadedBy",
-              "action"
-            ],
-            "pageSize": 5
-          }
-        }
-      ]
-    },
-    {
-      "name": "Programs",
-      "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
-      "icon": "fa-clipboard-list",
-      "controls": [
-        {
-          "type": "programs",
-          "requiredPrivileges": ["Get Patient Programs"],
-          "config": {
-            "fields": [
-              "programName",
-              "ID_Number",
-              "startDate",
-              "endDate",
-              "outcome",
-              "state"
-            ],
-            "pageSize": 5
-          }
-        }
-      ]
-    },
-    {
-      "name": "Forms",
-      "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY",
-      "icon": "fa-clipboard-list",
-      "controls": [
-        {
-          "type": "forms",
-          "requiredPrivileges": ["Get Forms"],
-          "config": {
-            "numberOfVisits": 10,
-            "showEditForActiveEncounter": true,
-            "hideThumbnail": false
-          }
-        }
-      ]
-    },
-    {
       "name": "Conditions",
       "translationKey": "DASHBOARD_TITLE_CONDITIONS_KEY",
       "icon": "fa-stethoscope",
@@ -144,27 +71,6 @@
       ]
     },
     {
-      "name": "Vaccinations",
-      "translationKey": "DASHBOARD_TITLE_VACCINATION_KEY",
-      "icon": "fa-syringe",
-      "controls": [
-        {
-          "type": "treatment",
-          "config": {
-            "code": ["http://hl7.org/fhir/sid/cvx|"],
-            "actions": [
-              {
-                "label": "ADMINISTER_ACTION_LABEL",
-                "type": "administer",
-                "encounterType": "Immunization",
-                "requiredPrivilege": ["Get Orders"]
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
       "name": "Medications",
       "translationKey": "DASHBOARD_TITLE_MEDICATIONS_KEY",
       "icon": "fa-pills",
@@ -176,36 +82,22 @@
       ]
     },
     {
-      "name": "Appointments",
-      "translationKey": "APPOINTMENTS_DISPLAY_CONTROL_HEADING",
-      "icon": "fa-calendar",
+      "name": "Flowsheet",
+      "translationKey": "DASHBOARD_TITLE_VITALS_FLOWSHEET_KEY",
+      "icon": "fa-table",
       "controls": [
         {
-          "type": "appointments",
+          "type": "flowSheet",
           "config": {
-            "pageSize": 5,
-            "fields": [
-              "appointmentNumber",
-              "service",
-              "reason",
-              "appointmentDate",
-              "appointmentSlot",
-              "status",
-              "provider"
+            "latestCount": 5,
+            "groupBy": "obstime",
+            "obsConcepts": [
+              "Temperature",
+              "Pulse",
+              "Respiratory rate",
+              "Blood Pressure",
+              "Body Position"
             ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "Procedures",
-      "translationKey": "DASHBOARD_TITLE_PROCEDURES_KEY",
-      "icon": "fa-flask",
-      "controls": [
-        {
-          "type": "ordersControl",
-          "config": {
-            "orderType": "Procedure Order"
           }
         }
       ]
@@ -239,22 +131,130 @@
       ]
     },
     {
-      "name": "Flowsheet",
-      "translationKey": "DASHBOARD_TITLE_VITALS_FLOWSHEET_KEY",
-      "icon": "fa-table",
+      "name": "Procedures",
+      "translationKey": "DASHBOARD_TITLE_PROCEDURES_KEY",
+      "icon": "fa-bed-pulse",
       "controls": [
         {
-          "type": "flowSheet",
+          "type": "ordersControl",
           "config": {
-            "latestCount": 5,
-            "groupBy": "obstime",
-            "obsConcepts": [
-              "Temperature",
-              "Pulse",
-              "Respiratory rate",
-              "Blood Pressure",
-              "Body Position"
+            "orderType": "Procedure Order"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Forms",
+      "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY",
+      "icon": "fa-clipboard-list",
+      "controls": [
+        {
+          "type": "forms",
+          "requiredPrivileges": ["Get Forms"],
+          "config": {
+            "numberOfVisits": 10,
+            "showEditForActiveEncounter": true,
+            "hideThumbnail": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "Immunization History",
+      "translationKey": "DASHBOARD_TITLE_IMMUNISATION_KEY",
+      "icon": "fa-syringe",
+      "controls": [
+        {
+          "type": "immunizationHistory",
+          "config": {
+            "encounterType": "Immunization",
+            "startEncounterPrivilege": "app:clinical:addImmunizations"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vaccinations",
+      "translationKey": "DASHBOARD_TITLE_VACCINATION_KEY",
+      "icon": "fa-syringe",
+      "controls": [
+        {
+          "type": "treatment",
+          "config": {
+            "code": ["http://hl7.org/fhir/sid/cvx|"],
+            "actions": [
+              {
+                "label": "ADMINISTER_ACTION_LABEL",
+                "type": "administer",
+                "encounterType": "Immunization",
+                "requiredPrivilege": ["Get Orders"]
+              }
             ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Appointments",
+      "translationKey": "APPOINTMENTS_DISPLAY_CONTROL_HEADING",
+      "icon": "fa-calendar",
+      "controls": [
+        {
+          "type": "appointments",
+          "config": {
+            "pageSize": 5,
+            "fields": [
+              "appointmentNumber",
+              "service",
+              "reason",
+              "appointmentDate",
+              "appointmentSlot",
+              "status",
+              "provider"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Documents",
+      "translationKey": "DOCUMENTS_TABLE_HEADING",
+      "icon": "fa-file-alt",
+      "controls": [
+        {
+          "type": "patientDocuments",
+          "requiredPrivileges": ["Get DocumentReference"],
+          "config": {
+            "fields": [
+              "documentIdentifier",
+              "documentType",
+              "uploadedOn",
+              "uploadedBy",
+              "action"
+            ],
+            "pageSize": 5
+          }
+        }
+      ]
+    },
+    {
+      "name": "Programs",
+      "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+      "icon": "fa-book-medical",
+      "controls": [
+        {
+          "type": "programs",
+          "requiredPrivileges": ["Get Patient Programs"],
+          "config": {
+            "fields": [
+              "programName",
+              "ID_Number",
+              "startDate",
+              "endDate",
+              "outcome",
+              "state"
+            ],
+            "pageSize": 5
           }
         }
       ]
