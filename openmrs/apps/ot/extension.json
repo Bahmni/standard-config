@@ -6,7 +6,7 @@
     "extensionParams": {
       "links": [
         {
-          "url": "/bahmni/clinical/#/default/patient/{{patientUuid}}/dashboard",
+          "url": "/bahmni/clinical/{{patientUuid}}",
           "linkColumn": "PATIENT_LISTING_QUEUES_HEADER_IDENTIFIER",
           "newTab": true
         }
