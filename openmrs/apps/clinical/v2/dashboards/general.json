@@ -45,7 +45,16 @@
       "icon": "fa-hand-dots",
       "controls": [
         {
-          "type": "allergies"
+          "type": "allergies",
+          "config": {
+            "actions": [
+              {
+                "label": "Edit",
+                "type": "edit",
+                "requiredPrivilege": ["Edit Allergies"]
+              }
+            ]
+          }
         }
       ]
     },
@@ -58,7 +67,14 @@
           "type": "conditions",
           "requiredPrivileges": ["Get Conditions"],
           "config": {
-            "pageSize": 5
+            "pageSize": 5,
+            "actions": [
+              {
+                "label": "Actions",
+                "type": "actions",
+                "requiredPrivilege": ["Edit Conditions"]
+              }
+            ]
           }
         },
         {
