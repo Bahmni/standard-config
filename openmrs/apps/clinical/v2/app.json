@@ -63,7 +63,7 @@
       },
       {
         "type": "medication",
-        "label": "MEDICATIONS_INPUT_CONTROL_LABEL",
+        "label": "MEDICATION_INPUT_CONTROL_LABEL",
         "metadata": {},
         "encounterTypes": ["Consultation"],
         "privileges": ["Add Orders"],
