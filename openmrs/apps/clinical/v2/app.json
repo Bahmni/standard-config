@@ -12,7 +12,14 @@
       "requiredPrivileges": [""],
       "icon": "fa fa-dashboard",
       "default": true,
-      "url": "general.json"
+      "url": "general.json",
+      "printOptions": [
+        {
+          "translationKey": "CLINICAL_PRINT_MEDICATION_PRESCRIPTION_KEY",
+          "templateId": "PRESCRIPTION_V1",
+          "privileges": ["app:clinical:printmedications"]
+        }
+      ]
     },
     {
       "name": "Program Dashboard",
@@ -20,12 +27,6 @@
       "icon": "fa fa-dashboard",
       "default": true,
       "url": "program.json"
-    }
-  ],
-  "printOptions": [
-    {
-      "translationKey": "CLINICAL_PRINT_MEDICATION_PRESCRIPTION_KEY",
-      "templateId": "PRESCRIPTION_V1"
     }
   ],
   "consultationPad": {
