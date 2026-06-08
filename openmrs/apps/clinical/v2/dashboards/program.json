@@ -96,7 +96,16 @@
             "controls": [
                 {
                     "type": "treatment",
-                    "config": {}
+                    "config": {
+                        "actions": [
+                            {
+                                "label": "Edit",
+                                "type": "edit",
+                                "encounterType": "Consultation",
+                                "requiredPrivilege": ["Edit Orders"]
+                            }
+                        ]
+                    }
                 }
             ]
         }
