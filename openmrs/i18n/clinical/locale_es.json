@@ -108,5 +108,6 @@
   "MEDICATION_INPUT_CONTROL_LABEL": "Medicamentos",
   "VACCINATION_INPUT_CONTROL_LABEL": "Vacunas",
   "CLINICAL_PRINT_MEDICATION_PRESCRIPTION_KEY": "Imprimir los últimos medicamentos",
-  "STOP_ACTION_LABEL": "Stop"
+  "STOP_ACTION_LABEL": "Detener",
+  "MODULE_LABEL_ALL_LEGACY_KEY": "Todo (heredado)"
 }
