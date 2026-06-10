@@ -93,7 +93,17 @@
       "controls": [
         {
           "type": "treatment",
-          "requiredPrivileges": ["Get Orders"]
+          "requiredPrivileges": ["Get Orders"],
+          "config": {
+            "actions": [
+              {
+                "label": "Edit",
+                "type": "edit",
+                "encounterType": "Consultation",
+                "requiredPrivilege": ["Edit Orders"]
+              }
+            ]
+          }
         }
       ]
     },
@@ -244,9 +254,9 @@
             "fields": [
               "documentIdentifier",
               "documentType",
+              "attachments",
               "uploadedOn",
-              "uploadedBy",
-              "action"
+              "uploadedBy"
             ],
             "pageSize": 5
           }
