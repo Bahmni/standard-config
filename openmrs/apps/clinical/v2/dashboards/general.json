@@ -51,9 +51,7 @@
               {
                 "label": "Edit",
                 "type": "edit",
-                "requiredPrivilege": [
-                  "Edit Allergies"
-                ]
+                "requiredPrivilege": ["Edit Allergies"]
               }
             ]
           }
@@ -67,27 +65,21 @@
       "controls": [
         {
           "type": "conditions",
-          "requiredPrivileges": [
-            "Get Conditions"
-          ],
+          "requiredPrivileges": ["Get Conditions"],
           "config": {
             "pageSize": 5,
             "actions": [
               {
                 "label": "Actions",
                 "type": "actions",
-                "requiredPrivilege": [
-                  "Edit Conditions"
-                ]
+                "requiredPrivilege": ["Edit Conditions"]
               }
             ]
           }
         },
         {
           "type": "diagnoses",
-          "requiredPrivileges": [
-            "Get Diagnoses"
-          ],
+          "requiredPrivileges": ["Get Diagnoses"],
           "config": {
             "pageSize": 5
           }
@@ -101,26 +93,20 @@
       "controls": [
         {
           "type": "treatment",
-          "requiredPrivileges": [
-            "Get Orders"
-          ],
+          "requiredPrivileges": ["Get Orders"],
           "config": {
             "actions": [
               {
                 "label": "Edit",
                 "type": "edit",
                 "encounterType": "Consultation",
-                "requiredPrivilege": [
-                  "Edit Orders"
-                ]
+                "requiredPrivilege": ["Edit Orders"]
               },
               {
                 "label": "Stop",
                 "type": "stop",
                 "encounterType": "Consultation",
-                "requiredPrivilege": [
-                  "Edit Orders"
-                ]
+                "requiredPrivilege": ["Edit Orders"]
               }
             ]
           }
@@ -196,9 +182,7 @@
       "controls": [
         {
           "type": "forms",
-          "requiredPrivileges": [
-            "Get Forms"
-          ],
+          "requiredPrivileges": ["Get Forms"],
           "config": {
             "numberOfVisits": 10,
             "showEditForActiveEncounter": true,
@@ -229,17 +213,13 @@
         {
           "type": "treatment",
           "config": {
-            "code": [
-              "http://hl7.org/fhir/sid/cvx|"
-            ],
+            "code": ["http://hl7.org/fhir/sid/cvx|"],
             "actions": [
               {
                 "label": "ADMINISTER_ACTION_LABEL",
                 "type": "administer",
                 "encounterType": "Immunization Administration",
-                "requiredPrivilege": [
-                  "Get Orders"
-                ]
+                "requiredPrivilege": ["Get Orders"]
               }
             ]
           }
@@ -275,9 +255,7 @@
       "controls": [
         {
           "type": "patientDocuments",
-          "requiredPrivileges": [
-            "Get DocumentReference"
-          ],
+          "requiredPrivileges": ["Get DocumentReference"],
           "config": {
             "fields": [
               "documentIdentifier",
@@ -298,9 +276,7 @@
       "controls": [
         {
           "type": "programs",
-          "requiredPrivileges": [
-            "Get Patient Programs"
-          ],
+          "requiredPrivileges": ["Get Patient Programs"],
           "config": {
             "fields": [
               "programName",
