@@ -198,5 +198,5 @@
         "requiredPrivilege": "View Patients"
       }
     ],
-  "registrationEncounterType": "REGISTRATION_ENCOUNTER_TYPE"
+  "registrationEncounterType": "REG"
 }
