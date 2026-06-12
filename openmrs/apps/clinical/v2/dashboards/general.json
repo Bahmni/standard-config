@@ -101,6 +101,12 @@
                 "type": "edit",
                 "encounterType": "Consultation",
                 "requiredPrivilege": ["Edit Orders"]
+              },
+              {
+                "label": "Stop",
+                "type": "stop",
+                "encounterType": "Consultation",
+                "requiredPrivilege": ["Edit Orders"]
               }
             ]
           }
