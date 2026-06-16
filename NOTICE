@@ -1,0 +1,16 @@
+## Bahmni Standard Config
+
+Copyright © 2018 OpenMRS Inc.
+
+### Contributors
+
+This repository has source code generated at Thoughtworks.
+
+### Third-Party Components
+
+This repository includes third-party content that is licensed separately:
+
+- CIEL Concept Dictionary (`masterdata/configuration/ocl/CIEL_*.zip`)
+  Developed by the Columbia International eHealth Laboratory (CIEL).
+  Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+  https://www.columbia.edu/itc/hs/medical/informatics/ciel/
