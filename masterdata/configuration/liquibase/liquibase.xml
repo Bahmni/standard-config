@@ -382,6 +382,32 @@
         </insert>
     </changeSet>
 
+    <changeSet id="acknowledge_amend_note_concept_202602091200" author="Soorya">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM concept where short_name='Acknowledge Amend Note' and
+                description='Acknowledge Amend Note Task Type';
+            </sqlCheck>
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM concept_name where name ='acknowledge_amend_note';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept Acknowledge Amend Note</comment>
+        <sql>
+            insert into concept (retired, short_name, description, datatype_id, class_id, is_set, creator, date_created,
+            changed_by, date_changed, uuid)
+            values (0, 'Acknowledge Amend Note', 'Acknowledge Amend Note Task Type',
+            (select concept_datatype_id from concept_datatype where name = 'Text'),
+            (select concept_class_id from concept_class where name = 'Misc'),
+            0, 1, now(), 1, now(), uuid());
+
+            insert into concept_name (concept_id, name, locale, locale_preferred, creator, date_created,
+            concept_name_type, voided, uuid)
+            values ((select concept_id from concept where short_name='Acknowledge Amend Note'),
+            'acknowledge_amend_note', 'en', 1, 1, now(), 'FULLY_SPECIFIED', 0, uuid());
+        </sql>
+    </changeSet>
+
     <include file="override_ciel_immunization_valueset.xml" relativeToChangelogFile="true"/>
     <include file="override_ciel_vaccination_site_valueset.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

@@ -5,3 +5,5 @@ Uuid,Privilege name,Description
 ,app:clinical:printmedications,Privilege to print Medications
 ,app:clinical:legacyPatientTabs,Privilege to view legacy patient tabs
 ,app:legacy-registration,Privilege to view legacy patient registration tile
+,Approve Amend Note,Allows to Acknowledge the Medication Administration Note
+,app:adt:approveAmendNote,Allows to approve amended note in IPD
