@@ -7,3 +7,5 @@ Uuid,Privilege name,Description
 ,app:patient-documents:legacyPatientTabs,Privilege to view legacy patient documents tabs
 ,app:radiology-upload:legacyPatientTabs,Privilege to view legacy radiology upload tabs
 ,app:legacy-registration,Privilege to view legacy patient registration tile
+,Approve Amend Note,Allows to Acknowledge the Medication Administration Note
+,app:adt:approveAmendNote,Allows to approve amended note in IPD

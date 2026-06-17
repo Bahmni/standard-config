@@ -57,36 +57,42 @@
   "sections": [
     {
       "title": "Vitals and Nutritional Values",
+      "translationKey": "VITALS_HEADER_KEY",
       "componentKey": "VT",
       "displayOrder": 1,
       "refreshKey": 1
     },
     {
       "title": "Allergies",
+      "translationKey": "ALLERGIES_HEADER_KEY",
       "componentKey": "AL",
       "displayOrder": 2,
       "refreshKey": 2
     },
     {
       "title": "Diagnosis",
+      "translationKey": "DIAGNOSIS_HEADER_KEY",
       "componentKey": "DG",
       "displayOrder": 3,
       "refreshKey": 3
     },
     {
       "title": "Treatments",
+      "translationKey": "TREATMENTS_HEADER_KEY",
       "componentKey": "TR",
       "displayOrder": 4,
       "refreshKey": 4
     },
     {
       "title": "Nursing Tasks",
+      "translationKey": "NURSING_TASKS_HEADER_KEY",
       "componentKey": "NT",
       "displayOrder": 5,
       "refreshKey": 5
     },
     {
       "title": "Drug Chart",
+      "translationKey": "DRUG_CHART_HEADER_KEY",
       "componentKey": "DC",
       "displayOrder": 6,
       "refreshKey": 6
@@ -104,6 +110,19 @@
   },
   "drugChartSlider": {
     "timeInMinutesToDisableSlotPostScheduledTime": 60
+  },
+  "drugChartNoteAmendment": {
+    "isAmendFeatureEnabled": true,
+    "amendmentReasons": [
+      "AMENDMENT_REASON_INCORRECT_TIME",
+      "AMENDMENT_REASON_INCORRECT_DOSE",
+      "AMENDMENT_REASON_INCORRECT_UNIT",
+      "AMENDMENT_REASON_INCORRECT_DRUG",
+      "AMENDMENT_REASON_INCORRECT_PATIENT",
+      "AMENDMENT_REASON_INCORRECT_ROUTE",
+      "AMENDMENT_REASON_MISSED_DOSE",
+      "AMENDMENT_REASON_OTHER"
+    ]
   },
   "enable24HourTime": false,
   "medicationTags": {

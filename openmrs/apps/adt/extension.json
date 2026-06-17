@@ -138,5 +138,20 @@
         "label": "All",
         "order": 4,
         "requiredPrivilege": "app:adt"
+    },
+       "bahmniAdtPatientsSearchToAcknowledge":{
+        "id": "bahmni.adt.patients.search.toAcknowledge",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.toAcknowledgeNotes",
+            "translationKey": "MODULE_LABEL_TO_ACKNOWLEDGE_KEY",
+            "forwardUrl" : "../clinical/index.html#/default/patient/{{patientUuid}}/dashboard/visit/ipd/{{visitUuid}}?source=adtHome&openAcknowledge=true&medicationAdministrationUuid={{medicationAdministrationUuid}}&medicationAdministrationEpoch={{medicationAdministrationEpoch}}",
+            "view":"tabular",
+            "tabularViewHeadingOrder": ["Identifier", "Name", "Drug Name", "Amended Note", "Amend Author","Amended Date/Time"]
+        },
+        "label": "To Acknowledge",
+        "order": 4,
+        "requiredPrivilege": "app:adt:approveAmendNote"
     }
 }

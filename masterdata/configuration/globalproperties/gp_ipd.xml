@@ -1,0 +1,56 @@
+<config>
+  <globalProperties>
+    <globalProperty>
+      <property>emrapi.sqlSearch.toAcknowledgeNotes</property>
+      <value>
+        SELECT
+          pi.identifier,
+          concat(pn.given_name, ' ', ifnull(pn.family_name,'')) AS "Name",
+          concat("", p.uuid) AS uuid,
+          concat("", v.uuid) AS activeVisitUuid,
+          concat("", ma.uuid) AS medicationAdministrationUuid,
+          IFNULL(d.name, dr.name) AS "Drug Name",
+          latest_note.text AS "Amended Note",
+          concat(ppn.given_name, ' ', ifnull(ppn.family_name,'')) AS "Amend Author",
+          DATE_FORMAT(latest_note.recorded_time, "%d %b %Y %h:%i %p") AS "Amended Date/Time",
+          UNIX_TIMESTAMP(ma.administered_date_time) * 1000 as "medicationAdministrationEpoch"
+        FROM (
+          SELECT man1.medication_administration_id, man1.uuid as note_uuid, man1.text, man1.recorded_time, man1.author_id
+          FROM medication_administration_note man1
+          INNER JOIN (
+            SELECT medication_administration_id, MAX(recorded_time) as max_recorded_time
+            FROM medication_administration_note
+            WHERE amendment_reason IS NOT NULL
+              AND text IS NOT NULL
+              AND recorded_time = GREATEST(recorded_time, DATE_SUB(CURDATE(), INTERVAL 7 DAY))
+            GROUP BY medication_administration_id
+          ) man2 ON man1.medication_administration_id = man2.medication_administration_id
+            AND man1.recorded_time = man2.max_recorded_time
+          WHERE man1.amendment_reason IS NOT NULL
+            AND man1.text IS NOT NULL
+        ) latest_note
+        INNER JOIN medication_administration ma ON ma.medication_administration_id = latest_note.medication_administration_id
+          AND ma.voided IS FALSE
+        INNER JOIN ipd_slot ist ON ma.medication_administration_id = ist.medication_administration_id AND ist.voided IS FALSE
+        INNER JOIN ipd_schedule ips ON ist.schedule_id = ips.schedule_id AND ips.voided IS FALSE
+        INNER JOIN visit v ON ips.visit_id = v.visit_id AND v.voided IS FALSE AND v.date_stopped IS NULL
+        LEFT JOIN fhir_reference fr ON fr.target_uuid = latest_note.note_uuid
+        LEFT JOIN fhir_task ft ON ft.for_reference_id = fr.reference_id
+          AND ft.name = 'ACKNOWLEDGE_MEDICATION_NOTE'
+          AND ft.status = 'COMPLETED'
+        INNER JOIN patient_identifier pi ON ma.patient_id = pi.patient_id AND pi.voided IS FALSE AND pi.preferred IS TRUE
+        INNER JOIN person p ON ma.patient_id = p.person_id AND p.voided IS FALSE
+        INNER JOIN person_name pn ON ma.patient_id = pn.person_id AND pn.voided IS FALSE AND pn.preferred IS TRUE
+        INNER JOIN provider pr ON latest_note.author_id = pr.provider_id
+        INNER JOIN person pp ON pr.person_id = pp.person_id AND pp.voided IS FALSE
+        INNER JOIN person_name ppn ON pp.person_id = ppn.person_id AND ppn.voided IS FALSE
+        LEFT JOIN drug d ON ma.drug_id = d.drug_id
+        LEFT JOIN drug_order do ON ma.drug_order_id = do.order_id
+        LEFT JOIN drug dr ON do.drug_inventory_id = dr.drug_id
+        WHERE ft.task_id IS NULL
+        ORDER BY latest_note.recorded_time ASC;
+      </value>
+    <description>Sql query to get list of medication administration notes that needs to be Acknowledged</description>
+    </globalProperty>
+  </globalProperties>
+</config>
