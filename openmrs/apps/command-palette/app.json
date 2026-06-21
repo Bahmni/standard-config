@@ -13,7 +13,7 @@
   "commandPalette": {
     "trigger": {
       "type": "combination",
-      "keys": "cmd+k"
+      "keys": ["cmd+k", "ctrl+k"]
     },
     "searchAnnotations": [
       {
