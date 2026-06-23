@@ -34,7 +34,8 @@
             "foodAllergenUuid": "162553AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "environmentalAllergenUuid": "162554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "allergyReactionUuid": "162555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "allergySeverityUuid": "160223AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            "allergySeverityUuid": "160223AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "otherAllergenUuid": "df2e7016-5f2e-41f4-b376-73762429a1c5"
         },
         "showTextAsAbnormal": false,
         "quickPrints":false,

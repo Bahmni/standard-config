@@ -37,5 +37,11 @@
             </value>
             <description>SQL query to get the list of emergency medications to be acknowledged</description>
         </globalProperty>
+        
+        <globalProperty>
+            <property>allergy.concept.noKnownAllergyUuid</property>
+            <value>f535bd4e-33ff-4f35-bf7c-189e07d1ac90</value>
+            <description>Specifies the uuid of no known allergy concept</description>
+        </globalProperty>
     </globalProperties>
 </config>
