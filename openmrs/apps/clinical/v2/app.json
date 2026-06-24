@@ -2,7 +2,12 @@
   "patientInformation": {},
   "contextInformation": {
     "program": {
-      "fields": ["ID_Number", "startDate", "endDate", "outcome"]
+      "fields": [
+        { "name": "ID_Number" },
+        { "name": "startDate" },
+        { "name": "endDate" },
+        { "name": "outcome" }
+      ]
     }
   },
   "actions": [],
