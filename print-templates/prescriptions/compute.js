@@ -53,7 +53,7 @@ module.exports = {
           startDate:          mr.authoredOn ?? '',
           stopped,
           stoppedDate:        stopped ? fhirPath(mr, 'meta.lastUpdated') ?? '' : '',
-          treatmentNotes:     parseAdditionalInstructions(mr.dosageInstruction?.[0]?.text),
+          treatmentNotes:     parseAdditionalInstructions(mr.dosageInstruction?.[0]?.text) || mr.note?.[0]?.text || '',
         };
       }),
     }));
