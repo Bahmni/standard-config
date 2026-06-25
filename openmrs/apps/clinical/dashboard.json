@@ -28,7 +28,10 @@
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 10,
-                    "showEditForActiveEncounter": true
+                    "showEditForActiveEncounter": true,
+                    "formGroup": ["Admission Letter"]
+
+                    
                 },
                 "translationKey": "Observation Forms"
             },
