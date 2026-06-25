@@ -28,7 +28,8 @@
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 10,
-                    "showEditForActiveEncounter": true
+                    "showEditForActiveEncounter": true,
+                    "formGroup": []         
                 },
                 "translationKey": "Observation Forms"
             },
