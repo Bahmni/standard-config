@@ -103,7 +103,8 @@
           { "name": "instruction", "required": false },
           { "name": "startDate", "required": true },
           { "name": "note", "required": false }
-        ]
+        ],
+        "cdss":[]
       },
       {
         "type": "stopMedications",
