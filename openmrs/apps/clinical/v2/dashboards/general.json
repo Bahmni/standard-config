@@ -279,12 +279,12 @@
           "requiredPrivileges": ["Get Patient Programs"],
           "config": {
             "fields": [
-              "programName",
-              "ID_Number",
-              "startDate",
-              "endDate",
-              "outcome",
-              "state"
+              { "name": "programName" },
+              { "name": "ID_Number" },
+              { "name": "startDate" },
+              { "name": "endDate" },
+              { "name": "outcome" },
+              { "name": "state" }
             ],
             "pageSize": 5
           }
