@@ -29,7 +29,7 @@
                     "title": null,
                     "maximumNoOfVisits": 10,
                     "showEditForActiveEncounter": true,
-                    "formGroup": []         
+                    "forms": []         
                 },
                 "translationKey": "Observation Forms"
             },
