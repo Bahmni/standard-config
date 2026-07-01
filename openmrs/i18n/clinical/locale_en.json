@@ -123,5 +123,8 @@
   "IMMUNIZATION_HISTORY_INPUT_CONTROL_LABEL": "Immunization History",
   "MEDICATION_INPUT_CONTROL_LABEL": "Medications",
   "VACCINATION_INPUT_CONTROL_LABEL": "Vaccinations",
-  "STOP_ACTION_LABEL": "Stop"
+  "STOP_ACTION_LABEL": "Stop",
+  "MEDICATION_PHARMACIST_REVIEW_HEADING": "New Medications Available to be Dispensed",
+  "MEDICATION_PHARMACIST_REVIEW_SUBTEXT": "Please review the patient's weight, allergies, and prescriptions to continue with dispensing.",
+  "MEDICATION_CONFIRM_REVIEW": "Confirm Review"
 }
