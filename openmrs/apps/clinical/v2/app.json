@@ -10,6 +10,18 @@
       ]
     }
   },
+  "extensions": [
+    {
+      "id": "bahmni.clinical.v2.search.commonSearch",
+      "extensionPointId": "org.bahmni.clinical.v2.search",
+      "translationKey": "ADVANCED_SEARCH_LABEL",
+      "requiredPrivileges": ["app:clinical"],
+      "extensionParams": {
+        "searchHandler": "commonSearch",
+        "configUrl": "/bahmni_config/openmrs/apps/clinical/v2/extensions/commonSearchConfig.json"
+      }
+    }
+  ],
   "actions": [],
   "dashboards": [
     {
