@@ -50,18 +50,6 @@
     "order": 5,
     "requiredPrivilege": "app:ot"
   },
-  "cmdPaletteNavOpenMRS": {
-    "id": "org.bahmni.commandpalette.nav.openmrs",
-    "extensionPointId": "org.bahmni.commandpalette.navItem",
-    "type": "link",
-    "translationKey": "COMMAND_PALETTE_NAV_OPENMRS",
-    "label": "OpenMRS",
-    "url": "/openmrs",
-    "icon": "fa-external-link",
-    "newTab": true,
-    "order": 6,
-    "requiredPrivilege": "app:admin"
-  },
   "cmdPaletteNavBahmniWiki": {
     "id": "org.bahmni.commandpalette.nav.bahmniwiki",
     "extensionPointId": "org.bahmni.commandpalette.navItem",
