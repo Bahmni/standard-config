@@ -40,23 +40,27 @@ module.exports = {
       .map((id) => fhirPath(encounterMap.get(id), 'period.start'))
       .find(Boolean);
 
-    const medications = [...byEncounter.entries()].map(([encId, meds]) => ({
-      doctorName: fhirPath(encounterMap.get(encId), 'participant.first().individual.display') ?? '',
-      drugOrders: meds.map((mr) => {
-        const stopped      = ['stopped', 'cancelled'].includes(mr.status);
-        const baseName     = mr.medicationCodeableConcept?.text ?? mr.medicationReference?.display ?? '';
-        const dosageForm   = medicationMap.get(refId(mr.medicationReference?.reference)) ?? '';
-        
-        return {
-          drugName:           dosageForm ? `${baseName} (${dosageForm})` : baseName,
-          dosageInstructions: buildDosageInstructions(mr.dosageInstruction),
-          startDate:          mr.authoredOn ?? '',
-          stopped,
-          stoppedDate:        stopped ? fhirPath(mr, 'meta.lastUpdated') ?? '' : '',
-          treatmentNotes:     parseAdditionalInstructions(mr.dosageInstruction?.[0]?.text) || mr.note?.[0]?.text || '',
-        };
-      }),
-    }));
+    const medications = [...byEncounter.entries()]
+      .map(([encId, meds]) => ({
+        doctorName: fhirPath(encounterMap.get(encId), 'participant.first().individual.display') ?? '',
+        drugOrders: meds
+          .filter((mr) => ['active', 'on-hold'].includes(mr.status))
+          .map((mr) => {
+            const stopped    = false;
+            const baseName   = mr.medicationCodeableConcept?.text ?? mr.medicationReference?.display ?? '';
+            const dosageForm = medicationMap.get(refId(mr.medicationReference?.reference)) ?? '';
+
+            return {
+              drugName:           dosageForm ? `${baseName} (${dosageForm})` : baseName,
+              dosageInstructions: buildDosageInstructions(mr.dosageInstruction),
+              startDate:          toLocalDate(mr.dosageInstruction?.[0]?.timing?.event?.[0] ?? mr.authoredOn, context.timeZone),
+              stopped,
+              stoppedDate:        stopped ? toLocalDate(fhirPath(mr, 'meta.lastUpdated'), context.timeZone) : '',
+              treatmentNotes:     parseAdditionalInstructions(mr.dosageInstruction?.[0]?.text) || mr.note?.[0]?.text || '',
+            };
+          }),
+      }))
+      .filter((enc) => enc.drugOrders.length > 0);
 
     if (medications.length === 0) throw new ValidationError(translate("NO_MEDICATIONS_PRESCRIBED"));
 
@@ -133,5 +137,14 @@ function parseAdditionalInstructions(text) {
 function durationLabel(code) {
   const map = { s: 'Seconds', min: 'Minutes', h: 'Hours', d: 'Days', wk: 'Weeks', mo: 'Months', a: 'Years' };
   return map[code] ?? code ?? '';
+}
+
+function toLocalDate(dateStr, timeZone) {
+  if (!dateStr) return '';
+  try {
+    return new Intl.DateTimeFormat('en-CA', { timeZone: timeZone ?? 'UTC', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(dateStr));
+  } catch {
+    return dateStr;
+  }
 }
 
