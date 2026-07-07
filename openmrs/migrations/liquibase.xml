@@ -89,5 +89,4 @@
     <include file ="addMoreObsSplitterProperty.xml"/>
     <include file ="addMultiSelectObsSplitterProperty.xml"/>
     <include file ="addLabRoleWithPrivilege.xml"/>
-    <include file ="addDocumentUploadMaxSizeProperty.xml"/>
 </databaseChangeLog>
