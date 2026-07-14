@@ -199,8 +199,26 @@
         {
           "type": "immunizationHistory",
           "config": {
+            "status": "completed",
             "encounterType": "Immunization",
             "startEncounterPrivilege": "app:clinical:addImmunizations"
+          }
+        }
+      ]
+    },
+     {
+      "name": "Vaccination Waiver",
+      "translationKey": "DASHBOARD_TITLE_IMMUNISATION_WAIVER_KEY",
+      "icon": "fa-syringe",
+      "controls": [
+        {
+          "type": "immunizationHistory",
+          "config": {
+            "status": "not-done",
+            "encounterType": "Immunization",
+            "startEncounterPrivilege": "app:clinical:addImmunizations",
+            "inputControlKey": "immunizationWaiver",
+            "notAdministeredFields": ["code", "reason", "recordedBy"]
           }
         }
       ]

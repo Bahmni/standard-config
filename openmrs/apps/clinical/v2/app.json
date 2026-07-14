@@ -176,6 +176,20 @@
           { "name": "batchNumber", "required": true },
           { "name": "note", "required": false }
         ]
+      },
+      {
+        "type": "immunizationWaiver",
+        "label": "IMMUNIZATION_WAIVER_INPUT_CONTROL_LABEL",
+        "metadata": {
+          "statusReasonValueSetUuid": "bff108b5-88da-454d-b171-e04cecb1f74d",
+          "otherReasonConceptUuid": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        "encounterTypes": ["Immunization"],
+        "privileges": ["app:clinical:addImmunizations"],
+        "attributes": [
+          { "name": "statusReason", "required": true },
+          { "name": "note", "required": false }
+        ]
       }
     ]
   }
