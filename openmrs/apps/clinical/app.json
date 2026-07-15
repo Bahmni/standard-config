@@ -24,6 +24,7 @@
     ],
     "config": {
         "enableNoKnownAllergy":false,
+        "enableVariableDoseProtocol": true,
         "hideFormName": true,
         "hideConditions": false,
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
