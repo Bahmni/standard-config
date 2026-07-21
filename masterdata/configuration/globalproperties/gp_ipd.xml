@@ -35,7 +35,7 @@
         INNER JOIN ipd_schedule ips ON ist.schedule_id = ips.schedule_id AND ips.voided IS FALSE
         INNER JOIN visit v ON ips.visit_id = v.visit_id AND v.voided IS FALSE AND v.date_stopped IS NULL
         LEFT JOIN fhir_reference fr ON fr.target_uuid = latest_note.note_uuid
-        LEFT JOIN fhir_task ft ON ft.for_reference_id = fr.reference_id
+        LEFT JOIN fhir_task ft ON ft.focus_reference_id = fr.reference_id
           AND ft.name = 'ACKNOWLEDGE_MEDICATION_NOTE'
           AND ft.status = 'COMPLETED'
         INNER JOIN patient_identifier pi ON ma.patient_id = pi.patient_id AND pi.voided IS FALSE AND pi.preferred IS TRUE

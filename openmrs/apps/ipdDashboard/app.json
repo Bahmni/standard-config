@@ -113,16 +113,7 @@
   },
   "drugChartNoteAmendment": {
     "isAmendFeatureEnabled": true,
-    "amendmentReasons": [
-      "AMENDMENT_REASON_INCORRECT_TIME",
-      "AMENDMENT_REASON_INCORRECT_DOSE",
-      "AMENDMENT_REASON_INCORRECT_UNIT",
-      "AMENDMENT_REASON_INCORRECT_DRUG",
-      "AMENDMENT_REASON_INCORRECT_PATIENT",
-      "AMENDMENT_REASON_INCORRECT_ROUTE",
-      "AMENDMENT_REASON_MISSED_DOSE",
-      "AMENDMENT_REASON_OTHER"
-    ]
+    "amendmentReasonConceptSetUuid": "5c3d2d00-0ad6-434a-b27b-d820796781a4"
   },
   "enable24HourTime": false,
   "medicationTags": {
