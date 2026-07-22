@@ -1,27 +1,52 @@
 {
-    "bahmniDocUploadPatientsSearchActivePatients":{
-        "id": "bahmni.docUpload.patients.search.activePatients",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.activePatients",
-            "translationKey": "MODULE_LABEL_ACTIVE_PATIENTS_KEY",
-            "forwardUrl" : "#/patient/{{patientUuid}}/document"
-        },
-        "label": "Active Patients",
-        "order": 1,
-        "requiredPrivilege": "app:radiology-upload"
+  "bahmniNewDocUploadPatientsSearchActivePatients": {
+    "id": "bahmni.docUpload.patients.search.activePatientsnew",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.activePatients",
+      "translationKey": "MODULE_LABEL_ACTIVE_PATIENTS_KEY",
+      "forwardUrl": "/bahmni-v2/patient-documents/{{patientUuid}}?encounterType={{encounterType}}&topLevelConcept={{topLevelConcept}}"
     },
-	"bahmniDocUploadPatientsSearchAllPatients":{
-        "id": "bahmni.docUpload.patients.search.allPatients",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "translationKey":"MODULE_LABEL_ALL_PATIENTS_KEY",
-            "forwardUrl" : "#/patient/{{patientUuid}}/document"
-        },
-        "label": "All patients",
-        "order": 1,
-        "requiredPrivilege": "app:radiology-upload"
-    }
+    "label": "Active Patients",
+    "order": 1,
+    "requiredPrivilege": ["Add DocumentReference", "Get DocumentReference"]
+  },
+  "bahmniDocUploadPatientsSearchActivePatients": {
+    "id": "bahmni.docUpload.patients.search.activePatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.activePatients",
+      "translationKey": "MODULE_LABEL_ACTIVE_PATIENTS_KEY_LEGACY_KEY",
+      "forwardUrl": "#/patient/{{patientUuid}}/document"
+    },
+    "label": "Active Patients - Legacy",
+    "order": 2,
+    "requiredPrivilege": "app:radiology-upload:legacyPatientTabs"
+  },
+  "bahmniNewDocUploadPatientsSearchAllPatients": {
+    "id": "bahmni.docUpload.patients.search.allPatientsnew",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "translationKey": "MODULE_LABEL_ALL_PATIENTS_KEY",
+      "forwardUrl": "/bahmni-v2/patient-documents/{{patientUuid}}?encounterType={{encounterType}}&topLevelConcept={{topLevelConcept}}"
+    },
+    "label": "All Patients",
+    "order": 3,
+    "requiredPrivilege": ["Add DocumentReference", "Get DocumentReference"]
+  },
+  "bahmniDocUploadPatientsSearchAllPatients": {
+    "id": "bahmni.docUpload.patients.search.allPatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "translationKey": "MODULE_LABEL_ALL_PATIENTS_KEY_LEGACY_KEY",
+      "forwardUrl": "#/patient/{{patientUuid}}/document"
+    },
+    "label": "All Patients - Legacy",
+    "order": 4,
+    "requiredPrivilege": "app:radiology-upload:legacyPatientTabs"
+  }
 }
