@@ -10,7 +10,7 @@
     },
     "label": "Active Patients",
     "order": 1,
-    "requiredPrivilege": ["Add DocumentReference", "Get DocumentReference"]
+    "requiredPrivileges": ["Add DocumentReference", "Get DocumentReference"]
   },
   "bahmniDocUploadPatientsSearchActivePatients": {
     "id": "bahmni.docUpload.patients.search.activePatients",
@@ -35,7 +35,7 @@
     },
     "label": "All Patients",
     "order": 3,
-    "requiredPrivilege": ["Add DocumentReference", "Get DocumentReference"]
+    "requiredPrivileges": ["Add DocumentReference", "Get DocumentReference"]
   },
   "bahmniDocUploadPatientsSearchAllPatients": {
     "id": "bahmni.docUpload.patients.search.allPatients",
