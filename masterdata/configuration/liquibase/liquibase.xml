@@ -399,7 +399,7 @@
             values (0, 'Acknowledge Amend Note', 'Acknowledge Amend Note Task Type',
             (select concept_datatype_id from concept_datatype where name = 'Text'),
             (select concept_class_id from concept_class where name = 'Misc'),
-            0, 1, now(), 1, now(), uuid());
+            0, 1, now(), 1, now(),'56eb8040-2d0d-11f1-9dc8-0242ac120009');
 
             insert into concept_name (concept_id, name, locale, locale_preferred, creator, date_created,
             concept_name_type, voided, uuid)

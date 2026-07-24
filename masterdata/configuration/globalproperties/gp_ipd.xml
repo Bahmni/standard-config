@@ -52,5 +52,10 @@
       </value>
     <description>Sql query to get list of medication administration notes that needs to be Acknowledged</description>
     </globalProperty>
+    <globalProperty>
+      <property>ipd.acknowledgement_task_type</property>
+      <value>56eb8040-2d0d-11f1-9dc8-0242ac120009</value>
+      <description>UUID value for the MAR amendment to be Acknowledged</description>
+    </globalProperty>
   </globalProperties>
 </config>
