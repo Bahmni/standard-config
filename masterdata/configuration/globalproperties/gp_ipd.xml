@@ -20,13 +20,13 @@
           INNER JOIN (
             SELECT medication_administration_id, MAX(recorded_time) as max_recorded_time
             FROM medication_administration_note
-            WHERE amendment_reason IS NOT NULL
+            WHERE amendment_reason_concept_id IS NOT NULL
               AND text IS NOT NULL
               AND recorded_time = GREATEST(recorded_time, DATE_SUB(CURDATE(), INTERVAL 7 DAY))
             GROUP BY medication_administration_id
           ) man2 ON man1.medication_administration_id = man2.medication_administration_id
             AND man1.recorded_time = man2.max_recorded_time
-          WHERE man1.amendment_reason IS NOT NULL
+          WHERE man1.amendment_reason_concept_id IS NOT NULL
             AND man1.text IS NOT NULL
         ) latest_note
         INNER JOIN medication_administration ma ON ma.medication_administration_id = latest_note.medication_administration_id
