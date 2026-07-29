@@ -3,6 +3,7 @@
   "extensionPoints": [
   ],
   "config": {
+    "additionalCustomParam": "patientObservations",
     "ignoredTabularViewHeadings": ["uuid","display","image","$$hashKey"],
     "identifierHeadings": ["identifier"],
     "patientDashboardUrl": {
@@ -17,6 +18,8 @@
       "dayViewEnd": "18:00",
       "dayViewSplit": "60"
     },
-    "startOfWeek": "Monday"
+    "startOfWeek": "Monday",
+    "listViewObservationColumns":[],
+    "requiredSurgeryAttributes":[]
   }
 }
