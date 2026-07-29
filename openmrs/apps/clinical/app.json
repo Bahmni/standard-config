@@ -23,6 +23,7 @@
         "visitUuid"
     ],
     "config": {
+        "enableNoKnownAllergy":false,
         "hideFormName": true,
         "hideConditions": false,
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
