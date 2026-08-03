@@ -1,5 +1,4 @@
 {
-    "patientSearch": {
     "customAttributes": [
       {
         "translationKey": "REGISTRATION_PATIENT_SEARCH_DROPDOWN_PHONE_NUMBER",
@@ -50,5 +49,4 @@
         "type": "address"
       }
     ]
-  }
 }
