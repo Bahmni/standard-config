@@ -175,7 +175,7 @@
       ],
       "extensionParams": {
         "type": "startVisit",
-        "url": "clinical/{{patientUuid}}",
+        "url": "bahmni-v2/clinical/{{patientUuid}}",
         "order": 1
       }
     }
