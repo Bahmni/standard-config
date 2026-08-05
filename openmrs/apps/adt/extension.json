@@ -136,10 +136,10 @@
             "forwardUrl" : "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
         },
         "label": "All",
-        "order": 4,
+        "order": 5,
         "requiredPrivilege": "app:adt"
     },
-       "bahmniAdtPatientsSearchToAcknowledge":{
+    "bahmniAdtPatientsSearchToAcknowledge":{
         "id": "bahmni.adt.patients.search.toAcknowledge",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
