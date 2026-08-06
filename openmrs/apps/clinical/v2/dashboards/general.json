@@ -67,6 +67,7 @@
           "type": "conditions",
           "requiredPrivileges": ["Get Conditions"],
           "config": {
+            "encounterType": "Consultation",
             "pageSize": 5,
             "actions": [
               {
