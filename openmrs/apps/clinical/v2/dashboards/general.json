@@ -18,6 +18,7 @@
               "Consultation Images",
               "Consultation Videos"
             ],
+            "hideThumbnail": false,
             "conceptUuid": [
               "1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "9bb0795c-4ff0-0305-1990-000000000005",
@@ -32,7 +33,8 @@
             "conceptNames": [
               "Chief Complaint Record",
               "History of present illness"
-            ]
+            ],
+            "hideThumbnail": false
           }
         }
       ]
@@ -63,11 +65,9 @@
       "controls": [
         {
           "type": "conditions",
-          "requiredPrivileges": [
-            "Get Conditions"
-          ],
+          "requiredPrivileges": ["Get Conditions"],
           "config": {
-            "encounterType": "Consultation",
+            "pageSize": 5,
             "actions": [
               {
                 "label": "Actions",
@@ -79,9 +79,10 @@
         },
         {
           "type": "diagnoses",
-          "requiredPrivileges": [
-            "Get Diagnoses"
-          ]
+          "requiredPrivileges": ["Get Diagnoses"],
+          "config": {
+            "pageSize": 5
+          }
         }
       ]
     },
@@ -92,7 +93,23 @@
       "controls": [
         {
           "type": "treatment",
-          "requiredPrivileges": ["Get Orders"]
+          "requiredPrivileges": ["Get Orders"],
+          "config": {
+            "actions": [
+              {
+                "label": "Edit",
+                "type": "edit",
+                "encounterType": "Consultation",
+                "requiredPrivilege": ["Edit Orders"]
+              },
+              {
+                "label": "Stop",
+                "type": "stop",
+                "encounterType": "Consultation",
+                "requiredPrivilege": ["Edit Orders"]
+              }
+            ]
+          }
         }
       ]
     },
@@ -146,18 +163,30 @@
       ]
     },
     {
+      "name": "Procedures",
+      "translationKey": "DASHBOARD_TITLE_PROCEDURES_KEY",
+      "icon": "fa-bed-pulse",
+      "controls": [
+        {
+          "type": "ordersControl",
+          "config": {
+            "orderType": "Procedure Order"
+          }
+        }
+      ]
+    },
+    {
       "name": "Forms",
       "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY",
       "icon": "fa-clipboard-list",
       "controls": [
         {
           "type": "forms",
-          "requiredPrivileges": [
-            "Get Forms"
-          ],
+          "requiredPrivileges": ["Get Forms"],
           "config": {
             "numberOfVisits": 10,
-            "showEditForActiveEncounter": true
+            "showEditForActiveEncounter": true,
+            "hideThumbnail": false
           }
         }
       ]
@@ -190,7 +219,7 @@
                 "label": "ADMINISTER_ACTION_LABEL",
                 "type": "administer",
                 "encounterType": "Immunization Administration",
-                "requiredPrivilege": ["Get Orders", "Add Immunizations"]
+                "requiredPrivilege": ["Get Orders"]
               }
             ]
           }
@@ -205,7 +234,7 @@
         {
           "type": "appointments",
           "config": {
-            "numberOfPastAppointments": 5,
+            "pageSize": 5,
             "fields": [
               "appointmentNumber",
               "service",
@@ -220,23 +249,44 @@
       ]
     },
     {
-      "name": "Patient Documents",
+      "name": "Documents",
       "translationKey": "DOCUMENTS_TABLE_HEADING",
       "icon": "fa-file-alt",
       "controls": [
         {
           "type": "patientDocuments",
-          "requiredPrivileges": [
-            "Get DocumentReference"
-          ],
+          "requiredPrivileges": ["Get DocumentReference"],
           "config": {
             "fields": [
               "documentIdentifier",
               "documentType",
+              "attachments",
               "uploadedOn",
-              "uploadedBy",
-              "action"
-            ]
+              "uploadedBy"
+            ],
+            "pageSize": 5
+          }
+        }
+      ]
+    },
+    {
+      "name": "Programs",
+      "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+      "icon": "fa-book-medical",
+      "controls": [
+        {
+          "type": "programs",
+          "requiredPrivileges": ["Get Patient Programs"],
+          "config": {
+            "fields": [
+              { "name": "programName" },
+              { "name": "ID_Number" },
+              { "name": "startDate" },
+              { "name": "endDate" },
+              { "name": "outcome" },
+              { "name": "state" }
+            ],
+            "pageSize": 5
           }
         }
       ]
