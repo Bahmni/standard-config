@@ -1,0 +1,18 @@
+[
+    {
+      "server": "clinical-example-cdss",
+      "url": "/openmrs/ws/rest/v1/clinical-example-cdss/cdss",
+      "services": [
+        {
+          "name": "vaccine-order-select",
+          "description": "CDSS service to provide decision support for vaccine order entry",
+          "contextResourceMap": [
+            {
+              "type": "MedicationRequest",
+              "attribute": "draftOrders"
+            }
+          ]
+        }
+      ]
+    }
+  ]
