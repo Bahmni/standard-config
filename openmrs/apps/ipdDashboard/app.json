@@ -74,22 +74,41 @@
       "refreshKey": 3
     },
     {
-      "title": "Treatments",
-      "componentKey": "TR",
+      "title": "Care Instructions",
+      "translationKey": "CARE_INSTRUCTIONS_HEADER_KEY",
+      "componentKey": "CI",
       "displayOrder": 4,
-      "refreshKey": 4
+      "refreshKey": 4,
+      "config": {
+        "formConcepts": [
+          {
+            "formName": "Patient Progress Notes and Orders",
+            "concepts": ["Physician Orders Comments"]
+          },
+          {
+            "formName": "ENT Operative Report",
+            "concepts": ["Post Operative Order Comments", "Activity Until Further Notice"]
+          }
+        ]
+      }
     },
     {
-      "title": "Nursing Tasks",
-      "componentKey": "NT",
+      "title": "Treatments",
+      "componentKey": "TR",
       "displayOrder": 5,
       "refreshKey": 5
     },
     {
-      "title": "Drug Chart",
-      "componentKey": "DC",
+      "title": "Nursing Tasks",
+      "componentKey": "NT",
       "displayOrder": 6,
       "refreshKey": 6
+    },
+    {
+      "title": "Drug Chart",
+      "componentKey": "DC",
+      "displayOrder": 7,
+      "refreshKey": 7
     }
   ],
   "nonMedicationTaskTypes": ["Measurement procedure", "Medication administration assessment", "Multidisciplinary assessment"],
@@ -106,6 +125,12 @@
     "timeInMinutesToDisableSlotPostScheduledTime": 60
   },
   "enable24HourTime": false,
+  "enableAddMultipleTask": true,
+  "enableStopTasks": true,
+  "nursingTaskScheduling": {
+    "enableDateSelection": true,
+    "maxFutureDaysAllowed": 60
+  },
   "medicationTags": {
     "asNeeded": "Rx-PRN",
     "Immediately": "Rx-STAT",
