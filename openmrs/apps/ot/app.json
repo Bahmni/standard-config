@@ -12,7 +12,7 @@
     },
     "surgeryAttributes": ["procedure", "estTimeHours", "estTimeMinutes", "cleaningTime", "otherSurgeon", "surgicalAssistant", "anaesthetist", "scrubNurse", "circulatingNurse", "notes"],
     "primarySurgeonsForOT" : [],
-     "surgeryAttributeTranslations": [
+    "surgeryAttributeTranslations": [
       
     ],
     "printListViewTemplateUrl" : "/bahmni_config/openmrs/apps/ot/printListView.html",
