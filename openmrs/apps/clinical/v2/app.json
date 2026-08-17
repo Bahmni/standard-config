@@ -113,7 +113,9 @@
       },
       {
         "type": "stopMedications",
-        "metadata": {},
+        "metadata": {
+          "stopOrderedReasonConceptSet": "Stopped Order Reason"
+        },
         "encounterTypes": ["Consultation"],
         "privileges": ["Edit Orders"],
         "attributes": [
