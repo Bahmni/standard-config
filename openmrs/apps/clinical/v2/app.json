@@ -42,6 +42,7 @@
       "allergyReactionUuid": "162555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     },
     "statDurationInMilliseconds": 7200000,
+    "allowedVisitTypes": ["OPD", "Follow Up"],
     "inputControls": [
       {
         "type": "encounterDetails",
@@ -112,7 +113,9 @@
       },
       {
         "type": "stopMedications",
-        "metadata": {},
+        "metadata": {
+          "stoppedOrderReasonConceptSet": "d737badf-5e07-11ef-8f7c-0242ac120002"
+        },
         "encounterTypes": ["Consultation"],
         "privileges": ["Edit Orders"],
         "attributes": [
