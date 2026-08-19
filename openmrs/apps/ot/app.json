@@ -12,6 +12,9 @@
     },
     "surgeryAttributes": ["procedure", "estTimeHours", "estTimeMinutes", "cleaningTime", "otherSurgeon", "surgicalAssistant", "anaesthetist", "scrubNurse", "circulatingNurse", "notes"],
     "primarySurgeonsForOT" : [],
+    "surgeryAttributeTranslations": [
+      
+    ],
     "printListViewTemplateUrl" : "/bahmni_config/openmrs/apps/ot/printListView.html",
     "calendarView": {
       "dayViewStart": "08:00",
