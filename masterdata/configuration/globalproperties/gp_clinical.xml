@@ -37,5 +37,10 @@
             </value>
             <description>SQL query to get the list of emergency medications to be acknowledged</description>
         </globalProperty>
+        <globalProperty>
+          <property>bahmni.forms.hyperlink.allowedDomains</property>
+          <value></value>
+          <description>Comma-separated list of domains allowed for hyperlink control properties (supports *.domain.tld wildcard). Empty denies all.</description>
+        </globalProperty>
     </globalProperties>
 </config>
