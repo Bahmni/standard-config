@@ -112,10 +112,6 @@
     "default": "Rx",
     "emergency": "EMERG"
   },
-  "shiftDetails": {
-    "1": { "shiftStartTime": "08:00", "shiftEndTime": "19:00" },
-    "2": { "shiftStartTime": "19:00", "shiftEndTime": "08:00" }
-  },
   "intakeOutputConfig": {
     "periodDetails": {
       "startTime": "08:00",
