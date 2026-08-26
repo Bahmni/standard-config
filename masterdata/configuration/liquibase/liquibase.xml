@@ -388,7 +388,7 @@
                 SELECT COUNT(*) FROM global_property WHERE property = 'ipd.shiftDetails';
             </sqlCheck>
         </preConditions>
-        <comment>Configure ET region shift details (8-hour and 11-hour shifts)</comment>
+        <comment>Configure shift details (8-hour and 11-hour shifts)</comment>
         <sql>
             UPDATE global_property
             SET property_value='{"1": {"shiftStartTime":"08:00","shiftEndTime":"19:00"},"2": {"shiftStartTime":"19:00","shiftEndTime":"08:00"}}',
