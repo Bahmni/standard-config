@@ -4,15 +4,33 @@
         "tasks": [
             {
                 "name": "Collect patient history",
-                "type": ""
+                "type": "",
+                "input": [
+                    {
+                        "type": "form-resource",
+                        "valueText": "History and Examination"
+                    }
+                ]
             },
             {
                 "name": "Record medications taken by the patient already",
-                "type": ""
+                "type": "",
+                "input": [
+                    {
+                        "type": "form-resource",
+                        "valueText": "Follow Up"
+                    }
+                ]
             },
             {
                 "name": "Record Vitals",
-                "type": ""
+                "type": "",
+                "input": [
+                    {
+                        "type": "form-resource",
+                        "valueText": "Vitals"
+                    }
+                ]
             }
         ]
     },
