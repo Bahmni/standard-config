@@ -1,11 +1,3 @@
-const ADDRESS_EXT = 'http://fhir.openmrs.org/ext/address';
-
-function addrExt(field) {
-  return `Bundle.entry.first().resource.address.first()` +
-    `.extension.where(url = '${ADDRESS_EXT}')` +
-    `.extension.where(url = '${ADDRESS_EXT}#${field}').valueString`;
-}
-
 module.exports = {
   compute: async function ({ context, data, resolved, ValidationError, fhirPath }) {
     const patientBundle   = resolved?.patient;
@@ -34,3 +26,11 @@ module.exports = {
     };
   },
 };
+
+const ADDRESS_EXT = 'http://fhir.openmrs.org/ext/address';
+
+function addrExt(field) {
+  return `Bundle.entry.first().resource.address.first()` +
+    `.extension.where(url = '${ADDRESS_EXT}')` +
+    `.extension.where(url = '${ADDRESS_EXT}#${field}').valueString`;
+}
