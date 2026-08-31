@@ -2,11 +2,7 @@
   "defaultVisitType": "OPD",
   "patientInformation": {
     "defaultIdentifierPrefix": "ABC",
-    "patientNameDisplayOrder": [
-      "firstName",
-      "middleName",
-      "lastName"
-    ],
+    "patientNameDisplayOrder": ["firstName", "middleName", "lastName"],
     "showBirthTime": true,
     "showDOBEstimated": true,
     "showEnterManually": false,
@@ -69,6 +65,12 @@
       ]
     }
   },
+  "printOptions": [
+    {
+      "translationKey": "REGISTRATION_PRINT_REGISTRATION_CARD",
+      "templateId": "REG_CARD_V1"
+    }
+  ],
   "registrationForm": {
     "sections": [
       {
@@ -150,9 +152,7 @@
       "id": "bahmni.registration.v2.search.registrationSearch",
       "extensionPointId": "org.bahmni.registration.v2.search",
       "translationKey": "REGISTRATION_DEFAULT_SEARCH_LABEL",
-      "requiredPrivileges": [
-        "app:registration"
-      ],
+      "requiredPrivileges": ["app:registration"],
       "extensionParams": {
         "searchHandler": "defaultSearch",
         "configUrl": "/bahmni_config/openmrs/apps/registration/v2/extensions/defaultSearchConfig.json"
@@ -161,9 +161,7 @@
     {
       "id": "bahmni.registration.navigation.patient.start.visit",
       "extensionPointId": "org.bahmni.registration.navigation",
-      "requiredPrivileges": [
-        "View Patients"
-      ],
+      "requiredPrivileges": ["View Patients"],
       "extensionParams": {
         "type": "startVisit",
         "url": "clinical/{{patientUuid}}",
