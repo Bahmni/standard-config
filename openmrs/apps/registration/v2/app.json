@@ -72,7 +72,10 @@
   "printOptions": [
     {
       "translationKey": "REGISTRATION_PRINT_REGISTRATION_CARD",
-      "templateId": "REG_CARD_V1"
+      "templateId": "REG_CARD_V1",
+      "privileges": [
+        "app:registration"
+      ]
     }
   ],
   "registrationForm": {
