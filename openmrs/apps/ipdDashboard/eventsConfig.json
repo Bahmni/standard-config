@@ -7,27 +7,21 @@
                 "type": "",
                 "input": [
                     {
-                        "type": "form-resource",
+                        "typeUuid": "f275a481-8656-4683-944f-16e575925131",
                         "valueText": "History and Examination"
                     }
                 ]
             },
             {
                 "name": "Record medications taken by the patient already",
-                "type": "",
-                "input": [
-                    {
-                        "type": "form-resource",
-                        "valueText": "Follow Up"
-                    }
-                ]
+                "type": ""
             },
             {
                 "name": "Record Vitals",
                 "type": "",
                 "input": [
                     {
-                        "type": "form-resource",
+                        "typeUuid": "f275a481-8656-4683-944f-16e575925131",
                         "valueText": "Vitals"
                     }
                 ]
