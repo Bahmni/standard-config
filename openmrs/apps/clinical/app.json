@@ -23,7 +23,6 @@
         "visitUuid"
     ],
     "config": {
-        "enableFormDraftFeature": true,
         "autoSaveIntervalSeconds":900,
         "hideFormName": true,
         "hideConditions": false,

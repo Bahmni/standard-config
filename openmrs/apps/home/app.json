@@ -8,7 +8,7 @@
   ],
   "config": {
     "enableFormDraftFeature": true,
-    "homeUrl": "/bahmni",
+    "homeUrl": "/bahmni-v2/home",
     "enableCommandPalette": true
   }
 }
