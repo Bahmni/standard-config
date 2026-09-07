@@ -17,7 +17,7 @@ FROM (
 														   patient_identifier.identifier AS patientIdentifier,
 														   concat(person_name.given_name, ' ', person_name.family_name) AS patientName,
 														   floor(datediff(CAST('#endDate#' AS DATE), person.birthdate)/365) AS Age,
-														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED') AS HIV_Status,
+														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED' and cn.voided = 0 and cn.locale = 'en' limit 1) AS HIV_Status,
 														   person.gender AS Gender,
 														   observed_age_group.name AS age_group,
 														   observed_age_group.sort_order AS sort_order
@@ -66,7 +66,7 @@ FROM (
 														   patient_identifier.identifier AS patientIdentifier,
 														   concat(person_name.given_name, ' ', person_name.family_name) AS patientName,
 														   floor(datediff(CAST('#endDate#' AS DATE), person.birthdate)/365) AS Age,
-														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED') AS HIV_Status,
+														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED' and cn.voided = 0 and cn.locale = 'en' limit 1) AS HIV_Status,
 														   person.gender AS Gender,
 														   observed_age_group.name AS age_group,
 														   observed_age_group.sort_order AS sort_order
@@ -115,7 +115,7 @@ FROM (
 														   patient_identifier.identifier AS patientIdentifier,
 														   concat(person_name.given_name, ' ', person_name.family_name) AS patientName,
 														   floor(datediff(CAST('#endDate#' AS DATE), person.birthdate)/365) AS Age,
-														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED') AS HIV_Status,
+														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED' and cn.voided = 0 and cn.locale = 'en' limit 1) AS HIV_Status,
 														   person.gender AS Gender,
 														   observed_age_group.name AS age_group,
 														   observed_age_group.sort_order AS sort_order
@@ -163,7 +163,7 @@ FROM (
 														   patient_identifier.identifier AS patientIdentifier,
 														   concat(person_name.given_name, ' ', person_name.family_name) AS patientName,
 														   floor(datediff(CAST('#endDate#' AS DATE), person.birthdate)/365) AS Age,
-														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED') AS HIV_Status,
+														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED' and cn.voided = 0 and cn.locale = 'en' limit 1) AS HIV_Status,
 														   person.gender AS Gender,
 														   observed_age_group.name AS age_group,
 														   observed_age_group.sort_order AS sort_order
@@ -223,7 +223,7 @@ FROM (
 														   patient_identifier.identifier AS patientIdentifier,
 														   concat(person_name.given_name, ' ', person_name.family_name) AS patientName,
 														   floor(datediff(CAST('#endDate#' AS DATE), person.birthdate)/365) AS Age,
-														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED') AS HIV_Status
+														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED' and cn.voided = 0 and cn.locale = 'en' limit 1) AS HIV_Status
 
 									from obs o
 											-- HTS CLIENTS WITH HIV STATUS BY SEX AND AGE
@@ -265,7 +265,7 @@ FROM (
 														   patient_identifier.identifier AS patientIdentifier,
 														   concat(person_name.given_name, ' ', person_name.family_name) AS patientName,
 														   floor(datediff(CAST('#endDate#' AS DATE), person.birthdate)/365) AS Age,
-														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED') AS HIV_Status
+														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED' and cn.voided = 0 and cn.locale = 'en' limit 1) AS HIV_Status
 
 									from obs o
 											-- HTS CLIENTS WITH HIV STATUS BY SEX AND AGE
@@ -307,7 +307,7 @@ FROM (
 														   patient_identifier.identifier AS patientIdentifier,
 														   concat(person_name.given_name, ' ', person_name.family_name) AS patientName,
 														   floor(datediff(CAST('#endDate#' AS DATE), person.birthdate)/365) AS Age,
-														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED') AS HIV_Status
+														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED' and cn.voided = 0 and cn.locale = 'en' limit 1) AS HIV_Status
 
 									from obs o
 											-- HTS CLIENTS WITH HIV STATUS BY SEX AND AGE
@@ -349,7 +349,7 @@ FROM (
 														   patient_identifier.identifier AS patientIdentifier,
 														   concat(person_name.given_name, ' ', person_name.family_name) AS patientName,
 														   floor(datediff(CAST('#endDate#' AS DATE), person.birthdate)/365) AS Age,
-														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED') AS HIV_Status
+														   (select name from concept_name cn where cn.concept_id = o.value_coded and concept_name_type='FULLY_SPECIFIED' and cn.voided = 0 and cn.locale = 'en' limit 1) AS HIV_Status
 
 									from obs o
 											-- HTS CLIENTS WITH HIV STATUS BY SEX AND AGE
