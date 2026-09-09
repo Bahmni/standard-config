@@ -1,0 +1,41 @@
+# 1. Create the Device under the default "Devices" container
+dn: dicomDeviceName=bahmni-emr,cn=Devices,cn=DICOM Configuration,dc=dcm4che,dc=org
+objectClass: dicomDevice
+dicomDeviceName: bahmni-emr
+dicomInstalled: TRUE
+
+# 2. Add the Network Connection with both required Object Classes
+dn: cn=hl7,dicomDeviceName=bahmni-emr,cn=Devices,cn=DICOM Configuration,dc=dcm4che,dc=org
+objectClass: dicomNetworkConnection
+objectClass: dcmNetworkConnection
+cn: hl7
+dicomHostname: pacs-integration-dcm5
+dicomPort: 2576
+dcmProtocol: HL7
+
+# 3. Create the HL7 Application
+dn: hl7ApplicationName=pacs-integration|pacs-integration,dicomDeviceName=bahmni-emr,cn=Devices,cn=DICOM Configuration,dc=dcm4che,dc=org
+objectClass: hl7Application
+hl7ApplicationName: pacs-integration|pacs-integration
+dicomNetworkConnectionReference: cn=hl7,dicomDeviceName=bahmni-emr,cn=Devices,cn=DICOM Configuration,dc=dcm4che,dc=org
+
+
+# 4. Update PSU Task attributes
+dn: dicomDeviceName=dcm4chee-arc,cn=Devices,cn=DICOM Configuration,dc=dcm4che,dc=org
+changetype: modify
+# 4.1. Setting the Polling Interval
+replace: hl7PSUTaskPollingInterval
+hl7PSUTaskPollingInterval: PT30S
+-
+# 4.2. Setting Sending App|Facility
+replace: hl7PSUSendingApplication
+hl7PSUSendingApplication: *
+-
+# 4.3. Setting Receiving App|Facility
+replace: hl7PSUReceivingApplication
+hl7PSUReceivingApplication: pacs-integration|pacs-integration
+-
+#4.4. Setting Timeout before sending notification
+replace: hl7PSUDelay
+hl7PSUDelay: PT30S
+
