@@ -864,6 +864,22 @@
       "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/bonolo_meds_prescriptions_list.sql/"
     }
   },
+  "ART_clients_with_contacts_list": {
+    "name": "ART-097 ART Clients with Contacts (List)",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/ART_clients_with_contacts_list.sql/"
+    }
+  },
+  "ART_clients_with_contacts_pivot": {
+    "name": "ART-098 ART Clients with Contacts (Pivot)",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/ART_clients_with_contacts_pivot.sql/"
+    }
+  },
   "htsfinalhivstatusbyservicepointlist": {
     "name": "HTS-001 HTS Final HIV Status (List)",
     "type": "MRSGeneric",
@@ -1137,7 +1153,7 @@
     }
   },
   "Under5_list": {
-    "name": "MCH-007| Child Health (Under5) - List",
+    "name": "MCH-007 Child Health (Under5) - List",
     "type": "MRSGeneric",
     "requiredPrivilege": "app:reports",
     "config": {
