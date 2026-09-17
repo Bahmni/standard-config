@@ -329,9 +329,6 @@
             "HIVTC, Date of transferred out": {
                 "required": true
             },
-            "ART treatment interruption Date": {
-                "required": true
-            },
             "Date restarted ART": {
                 "required": false
             },
