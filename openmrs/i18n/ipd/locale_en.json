@@ -64,5 +64,6 @@
   "DIAGNOSIS_HEADER_KEY": "Diagnosis",
   "TREATMENTS_HEADER_KEY": "Treatments",
   "NURSING_TASKS_HEADER_KEY": "Nursing Tasks",
-  "DRUG_CHART_HEADER_KEY": "Drug Chart"
+  "DRUG_CHART_HEADER_KEY": "Drug Chart",
+  "CARE_INSTRUCTIONS_HEADER_KEY": "Care Instructions"
 }
