@@ -1,5 +1,6 @@
 {
   "config": {
+    "formTaskInputConceptUuid": "f275a481-8656-4683-944f-16e575925131",
     "contactDetails": ["phoneNumber"],
     "enable24HourTimers": true,
     "drugChartScheduleFrequencies": [

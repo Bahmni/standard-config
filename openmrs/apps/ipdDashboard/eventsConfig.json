@@ -4,7 +4,13 @@
         "tasks": [
             {
                 "name": "Collect patient history",
-                "type": ""
+                "type": "",
+                "input": [
+                    {
+                        "typeUuid": "f275a481-8656-4683-944f-16e575925131",
+                        "valueText": "History and Examination"
+                    }
+                ]
             },
             {
                 "name": "Record medications taken by the patient already",
@@ -12,7 +18,13 @@
             },
             {
                 "name": "Record Vitals",
-                "type": ""
+                "type": "",
+                "input": [
+                    {
+                        "typeUuid": "f275a481-8656-4683-944f-16e575925131",
+                        "valueText": "Vitals"
+                    }
+                ]
             }
         ]
     },
