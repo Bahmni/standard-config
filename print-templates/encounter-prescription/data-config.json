@@ -57,8 +57,9 @@
       "api": "fhir",
       "resource": "Observation",
       "params": {
-        "encounter": "{{encounterUuid}}",
+        "patient": "{{patientUUID}}",
         "code": "9bb0795c-4ff0-0305-1990-000000000020,5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5092AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,631f9e92-b15f-41da-a6ba-4f4cd67f36b7",
+        "date": ["ge{{visitStartDate}}", "le{{visitEndDate}}"],
         "_include": ["Observation:has-member"],
         "_sort": "-_lastUpdated"
       }
