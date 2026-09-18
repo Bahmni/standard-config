@@ -1,7 +1,3 @@
-/* ---------------------------------------------------------------
-   Section titles — plain underlined caption (matches prescriptions/),
-   overrides base's gray full-width border-bottom rule.
---------------------------------------------------------------- */
 .section-title {
   border: 0;
   padding: 0;
@@ -26,9 +22,6 @@
   background: none;
 }
 
-/* ---------------------------------------------------------------
-   Print header
---------------------------------------------------------------- */
 .print-header {
   text-align: center;
   color: #000;
@@ -63,10 +56,6 @@
   margin-top: 2px;
 }
 
-/* ---------------------------------------------------------------
-   Patient info grid — bordered cells, bold label + normal-weight
-   value (matches prescriptions/'s bordered patient-info box).
---------------------------------------------------------------- */
 .patient-info {
   border: 0;
   border-radius: 0;
@@ -98,10 +87,6 @@
   font-weight: normal;
 }
 
-/* ---------------------------------------------------------------
-   Data tables — light zebra striping, no per-cell borders
-   (matches prescriptions/'s prescription-table look).
---------------------------------------------------------------- */
 .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -139,15 +124,7 @@
   padding-left: 14px;
 }
 
-/* ---------------------------------------------------------------
-   Medications — same prescription-table layout as
-   print-templates/prescriptions/ (S.No / Drug Name / Dosage
-   Instructions / Start Date + inline "Treatment Notes:" row).
-   Header <tr> has no explicit wrapper — browser wraps it in an
-   implicit <tbody>, making it the 1st/odd tbody which picks up the
-   #EDEDED alternating background. Each drug gets its own <tbody>
-   so odd/even alternation works correctly.
---------------------------------------------------------------- */
+/* Each drug gets its own <tbody> so the nth-child(odd) striping below alternates correctly. */
 .prescription-table {
   width: 100%;
   table-layout: fixed;
@@ -203,13 +180,6 @@
 .col-dose { width: 43%; }
 .col-date { width: 17%; white-space: nowrap; }
 
-/* ---------------------------------------------------------------
-   Investigations — one table per order-type group; table-layout:
-   fixed + shared colgroup widths keep columns aligned across all
-   group tables regardless of how long any one cell's content is
-   (long content wraps via overflow-wrap instead of growing the
-   column and shifting alignment relative to the other groups).
---------------------------------------------------------------- */
 .investigations-table {
   table-layout: fixed;
 }
@@ -219,18 +189,12 @@
   word-break: break-word;
 }
 
-/* ---------------------------------------------------------------
-   Abnormal values, medication badges, vitals range label
---------------------------------------------------------------- */
 .abnormal { font-weight: bold; color: #b00020; }
 .badge { font-size: 8pt; font-weight: bold; padding: 1px 5px; border-radius: 3px; margin-left: 4px; }
 .badge-stat { background: #b00020; color: #fff; }
 .badge-prn { background: #555; color: #fff; }
 .vital-range { font-size: 8pt; color: #555; }
 
-/* ---------------------------------------------------------------
-   Print media
---------------------------------------------------------------- */
 @media print {
   @page { size: A4 portrait; margin: 12mm 15mm; }
 
