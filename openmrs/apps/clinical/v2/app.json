@@ -22,12 +22,12 @@
         {
           "translationKey": "CLINICAL_PRINT_MEDICATION_PRESCRIPTION_KEY",
           "templateId": "PRESCRIPTION_V1",
-          "privileges": ["app:clinical"]
+          "privileges": ["app:clinical:printmedications"]
        },
      {
-          "translationKey": "SELECT_ENCOUNTER_TO_PRINT_PRESCRIPTION_KEY",
+          "translationKey": "PRINT_PRESCRIPTION_KEY",
           "templateId": "PRESCRIPTION_ENCOUNTER_V1",
-          "privileges": ["app:clinical"],
+          "privileges": ["app:clinical:printmedications"],
           "category": "PRESCRIPTION"
         }
       ]

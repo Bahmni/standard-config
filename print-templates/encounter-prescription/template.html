@@ -16,7 +16,6 @@
 
 {% block content %}
 
-{# ── Patient demographics ── #}
 <div class="patient-info">
   <table class="info-grid">
     <tr>
@@ -38,7 +37,6 @@
   </table>
 </div>
 
-{# ── Allergies ── #}
 <h2 class="section-title">{{ 'ALLERGIES' | t }}</h2>
 {% if computed.allergies and computed.allergies.length > 0 %}
 <table class="data-table">
@@ -63,7 +61,6 @@
 <div class="no-data">{{ 'NONE_RECORDED' | t }}</div>
 {% endif %}
 
-{# ── Conditions ── #}
 <h2 class="section-title">{{ 'CONDITIONS' | t }}</h2>
 {% if computed.conditions and computed.conditions.length > 0 %}
 <table class="data-table">
@@ -86,7 +83,6 @@
 <div class="no-data">{{ 'NONE_RECORDED' | t }}</div>
 {% endif %}
 
-{# ── Diagnosis (current encounter) ── #}
 <h2 class="section-title">{{ 'DIAGNOSIS' | t }}</h2>
 {% if computed.diagnoses and computed.diagnoses.length > 0 %}
 <table class="data-table">
@@ -109,8 +105,6 @@
 <div class="no-data">{{ 'NONE_RECORDED' | t }}</div>
 {% endif %}
 
-{# ── Chief complaint (current encounter) — table so N complaints per encounter
-     line up as rows instead of stacked paragraphs ── #}
 <h2 class="section-title">{{ 'CHIEF_COMPLAINT' | t }}</h2>
 {% if computed.chiefComplaints and computed.chiefComplaints.length > 0 %}
 <table class="data-table">
@@ -129,8 +123,6 @@
 <div class="no-data">{{ 'NONE_RECORDED' | t }}</div>
 {% endif %}
 
-{# ── Medications (current encounter) — same S.No/Drug Name/Dosage Instructions/Start
-     Date column layout and inline "Treatment Notes:" row as print-templates/prescriptions/ ── #}
 <h2 class="section-title">{{ 'MEDICATIONS' | t }}</h2>
 {% if computed.medications and computed.medications.length > 0 %}
 <table class="prescription-table">
@@ -168,7 +160,6 @@
 <div class="no-data">{{ 'NONE_RECORDED' | t }}</div>
 {% endif %}
 
-{# ── Investigations (current encounter), grouped dynamically by order type ── #}
 <h2 class="section-title">{{ 'INVESTIGATIONS' | t }}</h2>
 {% if computed.investigations and computed.investigations.length > 0 %}
 {% for group in computed.investigations %}
@@ -197,7 +188,6 @@
 <div class="no-data">{{ 'NONE_RECORDED' | t }}</div>
 {% endif %}
 
-{# ── Vitals (current encounter, latest reading per vital) ── #}
 <h2 class="section-title">{{ 'VITALS' | t }}</h2>
 {% if computed.vitals and computed.vitals.length > 0 %}
 <table class="data-table">
@@ -216,14 +206,13 @@
 <div class="no-data">{{ 'NONE_RECORDED' | t }}</div>
 {% endif %}
 
-{# ── Provider details ── #}
 <h2 class="section-title">{{ 'PROVIDER_DETAILS' | t }}</h2>
 <table class="info-grid">
   <tr>
     <td class="label">{{ 'PROVIDER_NAME' | t }}:</td>
     <td class="value">{{ computed.providerName | default('') }}</td>
     <!-- <td class="label">{{ 'LICENSE_NO' | t }}:</td>
-    <td class="value">{{ computed.providerLicenseNumber | default('N/A') }}</td> -->
+<td class="value">{{ computed.providerLicenseNumber | default('N/A') }}</td> -->
   </tr>
 </table>
 
