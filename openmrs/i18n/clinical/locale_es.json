@@ -119,5 +119,7 @@
   "VACCINATION_INPUT_CONTROL_LABEL": "Vacunas",
   "CLINICAL_PRINT_MEDICATION_PRESCRIPTION_KEY": "Imprimir los últimos medicamentos",
   "STOP_ACTION_LABEL": "Detener",
-  "REGISTRATION_DEFAULT_SEARCH_LABEL": "Buscar"
+  "REGISTRATION_DEFAULT_SEARCH_LABEL": "Buscar",
+  "OPEN_IN_VAIDRA_KEY": "Notas automáticas. IA en vivo.",
+  "DASHBOARD_TITLE_OPEN_IN_VAIDRA_KEY": "Notas automáticas. IA en vivo."
 }
