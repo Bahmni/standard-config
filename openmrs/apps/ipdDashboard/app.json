@@ -87,7 +87,7 @@
         "formConcepts": [
           {
             "formName": "General Care Instructions",
-            "concepts": ["Referring to Hospital", "Vaccination date", "Procedure comment"]
+            "concepts": ["Name of referring person", "Vaccination date", "Procedure comment"]
           },
           {
             "formName": "Surgery Care Instructions",
