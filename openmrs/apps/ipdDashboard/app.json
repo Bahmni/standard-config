@@ -84,16 +84,7 @@
       "displayOrder": 4,
       "refreshKey": 4,
       "config": {
-        "formConcepts": [
-          {
-            "formName": "Patient Progress Notes and Orders",
-            "concepts": ["Physician Orders Comments"]
-          },
-          {
-            "formName": "ENT Operative Report",
-            "concepts": ["Post Operative Order Comments", "Activity Until Further Notice"]
-          }
-        ]
+        "formConcepts": []
       }
     },
     {
