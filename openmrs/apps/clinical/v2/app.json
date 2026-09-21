@@ -27,7 +27,7 @@
      {
           "translationKey": "PRINT_PRESCRIPTION_KEY",
           "templateId": "PRESCRIPTION_ENCOUNTER_V1",
-          "privileges": ["app:clinical:printmedications"],
+          "privileges": ["app:clinical:printPrescription"],
           "category": "PRESCRIPTION"
         }
       ]
