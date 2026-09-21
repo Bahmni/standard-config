@@ -84,7 +84,16 @@
       "displayOrder": 4,
       "refreshKey": 4,
       "config": {
-        "formConcepts": []
+        "formConcepts": [
+          {
+            "formName": "General Care Instructions",
+            "concepts": ["Name of referring person", "Vaccination date", "Procedure comment"]
+          },
+          {
+            "formName": "Surgery Care Instructions",
+            "concepts": ["Radiographic Examination", "Complication of Surgical Procedure", "Surgery antibiotics"]
+          }
+        ]
       }
     },
     {
