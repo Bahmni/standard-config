@@ -36,7 +36,7 @@
   "USER_LOGOUT_SUCCESS_MESSAGE": "អ្នក​ប្រើ{{userId}}ចេញ",
   "USER_LOGIN_SUCCESS_MESSAGE": "អ្នក​ប្រើ{{userId}}ចូល",
   "USER_LOGIN_FAILED_MESSAGE": "អ្នក​ប្រើ {{params.userName}} មានការចូលបានបរាជ័យ",
-  "OPEN_VISIT_MESSAGE": "អ្នក​ប្រើ{{userId}}បានចាប់ផ្តើម ការពិគ្រោះ{{ visitType }} សម្រាប់អ្នកជម្ងឺ{{patientId}} ",
+  "OPEN_VISIT_MESSAGE": "អ្នក​ប្រើ{{userId}}បានចាប់ផ្តើម ការពិគ្រោះ{{ params.visitType }} សម្រាប់អ្នកជម្ងឺ{{patientId}} ",
   "EDIT_VISIT_MESSAGE": "អ្នក​ប្រើ{{userId}}បាកែការពិគ្រោះ {{params.visitType}}បច្ចុប្បន្នសកម្ម របស់​អ្នកជម្ងឺ{{patientId}}",
   "CLOSE_VISIT_MESSAGE": "អ្នក​ប្រើ{{userId}}បាបិទការពិគ្រោះ {{params.visitType}}  របស់​អ្នកជម្ងឺ{{patientId}}",
   "CLOSE_VISIT_FAILED_MESSAGE": "អ្នក​ប្រើ{{userId}}បានព្យាយាមបញ្ចប់ការពិគ្រោះ {{params.visitType}}  របស់​អ្នកជម្ងឺ{{patientId}}, ប៉ុន្តែបានបរាជ័យ",
