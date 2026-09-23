@@ -1,0 +1,48 @@
+{
+  "formJson": {
+    "id": 21,
+    "uuid": "703b3235-74f1-4fb1-9cc1-74b25c8fe844",
+    "name": "General Care Instructions",
+    "version": "3",
+    "published": true,
+    "resources": [
+      {
+        "value": "{\"name\":\"General Care Instructions\",\"id\":21,\"uuid\":\"703b3235-74f1-4fb1-9cc1-74b25c8fe844\",\"defaultLocale\":\"en\",\"controls\":[{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"NAME_OF_REFERRING_PERSON_11\",\"id\":\"11\",\"units\":\"\",\"type\":\"label\",\"value\":\"Name of referring person\"},\"properties\":{\"mandatory\":true,\"notes\":false,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":false,\"location\":{\"column\":0,\"row\":0}},\"id\":\"11\",\"concept\":{\"name\":\"Name of referring person\",\"uuid\":\"161103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\"description\":{\"value\":\"This is the name of person who referred the patient\",\"translationKey\":\"NAME_OF_REFERRING_PERSON_11_DESC\"},\"datatype\":\"Text\",\"conceptClass\":\"Question\",\"conceptHandler\":null,\"answers\":[],\"properties\":{\"allowDecimal\":null}},\"units\":null,\"hiNormal\":null,\"lowNormal\":null,\"hiAbsolute\":null,\"lowAbsolute\":null},{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"PROCEDURE_COMMENT_8\",\"id\":\"8\",\"units\":\"\",\"type\":\"label\",\"value\":\"Procedure comment\"},\"properties\":{\"mandatory\":true,\"notes\":false,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":false,\"location\":{\"column\":0,\"row\":1}},\"id\":\"8\",\"concept\":{\"name\":\"Procedure comment\",\"uuid\":\"160716AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\"description\":{\"value\":\"Free text comment to explain outcome of procedure performed.\",\"translationKey\":\"PROCEDURE_COMMENT_8_DESC\"},\"datatype\":\"Text\",\"conceptClass\":\"Question\",\"conceptHandler\":null,\"answers\":[],\"properties\":{\"allowDecimal\":null}},\"units\":null,\"hiNormal\":null,\"lowNormal\":null,\"hiAbsolute\":null,\"lowAbsolute\":null},{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"VACCINATION_DATE_9\",\"id\":\"9\",\"units\":\"\",\"type\":\"label\",\"value\":\"Vaccination date\"},\"properties\":{\"mandatory\":false,\"notes\":false,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":false,\"location\":{\"column\":0,\"row\":2},\"allowFutureDates\":false},\"id\":\"9\",\"concept\":{\"name\":\"Vaccination date\",\"uuid\":\"1410AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\"description\":{\"value\":\"The full date of a vaccination\",\"translationKey\":\"VACCINATION_DATE_9_DESC\"},\"datatype\":\"Date\",\"conceptClass\":\"Finding\",\"conceptHandler\":null,\"answers\":[],\"properties\":{\"allowDecimal\":null}},\"units\":null,\"hiNormal\":null,\"lowNormal\":null,\"hiAbsolute\":null,\"lowAbsolute\":null}],\"events\":{\"onFormSave\":\"\",\"onFormInit\":\"\"},\"formDefVersion\":1,\"translationsUrl\":\"/openmrs/ws/rest/v1/bahmniie/form/translations\",\"referenceVersion\":\"2\",\"referenceFormUuid\":\"d5e6cbc5-ab6e-4014-a718-ad00266725e7\"}",
+        "dataType": "org.bahmni.customdatatype.datatype.FileSystemStorageDatatype",
+        "uuid": "64e61274-19e0-4ba1-b675-66c97e427db9"
+      }
+    ],
+    "privileges": []
+  },
+  "translations": [
+    {
+      "locale": "en",
+      "labels": {},
+      "concepts": {
+        "UNKNOWN_6": "Unknown",
+        "RECUMBENT_6": "recumbent",
+        "NAME_OF_REFERRING_PERSON_11_DESC": "This is the name of person who referred the patient",
+        "STANDING_6": "standing",
+        "SYSTOLIC_BLOOD_PRESSURE_4_DESC": "A patient's systolic blood pressure measurement (taken with a manual cuff in either a sitting or standing position)",
+        "PROCEDURE_COMMENT_8": "Procedure comment",
+        "DIASTOLIC_BLOOD_PRESSURE_5": "Diastolic blood pressure",
+        "DIASTOLIC_BLOOD_PRESSURE_5_DESC": "A patient's diastolic blood pressure measurement (taken with a manual cuff in either a sitting or standing position)",
+        "VACCINATION_DATE_9": "Vaccination date",
+        "SYSTOLIC_BLOOD_PRESSURE_4": "Systolic blood pressure",
+        "FOWLER'S_POSITION_6": "Fowler's position",
+        "BODY_POSITION_6": "Body position",
+        "VACCINATION_DATE_9_DESC": "The full date of a vaccination",
+        "SITTING_6": "sitting",
+        "NAME_OF_REFERRING_PERSON_11": "Name of referring person",
+        "BODY_POSITION_6_DESC": "Body position for procedure or blood pressure measurement",
+        "PROCEDURE_COMMENT_8_DESC": "Free text comment to explain outcome of procedure performed.",
+        "OTHER_6": "Other"
+      },
+      "formName": "General Care Instructions",
+      "formUuid": null,
+      "version": "3",
+      "referenceVersion": null,
+      "referenceFormUuid": null
+    }
+  ]
+}

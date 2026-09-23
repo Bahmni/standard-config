@@ -23,6 +23,7 @@
         "visitUuid"
     ],
     "config": {
+        "autoSaveIntervalSeconds":900,
         "enableNoKnownAllergy":false,
         "enableVariableDoseProtocol": true,
         "hideFormName": true,
