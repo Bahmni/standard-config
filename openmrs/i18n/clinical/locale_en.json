@@ -131,5 +131,7 @@
   "REGISTRATION_DEFAULT_SEARCH_LABEL": "Search",
   "MEDICATION_PHARMACIST_REVIEW_HEADING": "New Medications Available to be Dispensed",
   "MEDICATION_PHARMACIST_REVIEW_SUBTEXT": "Please review the patient's weight, allergies, and prescriptions to continue with dispensing.",
-  "MEDICATION_CONFIRM_REVIEW": "Confirm Review"
+  "MEDICATION_CONFIRM_REVIEW": "Confirm Review",
+  "OPEN_IN_VAIDRA_KEY": "Auto notes. Live AI.",
+  "DASHBOARD_TITLE_OPEN_IN_VAIDRA_KEY": "Auto notes. Live AI."
 }
