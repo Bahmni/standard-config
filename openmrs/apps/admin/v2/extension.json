@@ -27,7 +27,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_AUDIT_LOG_KEY",
     "label": "Audit Log",
-    "url": "/bahmni/admin/index.html#/auditLog",
+    "url": "/bahmni-v2/admin/auditlog",
     "icon": "fa-eye",
     "order": 3,
     "requiredPrivilege": "app:admin"
