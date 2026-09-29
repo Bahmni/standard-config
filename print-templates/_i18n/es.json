@@ -49,13 +49,11 @@
   "TREATMENT_NOTES":   "Notas de Tratamiento",
   "INVESTIGATIONS":    "Investigaciones",
   "TEST_NAME":         "Prueba",
-  "STATUS":            "Estado",
-  "ORDERED_BY":        "Ordenado Por",
+  "INVESTIGATION_PANEL": "Panel",
   "ORDER_DATE":        "Fecha de Orden",
   "VITALS":            "Signos Vitales",
   "VITAL":             "Signo Vital",
   "VALUE":             "Medición",
   "PROVIDER_DETAILS":  "Detalles del Proveedor",
-  "PROVIDER_NAME":     "Proveedor",
-  "LICENSE_NO":        "N.° de Licencia"
+  "PROVIDER_NAME":     "Proveedor"
 }
