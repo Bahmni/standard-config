@@ -399,4 +399,17 @@
 
     <include file="override_ciel_immunization_valueset.xml" relativeToChangelogFile="true"/>
     <include file="override_ciel_vaccination_site_valueset.xml" relativeToChangelogFile="true"/>
+
+    <changeSet id="ORDERS_ADD_ORDER_FULFILLMENT_ENCOUNTER_TYPE_202603131200" author="SasikiranJ">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM encounter_type WHERE name = 'Order Fulfillment';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add Order Fulfillment encounter type for FHIR Task encounter linking</comment>
+        <sql>
+            INSERT INTO encounter_type (name, description, creator, date_created, retired, uuid)
+            VALUES ('Order Fulfillment', 'Encounter created when a fulfiller updates an order status', 1, now(), 0, '9e49d0a6-e30f-4c04-93e1-1a6e24b84455');
+        </sql>
+    </changeSet>
 </databaseChangeLog>
