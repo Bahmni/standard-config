@@ -53,7 +53,8 @@
       "Four days a week",
       "Five days a week",
       "Six days a week"
-    ]
+    ],
+    "prnBufferTimeInMinutes": 30
   },
   "sections": [
     {
