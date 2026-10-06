@@ -117,6 +117,7 @@
   "IMMUNIZATION_HISTORY_INPUT_CONTROL_LABEL": "Historial de vacunación",
   "MEDICATION_INPUT_CONTROL_LABEL": "Medicamentos",
   "VACCINATION_INPUT_CONTROL_LABEL": "Vacunas",
+  "DISPOSITION_FORM_TITLE": "Disposición",
   "CLINICAL_PRINT_MEDICATION_PRESCRIPTION_KEY": "Imprimir los últimos medicamentos",
   "PRINT_PRESCRIPTION_KEY": "Imprimir prescripción",
   "STOP_ACTION_LABEL": "Detener",
