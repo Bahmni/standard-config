@@ -85,6 +85,17 @@
             INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id, @location_tag_id);
         </sql>
     </changeSet>
+    <changeSet id="add-fhir2extension-orderTypeToCategoryMap-202608181630" author="CURE">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM global_property where property =
+                                                                                    "fhir2Extension.orderTypeToCategoryMap"
+            </sqlCheck>
+        </preConditions>
+        <comment>Add OrderType name to FHIR ServiceRequest category code mapping, used by fhir2-addl-extension to emit category codings and resolve category search filters</comment>
+        <sql>INSERT INTO global_property (property, property_value, description, uuid) VALUES
+            ("fhir2Extension.orderTypeToCategoryMap", "Radiology Order:imaging;Lab Order:laboratory;Rehab Order:rehabilitation;P&amp;O Order:prosthetics-orthotics;Speech Therapy Order:speech-therapy", "Maps OpenMRS OrderType name to standard/semantic FHIR ServiceRequest category code", uuid());
+        </sql>
+    </changeSet>
     <include file ="addObsPathSplitterProperty.xml"/>
     <include file ="addMoreObsSplitterProperty.xml"/>
     <include file ="addMultiSelectObsSplitterProperty.xml"/>
