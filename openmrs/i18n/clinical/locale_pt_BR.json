@@ -95,5 +95,7 @@
   "PROGRAM_TREATMENT_DATE": "Data do tratamento",
   "PROGRAM_COMORBIDITES": "Comorbidades",
   "PROGRAM_DOCTORINCHARGE": "Médico Responsável",
-  "PROGRAM_PATIENT_STAGE": "Estado do paciente"
+  "PROGRAM_PATIENT_STAGE": "Estado do paciente",
+  "OPEN_IN_VAIDRA_KEY": "Notas automáticas. IA ao vivo.",
+  "DASHBOARD_TITLE_OPEN_IN_VAIDRA_KEY": "Notas automáticas. IA ao vivo."
 }
