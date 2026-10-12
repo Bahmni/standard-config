@@ -16,7 +16,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_CSV_EXPORT_KEY",
     "label": "CSV Export",
-    "url": "/bahmni/admin/index.html#/csvExport",
+    "url": "/bahmni-v2/admin/csvExport",
     "icon": "fa-download",
     "order": 2,
     "requiredPrivilege": "app:admin"
