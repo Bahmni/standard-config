@@ -7,8 +7,6 @@
     }
   ],
   "config": {
-    "ignoredTabularViewHeadings": ["display", "uuid", "image", "$$hashKey", "activeVisitUuid", "hasBeenAdmitted", "forwardUrl", "programUuid", "enrollment", "extraIdentifier", "kid", "extraIdentifiers", "personId", "deathDate", "addressFieldValue", "givenName", "middleName", "familyName", "dateCreated", "customAttribute", "patientProgramAttributeValue"],
-    "identifierHeadings": ["ID", "Id", "id", "identifier", "DQ_COLUMN_TITLE_ACTION"],
     "manageOrdersPanelPatientDetails": [
       {
         "key": "patient.gender",
@@ -84,9 +82,7 @@
     "tabPractitionerTypeMap": {
       "Radiology Order": "Radiology Technologist",
       "Rehab Order": "Physiotherapist",
-      "P&O Order": "P&O Technician",
-      "Speech Therapy Order": "Speech Therapist",
-      "Audiology Order": "Audiology technician"
+      "P&O Order": "P&O Technician"
     },
     "ordersTableColumnHeadersGeneric": [
       {
@@ -169,47 +165,6 @@
         "sortable": false
       }
     ],
-    "maxConceptSetLevels": 3,
-    "conceptSetUI": {
-      "Grid1": {
-        "grid": true
-      },
-      "Coded3": {
-        "multiSelect": true
-      },
-      "Radiology Order Ownership": {
-        "dropdown": true
-      },
-      "Rehab Order Ownership": {
-        "dropdown": true
-      },
-      "P&O Order Ownership": {
-        "dropdown": true
-      }
-    },
-    "sections": {
-      "title": "Radiology Order FulFillment Form",
-      "name": "Radiology Results",
-      "isObservation": true,
-      "conceptNames": ["Radiology Notes"],
-      "numberOfVisits": 2,
-      "scope": "latest"
-    },
-    "orderLabelConcept": {
-      "Radiology Order Fulfillment Form": "Radiology Order Ownership",
-      "Rehab Order Fulfillment Form": "Rehab Order Ownership",
-      "P&O Order Fulfillment Form": "P&O Order Ownership"
-    },
-    "filterOutAttributeForAllSearch": [{
-      "attrName": "confirmedPatient",
-      "attrValue": "false"
-    }],
-    "iconAttribute" : {
-      "attrName": "kid",
-      "attrValue": "true",
-      "icon": "fa fa-solid fa-child",
-      "iconStyle": "{'background-color': '#F58C35'}"
-    },
     "fulfillmentEncounterTypeUuid": "9e49d0a6-e30f-4c04-93e1-1a6e24b84455",
     "orderFulfillmentConceptUuid": "65ac4f6a-d029-46f5-93e7-10ab49a91167"
   }
