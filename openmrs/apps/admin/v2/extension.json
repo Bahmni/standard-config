@@ -16,7 +16,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_CSV_EXPORT_KEY",
     "label": "CSV Export",
-    "url": "/bahmni/admin/index.html#/csvExport",
+    "url": "/bahmni-v2/admin/csvExport",
     "icon": "fa-download",
     "order": 2,
     "requiredPrivilege": "app:admin"
@@ -27,7 +27,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_AUDIT_LOG_KEY",
     "label": "Audit Log",
-    "url": "/bahmni/admin/index.html#/auditLog",
+    "url": "/bahmni-v2/admin/auditlog",
     "icon": "fa-eye",
     "order": 3,
     "requiredPrivilege": "app:admin"
