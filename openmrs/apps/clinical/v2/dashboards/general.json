@@ -106,6 +106,33 @@
       ]
     },
     {
+      "name": "Vitals Trends",
+      "translationKey": "DASHBOARD_TITLE_VITALS_TRENDS_KEY",
+      "icon": "fa-chart-line",
+      "controls": [
+        {
+          "type": "charts",
+          "config": {
+            "url": "/Observation?patient={patientUuid}&_sort=-_lastUpdated&_count=100&code=5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "chartType": "line",
+            "expression": "{\"points\": entry.resource[resourceType = \"Observation\" and valueQuantity].{ \"x\": effectiveDateTime, \"y\": valueQuantity.value, \"series\": code.coding[0].display }, \"xType\": \"date\", \"unit\": \"beats/min\"}",
+            "unit": "beats/min",
+            "title": "DASHBOARD_TITLE_VITALS_TRENDS_CHART_PULSE"
+          }
+        },
+        {
+          "type": "charts",
+          "config": {
+            "url": "/Observation?patient={patientUuid}&_sort=-_lastUpdated&_count=100&code=5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "chartType": "line",
+            "expression": "{\"points\": [entry.resource[resourceType = \"Observation\" and valueQuantity].{ \"x\": effectiveDateTime, \"y\": valueQuantity.value, \"series\": code.coding[0].display }], \"xType\": \"date\", \"xTitle\": \"Observation Date\", \"yTitle\": (entry.resource.valueQuantity.unit)[0] ? (entry.resource.valueQuantity.unit)[0] : \"mmHg\"}",
+            "unit": "mmHg",
+            "title": "DASHBOARD_TITLE_VITALS_TRENDS_CHART_BLOOD_PRESSURE"
+          }
+        }
+      ]
+    },
+    {
       "name": "Medications",
       "translationKey": "DASHBOARD_TITLE_MEDICATIONS_KEY",
       "icon": "fa-pills",
