@@ -124,7 +124,7 @@
           "type": "charts",
           "config": {
             "url": "/Observation?patient={patientUuid}&_sort=-_lastUpdated&_count=100&code=5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "chartType": "line",
+            "chartType": "area",
             "expression": "{\"points\": [entry.resource[resourceType = \"Observation\" and valueQuantity].{ \"x\": effectiveDateTime, \"y\": valueQuantity.value, \"series\": code.coding[0].display }], \"xType\": \"date\", \"xTitle\": \"Observation Date\", \"yTitle\": (entry.resource.valueQuantity.unit)[0] ? (entry.resource.valueQuantity.unit)[0] : \"mmHg\"}",
             "unit": "mmHg",
             "title": "DASHBOARD_TITLE_VITALS_TRENDS_CHART_BLOOD_PRESSURE"
