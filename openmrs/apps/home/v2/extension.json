@@ -75,7 +75,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_REPORTS_KEY",
-    "url": "/bahmni/reports/#/dashboard",
+    "url": "/bahmni-v2/reports",
     "icon": "fa-file-lines",
     "order": 8,
     "requiredPrivilege": "app:reports"
