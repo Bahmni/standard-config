@@ -25,6 +25,19 @@
     "order": 2,
     "requiredPrivilege": "app:adt"
   },
+  "bahmniAdtPatientsSearchPatientsToTransfer":{
+    "id": "bahmni.adt.patients.search.patientsToTransfer",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.patientsToTransfer",
+      "translationKey": "MODULE_LABEL_TO_TRANSFER_KEY",
+      "forwardUrl" : "#/bedManagement/patient/{{patientUuid}}"
+    },
+    "label": "To Transfer",
+    "order": 3,
+    "requiredPrivilege": "app:adt"
+  },
   "bahmniAdtPatientsSearchPatientsToDischarge":{
     "id": "bahmni.adt.patients.search.patientsToDischarge",
     "extensionPointId": "org.bahmni.patient.search",
@@ -35,7 +48,7 @@
       "forwardUrl" : "#/bedManagement/patient/{{patientUuid}}"
     },
     "label": "To Discharge",
-    "order": 3,
+    "order": 4,
     "requiredPrivilege": "app:adt"
   },
   "bahmniAdtPatientsSearchAllPatients":{
@@ -47,7 +60,7 @@
       "forwardUrl" : "#/bedManagement/patient/{{patientUuid}}"
     },
     "label": "All",
-    "order": 4,
+    "order": 5,
     "requiredPrivilege": "app:adt"
   }
 }
