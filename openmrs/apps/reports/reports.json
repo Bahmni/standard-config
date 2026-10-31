@@ -1888,7 +1888,8 @@
     "type": "MRSGeneric",
     "requiredPrivilege": "app:reports",
     "config": {
-      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/shippinglist.sql/"
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/shippinglist.sql/",
+      "barcodeColumns": ["Lab Order Number"]
     }
   },
   "HIV_POC_Viral_Load": {

@@ -37,5 +37,56 @@
             </value>
             <description>SQL query to get the list of emergency medications to be acknowledged</description>
         </globalProperty>
+        <globalProperty>
+            <property>emrapi.sqlSearch.labResultNotifications</property>
+            <value>
+                SELECT
+                    ord.uuid AS order_uuid,
+                    p.uuid AS patient_uuid,
+                    pi.identifier AS identifier,
+                    CONCAT_WS(' ', pn.given_name, pn.family_name) AS patient_name,
+                    COALESCE(test_short.name, test_full.name) AS test_name,
+                    (SELECT lab_no.value_text
+                        FROM obs lab_no
+                        JOIN concept_name lab_no_cn ON lab_no_cn.concept_id = lab_no.concept_id
+                            AND lab_no_cn.name = 'eRegister Lab Order Number'
+                            AND lab_no_cn.concept_name_type = 'FULLY_SPECIFIED' AND lab_no_cn.locale = 'en' AND lab_no_cn.voided = 0
+                        WHERE lab_no.order_id = ord.order_id AND lab_no.voided = 0
+                        ORDER BY lab_no.date_created DESC LIMIT 1) AS lab_order_number,
+                    DATE_FORMAT(MAX(o.date_created), '%Y-%m-%d %H:%i:%s') AS received_at
+                FROM obs o
+                    JOIN concept_name result_cn ON result_cn.concept_id = o.concept_id
+                        AND result_cn.concept_name_type = 'FULLY_SPECIFIED' AND result_cn.locale = 'en' AND result_cn.voided = 0
+                        AND result_cn.name IN (
+                            'DISA, VL Result [#/vol]',
+                            'DISA, VL Result [log#/vol]',
+                            'DISA, VL Result (low value)',
+                            'DISA, GeneXpert Result, MTB Result',
+                            'DISA, GeneXpert Result, Rifampicin',
+                            'DISA, VL Result Testdate',
+                            'DISA, VL Result Comments',
+                            'HIVTC, VL Pregnancy Status',
+                            'HIVTC, VL Breastfeeding Status',
+                            'DISA, Smear Result, Ziehl Neelsen',
+                            'DISA, Smear Result, Grading',
+                            'DISA, ZN Date',
+                            'DISA, ZN Remarks')
+                    JOIN orders ord ON ord.order_id = o.order_id AND ord.voided = 0
+                    JOIN order_type ot ON ot.order_type_id = ord.order_type_id AND ot.name = 'Lab Order'
+                    JOIN person p ON p.person_id = o.person_id AND p.voided = 0
+                    LEFT JOIN person_name pn ON pn.person_id = p.person_id AND pn.preferred = 1 AND pn.voided = 0
+                    LEFT JOIN patient_identifier pi ON pi.patient_id = p.person_id AND pi.preferred = 1 AND pi.voided = 0
+                    LEFT JOIN concept_name test_short ON test_short.concept_id = ord.concept_id
+                        AND test_short.concept_name_type = 'SHORT' AND test_short.locale = 'en' AND test_short.voided = 0
+                    LEFT JOIN concept_name test_full ON test_full.concept_id = ord.concept_id
+                        AND test_full.concept_name_type = 'FULLY_SPECIFIED' AND test_full.locale = 'en' AND test_full.voided = 0
+                WHERE o.voided = 0
+                    AND o.date_created >= NOW() - INTERVAL 30 DAY
+                GROUP BY ord.order_id, ord.uuid, p.uuid, pi.identifier, pn.given_name, pn.family_name, test_short.name, test_full.name
+                ORDER BY MAX(o.date_created) DESC, ord.order_id DESC
+                LIMIT 50
+            </value>
+            <description>SQL query for the home page lab result notification bell: lab orders with result values received in the last 30 days</description>
+        </globalProperty>
     </globalProperties>
 </config>
