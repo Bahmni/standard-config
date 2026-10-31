@@ -74,6 +74,11 @@
                 "excludeFrom": ["TB Program"]
             }
         },
+        "bloodDrawReminder": { 
+            "enabled": true, 
+            "conceptName": "CD4 Date Drawn", 
+            "intervalMonths": 6 
+        },
 
         "patientContext": {
             "programAttributes": [

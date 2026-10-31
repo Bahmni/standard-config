@@ -288,11 +288,6 @@
                     "pivotTable": {}
                 }
             },
-            "bloodDrawReminder": { 
-                "enabled": true, 
-                "conceptName": "CD4 Date Drawn", 
-                "intervalMonths": 6 
-            },
             "artInitiationValues": {
                 "translationKey": "ART Initiation",
                 "type": "artInitiationValues",
