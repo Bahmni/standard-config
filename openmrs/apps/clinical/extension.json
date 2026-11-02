@@ -59,7 +59,7 @@
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.activePatients",
+      "searchHandler": "emrapi.sqlSearch.queue.activePatients",
       "translationKey": "MODULE_LABEL_ACTIVE_KEY",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
@@ -98,7 +98,7 @@
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.activePatientsByProvider",
+      "searchHandler": "emrapi.sqlSearch.queue.activePatientsByProvider",
       "translationKey": "MODULE_LABEL_MY_PATIENTS_KEY",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
@@ -124,7 +124,7 @@
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.activePatientsByLocation",
+      "searchHandler": "emrapi.sqlSearch.queue.activePatientsByLocation",
       "translationKey": "MODULE_LABEL_ACTIVE_PATIENTS_BY_LOCATION",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
