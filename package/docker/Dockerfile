@@ -4,6 +4,7 @@ COPY openmrs /etc/bahmni_config/openmrs
 COPY masterdata /etc/bahmni_config/masterdata
 COPY openelis /etc/bahmni_config/openelis
 COPY print-templates /etc/bahmni_config/print-templates
+COPY ai /etc/bahmni_config/ai
 
 COPY package/docker/start.sh start.sh
 RUN chmod +x start.sh
