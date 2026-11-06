@@ -21,5 +21,6 @@
   "REGISTRATION_INSTITUTE_ADDRESS": "Endereço",
   "FEE_INFORMATION_LOCALE_KEY": "Taxas",
   "NUTRITIONAL_VALUES_LOCALE_KEY": "Valores nutricionais",
-  "REGISTRATION_PRINT_WITH_BARCODE": "Imprimir Có<u>d</u>igo de barras"
+  "REGISTRATION_PRINT_WITH_BARCODE": "Imprimir Có<u>d</u>igo de barras",
+  "PATIENT_ATTRIBUTE_DO_YOU_CONSENT_TO_BE_SENT_SMS_REMINDERS": "Do you consent to be sent SMS reminders?"
 }
