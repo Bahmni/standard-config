@@ -78,8 +78,8 @@
       ]
     },
     {
-      "translationKey": "REGISTRATION_PRINT_BARCODE_CARD",
-      "templateId": "REG_BARCODE_V1",
+      "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
+      "templateId": "BARCODE_CARD_V1",
       "privileges": [
         "app:registration"
       ]

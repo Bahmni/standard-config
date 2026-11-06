@@ -16,6 +16,7 @@ h3 { text-align: center; }
   margin: 0 auto;
   border: 1px solid #000;
   padding: 3mm;
+  overflow: hidden;
 }
 .barcodeCard-header { width: 100%; table-layout: fixed; }
 .barcodeCard-header td { vertical-align: middle; }
@@ -26,6 +27,7 @@ h3 { text-align: center; }
 .barcodeCard-details td { padding: 1mm 0; font-size: 4mm; }
 .barcodeCard-details-name { width: 28mm; }
 .barcodeCard-details-seperator { width: 6mm; text-align: center; }
+.barcodeCard-details-id { white-space: nowrap; font-weight: bold; }
 
 .barcodeCard-barcode {
   margin-top: 3mm;
@@ -72,7 +74,7 @@ h3 { text-align: center; }
     <tr>
       <td class="barcodeCard-details-name">{{ 'REGISTRATION' | t }}</td>
       <td class="barcodeCard-details-seperator">:</td>
-      <td>{{ computed.patientId | default('') }}</td>
+      <td class="barcodeCard-details-id">{{ computed.patientId | default('') }}</td>
     </tr>
     <tr>
       <td class="barcodeCard-details-name">{{ 'NAME' | t }}</td>

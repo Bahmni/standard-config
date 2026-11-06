@@ -7,13 +7,6 @@
         "_id": "{{patientUuid}}"
       }
     },
-    "relatives": {
-      "api": "fhir",
-      "resource": "RelatedPerson",
-      "params": {
-        "patient": "{{patientUuid}}"
-      }
-    },
     "patientProfile": {
       "api": "rest",
       "resource": "/openmrs/ws/rest/v1/patientprofile/{{patientUuid}}",
