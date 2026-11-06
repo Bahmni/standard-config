@@ -134,6 +134,15 @@
                     "numberOfVisits": 1
                 }
             },
+            "labOrderBarcode": {
+                "type": "labOrderBarcode",
+                "translationKey": "DASHBOARD_TITLE_LAB_ORDER_BARCODE_KEY",
+                "dashboardConfig": {
+                    "orderType": "Lab Order",
+                    "conceptName": "eRegister Lab Order Number",
+                    "numberOfVisits": 1
+                }
+            },
             "hivtestingandcounseling": {
                 "title": "HIV Testing and Counseling",
                 "type": "hivtestingandcounseling",
