@@ -1,6 +1,7 @@
 {
   "DATE":              "Date",
   "REGISTRATION_CARD": "REGISTRATION CARD",
+  "BARCODE_CARD": "BARCODE CARD",
   "NOTICE":            "Notice",
   "CAUTION":           "Caution",
   "DATED":             "Dated",

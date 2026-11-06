@@ -6,6 +6,11 @@
       "folder": "registration-card"
     },
     {
+      "id": "REG_BARCODE_V1",
+      "name": "Registration Barcode Card",
+      "folder": "registration-card-barcode"
+    },
+    {
       "id": "PRESCRIPTION_V1",
       "name": "Prescription",
       "folder": "prescriptions"
