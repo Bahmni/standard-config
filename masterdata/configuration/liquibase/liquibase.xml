@@ -353,4 +353,74 @@
         </sql>
 
     </changeSet>
+    <changeSet id="LS-sms-consent-concept-20261105" author="Lesotho-eRegister">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM concept WHERE uuid = 'd07f7c16-deee-432a-b59b-255f7b960ef0';
+            </sqlCheck>
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM concept_name WHERE name = 'SMS Reminder Consent' AND concept_name_type = 'FULLY_SPECIFIED' AND voided = 0;
+            </sqlCheck>
+            <sqlCheck expectedResult="2">
+                SELECT count(DISTINCT cn.name) FROM concept_name cn JOIN concept c ON c.concept_id = cn.concept_id
+                WHERE cn.name IN ('Yes', 'No') AND cn.locale = 'en' AND cn.concept_name_type = 'FULLY_SPECIFIED' AND cn.voided = 0 AND c.retired = 0;
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding the coded Yes/No concept behind the SMS reminder consent person attribute</comment>
+        <sql>
+            INSERT INTO concept (datatype_id, class_id, is_set, creator, date_created, uuid)
+            SELECT dt.concept_datatype_id, cc.concept_class_id, 0, 1, NOW(), 'd07f7c16-deee-432a-b59b-255f7b960ef0'
+            FROM concept_datatype dt, concept_class cc
+            WHERE dt.name = 'Coded' AND cc.name = 'Misc';
+
+            INSERT INTO concept_name (concept_id, name, locale, locale_preferred, creator, date_created, concept_name_type, voided, uuid)
+            SELECT concept_id, 'SMS Reminder Consent', 'en', 1, 1, NOW(), 'FULLY_SPECIFIED', 0, '446a3821-1bbc-4af1-919c-87f8a4a100dc'
+            FROM concept WHERE uuid = 'd07f7c16-deee-432a-b59b-255f7b960ef0';
+
+            INSERT INTO concept_name (concept_id, name, locale, locale_preferred, creator, date_created, concept_name_type, voided, uuid)
+            SELECT concept_id, 'Do you consent to be sent SMS reminders?', 'en', 0, 1, NOW(), 'SHORT', 0, 'e285f60b-822d-43e7-9dad-1b0a077be957'
+            FROM concept WHERE uuid = 'd07f7c16-deee-432a-b59b-255f7b960ef0';
+
+            INSERT INTO concept_answer (concept_id, answer_concept, creator, date_created, sort_weight, uuid)
+            SELECT q.concept_id, MIN(a.concept_id), 1, NOW(), 1, '2205b01c-c97f-46f5-84e9-91d038145351'
+            FROM concept q, concept_name a
+            WHERE q.uuid = 'd07f7c16-deee-432a-b59b-255f7b960ef0'
+            AND a.name = 'Yes' AND a.locale = 'en' AND a.concept_name_type = 'FULLY_SPECIFIED' AND a.voided = 0
+            GROUP BY q.concept_id;
+
+            INSERT INTO concept_answer (concept_id, answer_concept, creator, date_created, sort_weight, uuid)
+            SELECT q.concept_id, MIN(a.concept_id), 1, NOW(), 2, '3f93e872-af71-407f-815a-f854bf3bcf8c'
+            FROM concept q, concept_name a
+            WHERE q.uuid = 'd07f7c16-deee-432a-b59b-255f7b960ef0'
+            AND a.name = 'No' AND a.locale = 'en' AND a.concept_name_type = 'FULLY_SPECIFIED' AND a.voided = 0
+            GROUP BY q.concept_id;
+        </sql>
+    </changeSet>
+    <changeSet id="LS-sms-consent-attribute-20261105" author="Lesotho-eRegister">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM person_attribute_type WHERE name = 'Do you consent to be sent SMS reminders';
+            </sqlCheck>
+            <sqlCheck expectedResult="1">
+                SELECT count(*) FROM concept WHERE uuid = 'd07f7c16-deee-432a-b59b-255f7b960ef0';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding the SMS reminder consent person attribute</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, format, foreign_key, searchable, creator, date_created, retired, uuid)
+            SELECT 'Do you consent to be sent SMS reminders', 'org.openmrs.Concept', concept_id, 0, 1, NOW(), 0, 'b33af138-370d-4e7f-9fa5-24d02d8919b7'
+            FROM concept WHERE uuid = 'd07f7c16-deee-432a-b59b-255f7b960ef0';
+        </sql>
+    </changeSet>
+    <changeSet id="LS-sms-consent-position-20261105" author="Lesotho-eRegister">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                SELECT count(*) FROM person_attribute_type WHERE name = 'Do you consent to be sent SMS reminders';
+            </sqlCheck>
+        </preConditions>
+        <comment>Places the consent field directly above Primary Contact (telephoneNumber) in the two-column registration form</comment>
+        <sql>
+            UPDATE person_attribute_type SET sort_weight = 4.5 WHERE name = 'Do you consent to be sent SMS reminders';
+        </sql>
+    </changeSet>
 </databaseChangeLog>

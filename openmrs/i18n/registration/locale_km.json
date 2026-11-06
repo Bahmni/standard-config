@@ -21,5 +21,6 @@
   "REGISTRATION_INSTITUTE_ADDRESS": "Ganiyari, District - Bilaspur",
   "FEE_INFORMATION_LOCALE_KEY": "ពត៍មានបង់ប្រាក់",
   "NUTRITIONAL_VALUES_LOCALE_KEY": "តម្លៃអាហារូបត្ថម្ភ",
-  "REGISTRATION_PRINT_WITH_BARCODE": "បោះពុម្ពBar Code"
+  "REGISTRATION_PRINT_WITH_BARCODE": "បោះពុម្ពBar Code",
+  "PATIENT_ATTRIBUTE_DO_YOU_CONSENT_TO_BE_SENT_SMS_REMINDERS": "Do you consent to be sent SMS reminders?"
 }

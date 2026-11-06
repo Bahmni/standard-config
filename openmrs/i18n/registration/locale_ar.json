@@ -21,5 +21,6 @@
   "REGISTRATION_INSTITUTE_ADDRESS": "أسيوط",
   "FEE_INFORMATION_LOCALE_KEY": "التكاليف النقدية",
   "NUTRITIONAL_VALUES_LOCALE_KEY": "القيم الغذائية",
-  "REGISTRATION_PRINT_WITH_BARCODE": "اطبع الباركود"
+  "REGISTRATION_PRINT_WITH_BARCODE": "اطبع الباركود",
+  "PATIENT_ATTRIBUTE_DO_YOU_CONSENT_TO_BE_SENT_SMS_REMINDERS": "Do you consent to be sent SMS reminders?"
 }
