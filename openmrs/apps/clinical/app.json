@@ -577,6 +577,9 @@
             },
             "Under5, Base Doses": {
                 "multiSelect": true
+            }, 
+            "Under5,  6 Months": {
+                "multiSelect": true
             },
             "Under5, 12 - 14 Months": {
                 "multiSelect": true
