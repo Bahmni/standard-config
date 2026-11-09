@@ -198,13 +198,25 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 return conditions;
         },
 
+        'TB Status': function (formName, formFieldValues) {
+                var conditions = { show: [], hide: [] };
+                var conditionConcept = formFieldValues['TB Status'];
+                if (conditionConcept == "Suspected / Probable") {
+                        conditions.show.push("TB Suspect signs");
+                } else {
+                        conditions.hide.push("TB Suspect signs");
+                }
+                return conditions;
+        },
+
         'HTC, Patient type': function (formName, formFieldValues) {
                 var conditionConcept = formFieldValues['HTC, Patient type'];
                 var conditions = { show: [], hide: [], assignedValues: [] };
-                if (conditionConcept == undefined) {
+                if (!conditionConcept ||conditionConcept == undefined) {
                         conditions.hide.push("HEIGHT");
                         conditions.hide.push("WEIGHT");
                         conditions.hide.push("TB Status");
+                        conditions.hide.push("TB Suspect signs");
                         conditions.hide.push("Systolic Data");
                         conditions.hide.push("Diastolic Data");
                         conditions.hide.push("IMAM, MUAC");
@@ -249,7 +261,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
                         conditions.hide.push("IMAM, MUAC");
 
                 }
-
+                console.log("HTC, Patient type conditions", conditions);
                 return conditions;
         },
 

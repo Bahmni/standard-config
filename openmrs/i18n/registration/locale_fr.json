@@ -21,5 +21,6 @@
   "REGISTRATION_INSTITUTE_ADDRESS": "Ganiari, District - Bilaspur",
   "FEE_INFORMATION_LOCALE_KEY": "Informations sur les frais",
   "NUTRITIONAL_VALUES_LOCALE_KEY": "Valeurs nutritionnelles",
-  "REGISTRATION_PRINT_WITH_BARCODE": "Imp<u>r</u>imier de code à barres"
+  "REGISTRATION_PRINT_WITH_BARCODE": "Imp<u>r</u>imier de code à barres",
+  "PATIENT_ATTRIBUTE_DO_YOU_CONSENT_TO_BE_SENT_SMS_REMINDERS": "Do you consent to be sent SMS reminders?"
 }
