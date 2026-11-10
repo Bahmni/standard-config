@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Wraps every emrapi.sqlSearch.queue.* query so it returns a queueNumber column
+        (patients numbered by visit start time). ROW_NUMBER() needs MySQL 8, so this
+        changeset waits (onFail="CONTINUE") until the database is on MySQL 8 and at least
+        one queue query still lacks queueNumber; it is retried on every startup until then.
+        The UPDATE skips queries that already contain queueNumber, so it is safe to re-run.
+    -->
+    <changeSet id="LS-QUEUE-NUMBER-MYSQL8-202611101200" author="kgatman">
+        <preConditions onFail="CONTINUE">
+            <sqlCheck expectedResult="1">
+                SELECT CAST(SUBSTRING_INDEX(VERSION(), '.', 1) AS UNSIGNED) >= 8
+            </sqlCheck>
+            <sqlCheck expectedResult="1">
+                SELECT COUNT(*) > 0 FROM global_property
+                WHERE property LIKE 'emrapi.sqlSearch.queue.%'
+                  AND property_value NOT LIKE '%queueNumber%'
+            </sqlCheck>
+        </preConditions>
+        <comment>Add queueNumber (ROW_NUMBER over visit start) to queue sqlSearch handlers after MySQL 8 migration</comment>
+        <sql><![CDATA[
+            UPDATE global_property
+            SET property_value = CONCAT(
+              'SELECT q.*, ROW_NUMBER() OVER (ORDER BY v.date_started) AS queueNumber FROM (',
+              TRIM(TRAILING ';' FROM TRIM(property_value)),
+              ') q JOIN visit v ON v.uuid = q.activeVisitUuid'
+            )
+            WHERE property LIKE 'emrapi.sqlSearch.queue.%'
+              AND property_value NOT LIKE '%queueNumber%';
+        ]]></sql>
+    </changeSet>
+</databaseChangeLog>
