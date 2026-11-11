@@ -118,6 +118,20 @@
         ]
       },
       {
+        "type": "documents",
+        "label": "DOCUMENTS_INPUT_CONTROL_LABEL",
+        "metadata": {
+          "documentTypeConceptName": "Patient Document",
+          "supportedFileTypes": [".pdf", ".jpg", ".jpeg", ".png"]
+        },
+        "encounterTypes": ["Consultation", "Patient Document"],
+        "privileges": ["Add Encounters"],
+        "attributes": [
+          { "name": "documentType", "required": true },
+          { "name": "documentId", "required": false }
+        ]
+      },
+      {
         "type": "stopMedications",
         "metadata": {
           "stoppedOrderReasonConceptSet": "Stopped Order Reason"
