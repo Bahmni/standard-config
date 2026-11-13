@@ -1,0 +1,18 @@
+{
+  "sources": {
+    "patient": {
+      "api": "fhir",
+      "resource": "Patient",
+      "params": {
+        "_id": "{{patientUuid}}"
+      }
+    },
+    "patientProfile": {
+      "api": "rest",
+      "resource": "/openmrs/ws/rest/v1/patientprofile/{{patientUuid}}",
+      "params": {
+        "v": "full"
+      }
+    }
+  }
+}
