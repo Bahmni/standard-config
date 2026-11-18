@@ -42,7 +42,7 @@
         },
         "showTextAsAbnormal": false,
         "quickPrints":false,
-        "allowAdhocTeleConsultation": false,
+        "allowAdhocTeleConsultation": true,
         "teleConsultationDomain": "meet.jit.si",
         "networkConnectivity" : {
             "showNetworkStatusMessage": false,
