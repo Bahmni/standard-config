@@ -1,6 +1,15 @@
 -- Main query to get patient names and their latest ART encounter information
 SELECT 
 
+    -- Subquery to get the patient's eRegister ID (identifier type 3)
+    (
+        SELECT identifier
+        FROM patient_identifier eReg
+        WHERE eReg.patient_id = pn.person_id
+            AND eReg.identifier_type = 3  -- eRegister identifier type
+            AND eReg.voided = 0
+        LIMIT 1
+    ) AS "eRegister No.",
     -- Combine first and last name to create full patient name
     CONCAT(pn.given_name, ' ', pn.family_name) AS "Patient Name",
 
@@ -9,7 +18,7 @@ SELECT
         SELECT identifier
         FROM patient_identifier pi
         WHERE pi.patient_id = pn.person_id
-            AND pi.identifier_type = 5  -- HIV program ID type
+            AND pi.identifier_type in (5,10)  -- HIV program ID type
         LIMIT 1
     ) AS "HIV Program ID",
 
@@ -196,7 +205,8 @@ SELECT
     ) AS "Address",
 
     -- Select the name of the location where the ART encounter took place
-    parent_loc.name AS "Location"
+    parent_loc.name AS "Location",
+    national_id.identifier AS "National ID"
 
 -- Main table: person_name (contains patient names)
 FROM 
@@ -231,6 +241,10 @@ FROM
     LEFT JOIN encounter e ON latest_art.encounter_id = e.encounter_id
     LEFT JOIN location loc ON e.location_id = loc.location_id
     LEFT JOIN location parent_loc ON loc.parent_location = parent_loc.location_id
+    LEFT JOIN patient_identifier national_id ON pn.person_id = national_id.patient_id AND national_id.identifier_type = 4 -- National ID type
+
+    WHERE pn.voided = 0  -- Ensure we only get non-voided patient names
+     --   AND pn.preffered = 1  -- Ensure we only get preferred names
 
 
 -- Order results by the date of the ART encounter
