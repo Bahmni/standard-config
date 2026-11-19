@@ -1,0 +1,60 @@
+{
+  "mcpServers": {
+    "documents": {
+      "url": "${MCP_DOCUMENTS_URL}",
+      "transport": "streamable-http",
+      "auth": {
+        "type": "none"
+      },
+      "requiredPrivilege": "AI: Search Documents",
+      "tools": {
+        "allow": [
+          "list_documents",
+          "read_document",
+          "search_documents"
+        ],
+        "default": "deny"
+      },
+      "trustToolAnnotations": true
+    },
+    "fhir": {
+      "url": "${MCP_FHIR_URL}",
+      "transport": "streamable-http",
+      "auth": {
+        "type": "openmrs-session"
+      },
+      "requiredPrivilege": "AI: Access FHIR Data",
+      "tools": {
+        "allow": [],
+        "deny": [
+          "delete"
+        ],
+        "overrides": {
+          "get_capabilities": {
+            "access": "read"
+          },
+          "search": {
+            "access": "read"
+          },
+          "read": {
+            "access": "read"
+          },
+          "get_user": {
+            "access": "read"
+          },
+          "create": {
+            "access": "write",
+            "confirm": true,
+            "requiredPrivilege": "AI: Access FHIR Data"
+          },
+          "update": {
+            "access": "write",
+            "confirm": true,
+            "requiredPrivilege": "AI: Access FHIR Data"
+          }
+        },
+        "default": "deny"
+      }
+    }
+  }
+}
