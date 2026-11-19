@@ -76,6 +76,13 @@
       "privileges": [
         "app:registration"
       ]
+    },
+    {
+      "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
+      "templateId": "BARCODE_CARD_V1",
+      "privileges": [
+        "app:registration"
+      ]
     }
   ],
   "registrationForm": {

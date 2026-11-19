@@ -1,0 +1,109 @@
+{% extends "_base/landscape.html" %}
+
+{% block title %}{{ 'BARCODE_CARD' | t }}{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block styles %}
+@page { margin-left: 0.2cm; margin-right: 0.2cm; margin-top: 0.2cm; margin-bottom: 0.2cm; }
+
+p, h1, h2, h3, table, tr, td, div, span, li { margin: 0px; padding: 0px; }
+h3 { text-align: center; }
+.print-center { text-align: center; }
+
+.barcodeCard {
+  width: 150mm;
+  margin: 0 auto;
+  border: 1px solid #000;
+  padding: 3mm;
+  overflow: hidden;
+}
+.barcodeCard-header { width: 100%; table-layout: fixed; }
+.barcodeCard-header td { vertical-align: middle; }
+.barcodeCard-logo { width: 14mm; }
+.barcodeCard-photo { width: 22mm; text-align: right; }
+
+.barcodeCard-details { width: 100%; margin-top: 3mm; }
+.barcodeCard-details td { padding: 1mm 0; font-size: 4mm; }
+.barcodeCard-details-name { width: 28mm; }
+.barcodeCard-details-seperator { width: 6mm; text-align: center; }
+.barcodeCard-details-id { white-space: nowrap; font-weight: bold; }
+
+.barcodeCard-barcode {
+  margin-top: 3mm;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+}
+.barcodeCard-barcode img {
+  display: inline-block !important;
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+.barcodeCard-barcode .barcode-fallback { font-size: 6mm; font-weight: bold; }
+{% endblock %}
+
+{% block content %}
+<div class="barcodeCard">
+
+  <table class="barcodeCard-header">
+    <tr>
+      <td class="barcodeCard-logo">
+        <img src="/bahmni_config/openmrs/apps/registration/registrationCardLayout/images/bahmni-icon.png" style="width: 12mm; height: 12mm;" />
+      </td>
+      <td>
+        <h3>{{ 'REGISTRATION_INSTITUTION_NAME' | t }}</h3>
+      </td>
+      <td class="barcodeCard-photo">
+        {% if computed.photoUrl %}
+          <img src="{{ computed.photoUrl }}" style="width: 20mm; height: 20mm;"
+               onerror="this.onerror=null;this.src='../images/blank.jpeg';" />
+        {% endif %}
+      </td>
+    </tr>
+  </table>
+
+  <table class="barcodeCard-details">
+    <tbody>
+    <tr>
+      <td class="barcodeCard-details-name">{{ 'DATED' | t }}</td>
+      <td class="barcodeCard-details-seperator">:</td>
+      <td>{{ computed.registrationDate | dateFormat | default('') }}</td>
+    </tr>
+    <tr>
+      <td class="barcodeCard-details-name">{{ 'REGISTRATION' | t }}</td>
+      <td class="barcodeCard-details-seperator">:</td>
+      <td class="barcodeCard-details-id">{{ computed.patientId | default('') }}</td>
+    </tr>
+    <tr>
+      <td class="barcodeCard-details-name">{{ 'NAME' | t }}</td>
+      <td class="barcodeCard-details-seperator">:</td>
+      <td>{{ computed.patientName | default('') }}</td>
+    </tr>
+    <tr>
+      <td class="barcodeCard-details-name">{{ 'AGE' | t }}</td>
+      <td class="barcodeCard-details-seperator">:</td>
+      <td>{{ computed.birthDate | age }}</td>
+    </tr>
+    <tr>
+      <td class="barcodeCard-details-name">{{ 'GENDER' | t }}</td>
+      <td class="barcodeCard-details-seperator">:</td>
+      <td>{{ computed.gender | upper | first | default('') }}</td>
+    </tr>
+    <tr>
+      <td class="barcodeCard-details-name">{{ 'VILLAGE' | t }}</td>
+      <td class="barcodeCard-details-seperator">:</td>
+      <td>{{ computed.village | default('') }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  {% if computed.patientId %}
+  <div class="barcodeCard-barcode">
+    {{ computed.patientId | barcode('code128', 12) }}
+  </div>
+  {% endif %}
+
+</div>
+{% endblock %}
