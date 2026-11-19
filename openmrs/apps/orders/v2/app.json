@@ -1,0 +1,171 @@
+{
+  "id": "bahmni.orders",
+  "extensionPoints": [
+    {
+      "id": "org.bahmni.orders.search",
+      "description": "Orders Dashboard"
+    }
+  ],
+  "config": {
+    "manageOrdersPanelPatientDetails": [
+      {
+        "key": "patient.gender",
+        "label": "Gender",
+        "translationKey": "GENDER"
+      },
+      {
+        "key": "patient.dateOfBirth",
+        "label": "Date of Birth",
+        "translationKey": "DOB"
+      },
+      {
+        "key": "patient.age",
+        "label": "Age",
+        "translationKey": "AGE"
+      }
+    ],
+    "orderStatusesAvailable": [
+      {
+        "value": "New",
+        "label": "New",
+        "translationKey": "STATUS_NEW"
+      },
+      {
+        "value": "Acknowledged",
+        "label": "Acknowledged",
+        "translationKey": "STATUS_ACKNOWLEDGED"
+      },
+      {
+        "value": "In Progress",
+        "label": "In Progress",
+        "translationKey": "STATUS_IN_PROGRESS"
+      },
+      {
+        "value": "On Hold",
+        "label": "On Hold",
+        "translationKey": "STATUS_ON_HOLD"
+      },
+      {
+        "value": "Cancelled",
+        "label": "Cancelled",
+        "translationKey": "STATUS_CANCELLED"
+      },
+      {
+        "value": "Completed",
+        "label": "Completed",
+        "translationKey": "STATUS_COMPLETED"
+      }
+    ],
+    "orderStatusesPreSelected": [
+      {
+        "value": "New",
+        "label": "New",
+        "translationKey": "STATUS_NEW"
+      },
+      {
+        "value": "Acknowledged",
+        "label": "Acknowledged",
+        "translationKey": "STATUS_ACKNOWLEDGED"
+      },
+      {
+        "value": "In Progress",
+        "label": "In Progress",
+        "translationKey": "STATUS_IN_PROGRESS"
+      }
+    ],
+    "lmpConfig": {
+      "lmpDateConcept": "da9b8c7e-610f-4b53-9a4d-e2b837cd610a",
+      "threshold": 28,
+      "ageThreshold": 9,
+      "tabLabels": ["Radiology Order"]
+    },
+    "tabPractitionerTypeMap": {
+      "Radiology Order": "Radiology Technologist",
+      "Rehab Order": "Physiotherapist",
+      "P&O Order": "P&O Technician"
+    },
+    "ordersTableColumnHeadersGeneric": [
+      {
+        "key": "badge",
+        "header": "",
+        "translationKey": "",
+        "visible": true,
+        "sortable": false
+      },
+      {
+        "key": "identifier",
+        "header": "Identifier",
+        "translationKey": "IDENTIFIER",
+        "visible": true,
+        "sortable": false
+      },
+      {
+        "key": "patientName",
+        "header": "Patient Name",
+        "translationKey": "PATIENT_NAME",
+        "visible": true,
+        "sortable": false
+      },
+      {
+        "key": "ordersPending",
+        "header": "Orders",
+        "translationKey": "ORDERS",
+        "visible": true,
+        "sortable": false
+      },
+      {
+        "key": "priority",
+        "header": "Priority",
+        "translationKey": "PRIORITY",
+        "visible": true,
+        "sortable": false
+      },
+      {
+        "key": "status",
+        "header": "Status",
+        "translationKey": "STATUS",
+        "visible": true,
+        "sortable": false
+      },
+      {
+        "key": "provider",
+        "header": "Provider",
+        "translationKey": "PROVIDER",
+        "visible": true,
+        "sortable": false
+      },
+      {
+        "key": "dateTime",
+        "header": "Date and Time",
+        "translationKey": "DATE_AND_TIME",
+        "visible": true,
+        "sortable": false
+      },
+      {
+        "key": "owner",
+        "header": "Owner",
+        "translationKey": "OWNER",
+        "visible": true,
+        "sortable": false
+      }
+    ],
+    "ordersTableColumnHeadersCustom": [
+      {
+        "key": "identifier",
+        "header": "Identifier",
+        "translationKey": "IDENTIFIER",
+        "visible": true,
+        "sortable": false
+      },
+      {
+        "key": "patientName",
+        "header": "Patient Name",
+        "translationKey": "PATIENT_NAME",
+        "visible": true,
+        "sortable": false
+      }
+    ],
+    "fulfillmentEncounterTypeUuid": "9e49d0a6-e30f-4c04-93e1-1a6e24b84455",
+    "orderFulfillmentConceptUuid": "65ac4f6a-d029-46f5-93e7-10ab49a91167"
+  }
+}
