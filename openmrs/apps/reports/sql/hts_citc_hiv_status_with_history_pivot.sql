@@ -24,12 +24,26 @@ FROM (
         AND pi.identifier_type = 3
         AND pi.preferred = 1
         AND pi.voided = 0
+ 
+    -- HIV Testing and Counseling Intake Template
+    JOIN obs htc 
+        ON htc.person_id = p.person_id
+        AND htc.concept_id = 2386
+        AND htc.voided = 0
+
+    JOIN obs o_post_test 
+        ON o_post_test.person_id = p.person_id
+        AND o_post_test.obs_group_id = htc.obs_id
+        AND o_post_test.concept_id = 2385
+        AND o_post_test.voided = 0    
 
     JOIN obs tr 
         ON tr.person_id = p.person_id
+        AND tr.obs_group_id = o_post_test.obs_id
         AND tr.concept_id = 2165
         AND tr.voided = 0
         AND tr.obs_datetime >= CAST('#startDate#' AS DATE) AND tr.obs_datetime < DATE_ADD(CAST('#endDate#' AS DATE), INTERVAL 1 DAY)
+
 
     -- Require PITC selected in same encounter
     JOIN obs pitc
@@ -104,8 +118,21 @@ FROM (
         AND pi.preferred = 1
         AND pi.voided = 0
 
+    -- HIV Testing and Counseling Intake Template
+    JOIN obs htc 
+        ON htc.person_id = p.person_id
+        AND htc.concept_id = 2386
+        AND htc.voided = 0
+
+    JOIN obs o_post_test 
+        ON o_post_test.person_id = p.person_id
+        AND o_post_test.obs_group_id = htc.obs_id
+        AND o_post_test.concept_id = 2385
+        AND o_post_test.voided = 0    
+
     JOIN obs tr 
         ON tr.person_id = p.person_id
+        AND tr.obs_group_id = o_post_test.obs_id
         AND tr.concept_id = 2165
         AND tr.voided = 0
         AND tr.obs_datetime >= CAST('#startDate#' AS DATE) AND tr.obs_datetime < DATE_ADD(CAST('#endDate#' AS DATE), INTERVAL 1 DAY)

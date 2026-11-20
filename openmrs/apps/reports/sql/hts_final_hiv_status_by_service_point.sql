@@ -45,31 +45,30 @@ SELECT
         WHEN 2143 THEN 'Other'
     END AS Mode_of_Entry
 
-FROM obs tr /*tr => Testing results*/
-JOIN person p ON p.person_id = tr.person_id
-JOIN patient_identifier pi ON pi.patient_id = tr.person_id
-JOIN person_name pn ON pn.person_id = tr.person_id  AND pn.preferred = 1
-JOIN location loc ON loc.location_id = tr.location_id
+FROM obs htc /*htc => HIV Testing and Counseling Intake Template*/
+JOIN person p ON p.person_id = htc.person_id
+JOIN patient_identifier pi ON pi.patient_id = htc.person_id
+JOIN person_name pn ON pn.person_id = htc.person_id  AND pn.preferred = 1
+JOIN location loc ON loc.location_id = htc.location_id
 
 -- HIV Testing Initiation
 LEFT JOIN obs o_initiation 
-    ON o_initiation.person_id = tr.person_id
-    AND o_initiation.encounter_id = tr.encounter_id
---    AND o_initiation.obs_datetime = tr.obs_datetime
+    ON o_initiation.person_id = htc.person_id
+    AND o_initiation.encounter_id = htc.encounter_id
     AND o_initiation.concept_id = 4228
     AND o_initiation.voided = 0
 
 -- Testing History
 LEFT JOIN obs o_history 
-    ON o_history.person_id = tr.person_id
+    ON o_history.person_id = htc.person_id
     AND o_history.concept_id = 4798
     AND o_history.voided = 0
-    AND o_history.encounter_id = tr.encounter_id
+    AND o_history.encounter_id = htc.encounter_id
 
 -- Mode of Entry
 INNER JOIN obs o_entry 
-    ON o_entry.person_id = tr.person_id
-    AND o_entry.encounter_id = tr.encounter_id
+    ON o_entry.person_id = htc.person_id
+    AND o_entry.encounter_id = htc.encounter_id
     AND o_entry.concept_id = 4238
     AND o_entry.voided = 0
     AND o_entry.value_coded IS NOT NULL
@@ -80,18 +79,27 @@ JOIN reporting_age_group ag
         AND DATE_ADD(DATE_ADD(p.birthdate, INTERVAL ag.max_years YEAR), INTERVAL ag.max_days DAY)
     AND ag.report_group_name = 'Modified_Ages'
 
-WHERE tr.concept_id = 2165
-  AND tr.voided = 0
-  AND tr.obs_datetime >= CAST('#startDate#' AS DATE) AND tr.obs_datetime < DATE_ADD(CAST('#endDate#' AS DATE), INTERVAL 1 DAY)
+-- Post Test Counseling
+INNER JOIN obs o_post_test 
+    ON o_post_test.person_id = htc.person_id
+    AND o_post_test.encounter_id = htc.encounter_id
+    AND o_post_test.obs_group_id = htc.obs_id
+    AND o_post_test.concept_id = 2385
+    AND o_post_test.voided = 0
+
+-- Testing results
+INNER JOIN obs tr
+    ON tr.person_id = htc.person_id
+    AND tr.encounter_id = htc.encounter_id
+    AND tr.obs_group_id = o_post_test.obs_id
+    AND tr.concept_id = 2165
+    AND tr.obs_datetime >= CAST('#startDate#' AS DATE) AND tr.obs_datetime < DATE_ADD(CAST('#endDate#' AS DATE), INTERVAL 1 DAY)
+    AND tr.voided = 0
+
+WHERE htc.concept_id = 2386
+  AND htc.voided = 0
   AND pi.identifier_type = 3 
   AND pi.preferred = 1 
   AND pi.voided = 0
   AND loc.retired = 0
   AND o_initiation.value_coded IN (4227,4226)
-
-GROUP BY tr.obs_datetime, pi.identifier
-
-ORDER BY 
-    tr.obs_datetime DESC, 
-    pi.identifier;
- 
