@@ -103,3 +103,4 @@ WHERE htc.concept_id = 2386
   AND pi.voided = 0
   AND loc.retired = 0
   AND o_initiation.value_coded IN (4227,4226)
+GROUP BY Patient_Identifier,HIV_Status, HIV_Testing_Initiation, Mode_of_Entry, Location_Name, Age, Sex
