@@ -1,6 +1,7 @@
 {
   "DATE": "Fecha",
   "REGISTRATION_CARD": "TARJETA DE REGISTRO",
+  "BARCODE_CARD": "TARJETA CON CÓDIGO DE BARRAS",
   "NOTICE": "Aviso",
   "CAUTION": "Precaución",
   "DATED": "Fechado",
